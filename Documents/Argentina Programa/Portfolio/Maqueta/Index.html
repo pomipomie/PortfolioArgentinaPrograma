@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>María Xiomara Badano - Portfolio</title>
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css" integrity="sha384-ejwKkLla8gPP8t2u0eQyL0Q/4ItcnyveF505U0NIobD/SMsNyXrLti6CWaD0L52l" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Encode+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Index.css">
+</head>
+<body>
+    <nav>
+        <ul id="navul">
+            <li id="aplogo">
+                <i class="bi bi-terminal"></i>
+            </li>
+            <li id="aptext">
+                <p>Argentina</p>
+                <p>Programa</p>
+            </li>
+            <li id="yoprogramo">
+                <p>#YoProgramo</p>
+            </li>
+            <li id="menu">
+                <i onclick="openNav()" class="bi bi-list"></i>
+                <div id="mySidenav" class="sidenav">
+                    <a href="javascript:void(0)" class="bi-x-lg" onclick="closeNav()"></a>
+                    <a href="#" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</a>
+                    <a href="#sobremi">Sobre mí</a>
+                    <a href="#experiencia">Experiencia</a>
+                    <a href="#educacion">Educación</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#proyectos">Proyectos</a>
+                    <a href="#contacto">Contacto</a>
+                    <a href="#" class="btn-toggle"><i class="bi bi-lightbulb"></i></a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+    <main>
+        <section id="banner">
+            <picture id="bannerpic">
+                <source media="(min-width: 360px)" srcset="florian-olivo-4hbJ-eymZ1o-unsplash(1).jpg">
+                <source media="(max-width: 360px)" srcset="florian-olivo-4hbJ-eymZ1o-unsplash(2).jpg">
+                <source media="(min-width: 1280px)" srcset="florian-olivo-4hbJ-eymZ1o-unsplash.jpg">
+                <img src="florian-olivo-4hbJ-eymZ1o-unsplash(1).jpg">
+            </picture>
+        </section>
+        <div id="aboutcontainer">
+            <section id="avatar">
+                <div id="avatarpic">
+                    <img src="https://i.pravatar.cc/150?img=45" width="75%">
+                </div>
+                <div id="avatartext">
+                    <h1>María Xiomara Badano</h1>
+                </div>
+            </section>
+            <section id="sobremi">
+                <h2>Sobre mí</h2>
+                <p>Cat ipsum dolor sit amet, i cry and cry and cry unless you pet me, and then maybe i cry just for fun do not try to mix old food with new one to fool me! jump on fridge a nice warm laptop for me to sit on.</p>
+            </section>
+        </div>
+        <section id="experiencia" class="card">
+            <h2>Experiencia</h2>
+            <article id="e1" class="cardcont">
+                <h3>Título</h3>
+                <h4>Subtítulo</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo natus nesciunt quia provident, amet magnam ipsa ipsum alias neque eum. Recusandae veniam, hic laudantium fugiat eius laboriosam. Enim, iusto molestiae.</p>
+            </article>
+        </section>
+        <section id="educacion" class="card">
+            <h2>Educación</h2>
+            <article id="ed1" class="cardcont">
+                <h3>Título</h3>
+                <h4>Subtítulo</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo natus nesciunt quia provident, amet magnam ipsa ipsum alias neque eum. Recusandae veniam, hic laudantium fugiat eius laboriosam. Enim, iusto molestiae.</p>
+            </article>
+        </section>
+        <section id="skills" class="card">
+            <h2>Skills</h2>
+            <div id="cirgrid">
+                <article id="s1" class="circle">
+                    <p>HTML</p>
+                </article>
+                <article id="s2" class="circle">
+                    <p>CSS</p>
+                </article>
+                <article id="s3" class="circle">
+
+                </article>
+                <article id="s4" class="circle">
+
+                </article>
+                <article id="s5" class="circle">
+
+                </article>
+                <article id="s6" class="circle">
+
+                </article>
+            </div>
+        </section>
+        <section id="proyectos" class="card">
+            <h2>Proyectos</h2>
+            <article id="p1" class="cardcont">
+                <h3>Título</h3>
+                <h4>Subtítulo</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo natus nesciunt quia provident, amet magnam ipsa ipsum alias neque eum. Recusandae veniam, hic laudantium fugiat eius laboriosam. Enim, iusto molestiae.</p>
+            </article>
+        </section>
+        <section id="contacto" class="card">
+            <h2>Contacto</h2>
+            <article id="c1" class="cardcont">
+                <h3>Título</h3>
+                <h4>Subtítulo</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo natus nesciunt quia provident, amet magnam ipsa ipsum alias neque eum. Recusandae veniam, hic laudantium fugiat eius laboriosam. Enim, iusto molestiae.</p>
+            </article>
+        </section>
+        <div id="id01" class="modal">
+            <form class="modal-content animate" action="/action_page.php" method="post">
+                <div class="titlecontainer">
+                    <h1>Argentina Programa</h1>
+                    <h1>#YoProgramo</h1>
+                    <h2>Iniciar sesión</h2>
+                </div>      
+                <div class="container">
+                    <label for="uname">Nombre de usuario</label>
+                    <input type="text" placeholder="Escribir nombre" name="uname" required>
+                    <label for="psw">Contraseña</label>
+                    <input type="password" placeholder="Ingresar contraseña" name="psw" required>       
+                    <button type="submit">Log in</button>
+                    <label style="font-size: 0.5em;"><input type="checkbox" checked="checked" name="remember"> Recordarme</label>
+                </div>
+                <div class="container">
+                    <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancelar</button>
+                    <span class="psw"><a href="#" id="recup">Recuperar contraseña</a></span>
+                </div>
+            </form>
+        </div>
+    </main>
+    <footer>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum quas vero expedita ad rerum laboriosam.</p>
+    </footer>
+    <script src="Index.js"></script>
+</body>
+</html>
