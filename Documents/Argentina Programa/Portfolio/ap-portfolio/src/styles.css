@@ -23,114 +23,9 @@ body {
     overflow-x: hidden;
 }
 
-nav {
-    background-color: var(--blue);
-    color: var(--bgdcolor);
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-content: center;
-    text-align: center;
-    vertical-align: middle;
-    width: 100%;
-    height: auto;
-    font-family: 'Encode Sans', sans-serif;
-    position: fixed;
-    z-index: 8;
-}
-
-#navul {
-    margin-block-start: 0;
-    margin-block-end: 0;
-    margin-inline-start: 0;
-    margin-inline-end: 0;
-    padding-inline-start: 0;
-    width: 100%;
-    display: grid;
-    justify-content: stretch;
-    grid-template-columns: auto auto auto auto;
-    align-content: center;
-}
-
-nav li {
-    list-style-type: none;
-    font-size: 1em;
-    margin-top: 0.25em;
-}
-
-#aplogo {
-    font-size: 1.5em;
-    grid-column: 1 / 2;
-    margin-left: 0.5em;
-    margin-right: -0.5em;
-}
-
-#aptext {
-    font-size: 0.65em;
-    line-height: 0;
-    margin-left: -0.5em;
-    margin-right: 2em;
-    grid-column: 2 / 3;
-}
-
-#yoprogramo {
-    font-size: 0.85em;
-    margin-left: 0;
-    margin-right: 2em;
-    line-height: 2em;
-    grid-column: 3 / 4;
-}
-
-#yoprogramo p {
-    margin: 0.25em 0 0 0;
-}
-
-#menu {
-    font-size: 1.15em;
-    line-height: 2em;
-    grid-column: 4 / span 1;
-}
-
-#menu i {
-    margin: 0.25em 0 0 0;
-}
-
-#menu p:hover {
-    color: var(--hoverblue);
-}
-
 main {
     width: 100vw;
     height: auto;
-}
-
-#banner {
-    max-width: fit-content;
-    height: fit-content;
-    margin-bottom: -1em;
-}
-
-#bannerpic, #bannerpic source, #bannerpic img {
-    width: 100vw;
-    height: auto;
-    line-height: 0;
-}
-
-#aboutcontainer {
-    display: grid;
-    justify-content: stretch;
-    grid-template-areas: "avatar sobremi sobremi";
-    grid-template-columns: 35% auto auto;
-    background-color: var(--pink) ;
-    color: var(--bgdcolor);
-    text-align: center;
-}
-
-#aboutcontainer p {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 300;
-    font-size: 0.8em;
-    margin-right: 1em;
 }
 
 h1, h2 {
@@ -141,58 +36,14 @@ h1, h2 {
     position: relative;
 }
 
-#avatar {
-    grid-template-columns: 1 / 2;
-}
-
-h1 {
-    font-size: 1.25em;
+/* h1 {
+    font-size: 1em;
     text-shadow:
     -1px -1px 0 var(--blue),  
     1px -1px 0 var(--blue),
     -1px 1px 0 var(--blue),
     1px 1px 0 var(--blue);
-}
-
-#avatarpic img {
-    margin-top: -2.5em;
-    border: 0.5em solid var(--blue);
-    border-radius: 5%;
-    z-index: 5;
-    position: relative;
-}
-
-#avatartext, #avatartext h1 {
-    margin: 0;
-}
-
-#sobremi {
-    grid-template-columns: 2 / span 2;
-}
-
-#sobremi h2 {
-    font-size: 1.4em;
-    margin-top: 1.25em;
-    margin-left: 1.25em;
-    margin-bottom: 0;
-    text-shadow:
-        -1px -1px 0 var(--blue),  
-        1px -1px 0 var(--blue),
-        -1px 1px 0 var(--blue),
-        1px 1px 0 var(--blue);
-}
-
-#sobremi h2::before {
-    content: " ";
-    width: 140%;
-    height: 0.9em;
-    margin-bottom: 7vw;
-    margin-top: -1.5vw;
-    margin-left: -47vw;
-    position: absolute;
-    background-color: var(--blue);
-    z-index: -1;
-}
+} */
 
 h3, h4 {
     font-family: 'Encode Sans', sans-serif;
@@ -201,20 +52,32 @@ h3, h4 {
     margin-top: -0.7em;
 }
 
+h3 {
+    font-size: 1em;
+    line-height: 0.9em;
+}
+
+h4 {
+    font-size: 0.8em;
+    line-height: 1em;
+}
+
 .card {
     color: var(--blue);
 }
 
 .card h2 {
+    font-size: 1.2em;
+    font-weight: 700;
     text-shadow:
     -1px -1px 0 var(--bgdcolor),  
     1px -1px 0 var(--bgdcolor),
     -1px 1px 0 var(--bgdcolor),
-    1px 1px 0 var(--bgdcolor),
-    -2px -2px 0 var(--pink),  
+    1px 1px 0 var(--bgdcolor);
+    /* -2px -2px 0 var(--pink),  
     2px -2px 0 var(--pink),
     -2px 2px 0 var(--pink),
-    2px 2px 0 var(--pink);
+    2px 2px 0 var(--pink); */
 }
 
 .card h2::before {
@@ -239,140 +102,16 @@ h3, h4 {
     font-family: 'Roboto', sans-serif;
     margin-top: -0.7em;
     font-weight: 400;
-    font-size: 0.8em;
+    font-size: 0.6em;
     text-align: justify;
-}
-
-#cirgrid {
-    display: grid;
-    grid-template-columns: auto auto;
-    justify-content: center;
-}
-
-.circle {
-    border: 5.5vw solid var(--grey);
-    border-bottom: 5.5vw solid var(--blue);
-    border-radius: 50%;
-    width: 22vw;
-    height: 22vw;
-    margin: 5vw;
-    font-family: 'Roboto', sans-serif;
-    position: relative;
-    padding: 5%;
-}
-
-.circle p {
-    position: relative;
-    text-align: center;
-    vertical-align: middle;
-    padding: 6%;
-    font-size: 5vw;
-}
-
-#s1, #s2 {
-    border-right: 5.5vw solid var(--blue);
-    border-top: 5.5vw solid var(--blue);
-}
-
-.sidenav {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    right: 0;
-    background-color: var(--blue);
-    overflow-x: hidden;
-    overflow-y: scroll;
-    padding-top: 60px;
-    transition: 0.5s;
-    color: var(--bgdcolor);
-    font-size: 0.8em;
-    display: grid;
-    grid-auto-rows: auto;
-    justify-content: center;
-    align-content: start;
-}
-
-.sidenav a {
-    color: var(--bgdcolor);
-    text-decoration: none;
-    padding: 0.5em;
-    line-height: 1.15em;
-}
-
-.sidenav a:hover {
-    background-color: var(--hoverblue);
-}
-
-footer {
-    background-color: var(--pink);
-    color: var(--bgdcolor);
-    font-family: 'Roboto', sans-serif;
-    font-size: 0.5em;
-    width: 100%;
-}
-
-footer p {
-    padding: 0.5em;
-    margin-left: 1em;
-    overflow-x: hidden;
 }
 
 @media screen and (min-width: 800px) {
     body {
         font-size: 3.75vw;
     }
-
-    #cirgrid {
-        grid-template-columns: auto auto auto;
-    }
-    .circle {
-        border: 4vw solid var(--grey);
-        border-bottom: 4vw solid var(--blue);
-        border-radius: 50%;
-        width: 15vw;
-        height: 15vw;
-        margin: 3vw;
-        font-family: 'Roboto', sans-serif;
-        position: relative;
-        padding: 5%;
-    }
-    #s1, #s2 {
-        border-right: 4vw solid var(--blue);
-        border-top: 4vw solid var(--blue);
-    }
-    .circle p {
-        position: relative;
-        text-align: center;
-        vertical-align: middle;
-        margin-top: 24%;
-        padding-top: 4%;
-        font-size: 4vw;
-    }
-    #aboutcontainer p {
-        font-size: 0.6em;
-        padding-left: 0.7em;
-    }
-    .cardcont p {
-        font-size: 0.6em;
-    }
-    #sobremi h2 {
-        font-size: 1.2em;
-        text-shadow: 3px 3px 0 var(--blue);
-    }
-    #avatartext h1 {
-        font-size: 0.9em;
-        padding: 0 0.5em 0.5em 0.5em;
-        margin-left: 1em;
-        line-height: 1.2em;
-        text-shadow: 3px 3px 0 var(--blue);
-    }
-    #avatar img {
-        margin-left: 0.9em;
-    }
+    
     .card h2 {
-        font-size: 1.2em;
         text-shadow:
         -2px -2px 0 var(--bgdcolor),  
         2px -2px 0 var(--bgdcolor),
@@ -384,10 +123,6 @@ footer p {
     }
     h4 {
         font-size: 0.7em;
-    }
-
-    .sidenav {
-        font-size: 0.6em;
     }
 }
 
@@ -395,140 +130,17 @@ footer p {
     body {
         font-size: 3.5vw;
     }
-
-    #aplogo {
-        margin-left: -0.5em;
-        margin-right: -0.5em;
-    }
-
-    #aptext {
-        font-size: 0.6em;
-        margin-left: -5em;
-        margin-right: 2em;
-        margin-top: 0.5em;
-    }
-
-    #yoprogramo {
-        font-size: 0.8em;
-        margin-left: -0.5em;
-        margin-right: 3em;
-    }
-
-    #menu {
-        font-size: 1.15em;
-        margin-top: 0.1em;
-        margin-right: -1em;
-    }
-
-    #cirgrid {
-        grid-template-columns: auto auto auto;
-    }
-    .circle {
-        border: 4vw solid var(--grey);
-        border-bottom: 4vw solid var(--blue);
-        border-radius: 50%;
-        width: 15vw;
-        height: 15vw;
-        margin: 3vw;
-        font-family: 'Roboto', sans-serif;
-        position: relative;
-        padding: 5%;
-    }
-    #s1, #s2 {
-        border-right: 4vw solid var(--blue);
-        border-top: 4vw solid var(--blue);
-    }
-    .circle p {
-        position: relative;
-        text-align: center;
-        vertical-align: middle;
-        margin-top: 24%;
-        padding-top: 4%;
-        font-size: 4vw;
-    }
-    #aboutcontainer p {
-        font-size: 0.6em;
-        padding-left: 0.7em;
-    }
-    .cardcont p {
-        font-size: 0.6em;
-    }
-    #sobremi h2 {
-        font-size: 1.2em;
-        text-shadow: 3px 3px 0 var(--blue);
-    }
-    
-    #sobremi h2::before {
-        content: " ";
-        width: 130%;
-        height: 0.9em;
-        margin-bottom: 7vw;
-        margin-top: -1.5vw;
-        margin-left: -47vw;
-        position: absolute;
-        background-color: var(--blue);
-        z-index: -1;
-    }
-    #avatartext h1 {
-        font-size: 0.9em;
-        padding: 0 0.5em 0.5em 0.5em;
-        margin-left: 1em;
-        line-height: 1.2em;
-        text-shadow: 3px 3px 0 var(--blue);
-    }
-    #avatar img {
-        margin-left: 0.9em;
-    }
-    .card h2 {
-        font-size: 1.2em;
-        text-shadow:
-        -2px -2px 0 var(--bgdcolor),  
-        2px -2px 0 var(--bgdcolor),
-        -2px 2px 0 var(--bgdcolor),
-        2px 2px 0 var(--bgdcolor);
-    }
-    h3 {
-        font-size: 0.9em;
-    }
-    h4 {
-        font-size: 0.7em;
-    }
 }
 @media screen and (min-width: 1200px) {
     body {
         font-size: 3vw;
     }
-    #aptext {
-        margin-left: -12em;
-    }
-    #yoprogramo {
-        margin-left: -2em;
-        margin-right: 3em;
-    }
 
-    #aboutcontainer p {
-        font-size: 0.5em;
-        padding-left: 0.7em;
-        margin-right: 2em;
-    }
     .cardcont p {
         font-size: 0.5em;
         margin-right: 2em;
     }
-    #sobremi h2 {
-        font-size: 1em;
-    }
-    #sobremi h2::before {
-        content: " ";
-        width: 130%;
-        height: 0.9em;
-        margin-bottom: 7vw;
-        margin-top: -0.5vw;
-        margin-left: -47vw;
-        position: absolute;
-        background-color: var(--blue);
-        z-index: -1;
-    }
+
     .card h2 {
         font-size: 0.9em;
     }
@@ -543,186 +155,5 @@ footer p {
     }
     h4 {
         font-size: 0.5em;
-    }
-    #cirgrid {
-        grid-template-columns: auto auto auto auto auto;
-        justify-content: center;
-        overflow-x: hidden;
-        margin-left: -0.7em;
-    }
-    .circle {
-        border: 2vw solid var(--grey);
-        border-bottom: 2vw solid var(--blue);
-        border-radius: 50%;
-        width: 10vw;
-        height: 10vw;
-        margin: 2vw;
-        font-family: 'Roboto', sans-serif;
-        position: relative;
-        padding: 5%;
-    }
-    #s1, #s2 {
-        border-right: 2vw solid var(--blue);
-        border-top: 2vw solid var(--blue);
-    }
-    .circle p {
-        margin-top: 24%;
-        padding-top: 4%;
-        font-size: 3vw;
-    }
-}
-
-/* login form */
-input[type=text], input[type=password] {
-    width: 100%;
-    padding: 0.4em 0.45em;
-    margin: 0.2em 0;
-    display: inline-block;
-    border: 1px solid var(--blue);
-    box-sizing: border-box;
-    color: var(--blue);
-    font-family: 'Roboto', sans-serif;
-    font-size: 0.5em;
-    background-color: var(--bgdcolor);
-}
-
-input[type=text]:active, input[type=password]:active, input[type=text]:focus, input[type=password]:focus {
-    background-color: var(--grey);
-    border: 2px solid var(--hoverblue);
-}
-
-button {
-    background-color: var(--pink);
-    color: var(--blue);
-    padding: 14px 20px;
-    margin: 0.2em 0;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-    font-family: 'Roboto', sans-serif;
-    font-size: 0.6em;
-}
-
-button:hover {
-    opacity: 0.8;
-}
-
-.cancelbtn {
-    width: auto;
-    padding: 10px 18px;
-    background-color: var(--pink);
-}
-
-#recup {
-    font-family: 'Roboto', sans-serif;
-    font-size: 0.5em;
-    color: var(--blue);
-    text-decoration: none;
-}
-
-#recup a:active, #recup a:visited {
-    text-decoration: none;
-    color: var(--blue);
-}
-
-.titlecontainer {
-    text-align: center;
-    margin: 0.5em 0;
-    position: relative;
-}
-
-.container {
-    padding: 0.3em;
-}
-
-span.psw {
-    float: right;
-}
-
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 14;
-    left: 20%;
-    top: 5%;
-    width: 60%;
-    height: auto;
-    max-height: 95vh;
-    overflow: auto;
-    background-color: var(--bgdcolor);
-    padding: 0;
-    color: var(--blue);
-}
-
-.modal h1 {
-    font-size: 0.8em;
-    font-weight: 500;
-    margin: 0.2em;
-}
-
-.modal h2 {
-    font-size: 0.7em;
-    margin: 0.5em 0 0.2em 0;
-}
-
-.modal-content {
-    background-color: var(--bgdcolor);
-    margin: 1% auto 1% auto;
-    width: 80%;
-}
-
-.container label {
-    color: var(--blue);
-    font-family: 'Roboto', sans-serif;
-    font-size: 0.55em;
-    margin: 0;
-    padding: 0;
-}
-
-.close {
-    position: absolute;
-    right: 0;
-    top: 0;
-    color: var(--blue);
-    font-size: 0.7em;
-    font-weight: bold;
-    text-align: right;
-}
-
-.close:hover,
-.close:focus {
-    color: var(--hoverblue);
-    cursor: pointer;
-}
-
-.animate {
-    -webkit-animation: animatezoom 0.6s;
-    animation: animatezoom 0.6s;
-}
-
-@-webkit-keyframes animatezoom {
-    from {-webkit-transform: scale(0)} 
-    to {-webkit-transform: scale(1)}
-}
-    
-@keyframes animatezoom {
-    from {transform: scale(0)} 
-    to {transform: scale(1)}
-}
-@media screen and (max-width: 800px) {
-    span.psw {
-        display: block;
-        float: none;
-    }
-    .cancelbtn {
-        width: 100%;
-    }
-
-    .modal {
-        width: 100%;
-        height: auto;
-        max-height: 100%;
-        left: 0;
-        top: 0;
     }
 }

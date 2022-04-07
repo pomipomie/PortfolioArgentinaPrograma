@@ -1,0 +1,154 @@
+/* login form */
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 0.4em 0.45em;
+    margin: 0.2em 0;
+    display: inline-block;
+    border: 1px solid var(--blue);
+    box-sizing: border-box;
+    color: var(--blue);
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.5em;
+    background-color: var(--bgdcolor);
+}
+
+input[type=text]:active, input[type=password]:active, input[type=text]:focus, input[type=password]:focus {
+    background-color: var(--grey);
+    border: 2px solid var(--hoverblue);
+}
+
+button {
+    background-color: var(--pink);
+    color: var(--blue);
+    padding: 14px 20px;
+    margin: 0.2em 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.6em;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+.cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: var(--pink);
+}
+
+#recup {
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.5em;
+    color: var(--blue);
+    text-decoration: none;
+}
+
+#recup a:active, #recup a:visited {
+    text-decoration: none;
+    color: var(--blue);
+}
+
+.titlecontainer {
+    text-align: center;
+    margin: 0.5em 0;
+    position: relative;
+}
+
+.container {
+    padding: 0.3em;
+}
+
+span.psw {
+    float: right;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 14;
+    left: 20%;
+    top: 5%;
+    width: 60%;
+    height: auto;
+    max-height: 95vh;
+    overflow: auto;
+    background-color: var(--bgdcolor);
+    padding: 0;
+    color: var(--blue);
+}
+
+.modal h1 {
+    font-size: 0.8em;
+    font-weight: 500;
+    margin: 0.2em;
+}
+
+.modal h2 {
+    font-size: 0.7em;
+    margin: 0.5em 0 0.2em 0;
+}
+
+.modal-content {
+    background-color: var(--bgdcolor);
+    margin: 1% auto 1% auto;
+    width: 80%;
+}
+
+.container label {
+    color: var(--blue);
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.55em;
+    margin: 0;
+    padding: 0;
+}
+
+.close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: var(--blue);
+    font-size: 0.7em;
+    font-weight: bold;
+    text-align: right;
+}
+
+.close:hover,
+.close:focus {
+    color: var(--hoverblue);
+    cursor: pointer;
+}
+
+.animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s;
+}
+
+@-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)} 
+    to {-webkit-transform: scale(1)}
+}
+    
+@keyframes animatezoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+}
+@media screen and (max-width: 800px) {
+    span.psw {
+        display: block;
+        float: none;
+    }
+    .cancelbtn {
+        width: 100%;
+    }
+
+    .modal {
+        width: 100%;
+        height: auto;
+        max-height: 100%;
+        left: 0;
+        top: 0;
+    }
+}

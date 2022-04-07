@@ -1,5 +1,20 @@
 #banner {
+    max-width: fit-content;
+    height: fit-content;
+    max-height: 50vw;
+    margin-bottom: -1em;
+    object-fit: cover;
+    overflow-y: hidden;
+}
+
+#bannerpic, #bannerpic source, #bannerpic img {
     width: 100vw;
     height: auto;
-    overflow-x: hidden;
+    line-height: 0;
+}
+
+@media screen and (min-width: 800px) {
+    #banner {
+        max-height: 40vw;
+    }
 }

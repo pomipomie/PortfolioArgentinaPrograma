@@ -1,0 +1,86 @@
+#aboutcontainer {
+    display: grid;
+    justify-content: stretch;
+    grid-template-areas: "avatar sobremi sobremi";
+    grid-template-columns: 35% auto auto;
+    background-color: var(--pink) ;
+    color: var(--bgdcolor);
+    text-align: center;
+}
+
+#aboutcontainer p {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 0.6em;
+    margin-right: 2em;
+    text-align: justify;
+}
+
+#avatar {
+    grid-template-columns: 1 / 2;
+}
+
+#avatarpic img {
+    margin-top: -2.5em;
+    border: 0.45em solid var(--blue);
+    border-radius: 5%;
+    z-index: 5;
+    position: relative;
+}
+
+#avatartext h1 {
+    margin: 0;
+    text-shadow: 2px 2px 0 var(--blue);
+    font-size: 1.1em;
+    line-height: 1.05em;
+}
+
+#sobremi {
+    grid-template-columns: 2 / span 2;
+}
+
+#sobremi h2 {
+    font-size: 1.1em;
+    margin-top: 1.25em;
+    margin-left: 1.25em;
+    margin-bottom: 0;
+    text-shadow: 2px 2px 0 var(--blue);
+}
+
+#sobremi h2::before {
+    content: " ";
+    width: 140%;
+    height: 0.7em;
+    margin-bottom: 7vw;
+    margin-top: -0.5vw;
+    margin-left: -47vw;
+    position: absolute;
+    background-color: var(--blue);
+    z-index: -1;
+}
+
+@media screen and (min-width: 800px) {
+    #aboutcontainer p {
+        padding-left: 0.7em;
+    }
+    #sobremi h2 {
+        text-shadow: 3px 3px 0 var(--blue), 2px 2px 0 var(--blue);
+    }
+    #sobremi h2::before {
+        width: 125%;
+        margin-top: 0;
+    }
+    #avatartext h1 {
+        font-size: 1em;
+        padding: 0 0.5em 0.5em 0.5em;
+        margin-left: 0;
+        line-height: 1.2em;
+        text-shadow: 3px 3px 0 var(--blue), 2px 2px 0 var(--blue);
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    #avatartext h1 {
+        padding: 0 0.7em 0.7em 0.7em;
+    }
+}
