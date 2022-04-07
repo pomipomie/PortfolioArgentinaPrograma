@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, ElementRef, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-navbar',
@@ -13,4 +13,20 @@ export class NavbarComponent implements OnInit {
     
   }
 
+  @ViewChild("mySidenav")
+  mySideNav!: ElementRef;
+  openNav() {
+//    console.log(this.mySideNav);
+    this.mySideNav.nativeElement.style.width = "30%";
+  }
+  closeNav() {
+    this.mySideNav.nativeElement.style.width = "0";
+  }
 }
+
+// function openNav() {
+//    document.getElementById("mySidenav").style.width = "30%";
+//} 
+//function closeNav() {
+//  document.getElementById("mySidenav").style.width = "0";
+//}

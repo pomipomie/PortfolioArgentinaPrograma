@@ -82,14 +82,15 @@ nav li {
     background-color: var(--blue);
     overflow-x: hidden;
     overflow-y: scroll;
-    padding-top: 60px;
+    padding-top: 3vw;
     transition: 0.5s;
     color: var(--bgdcolor);
-    font-size: 0.8em;
+    font-size: 0.7em;
     display: grid;
     grid-auto-rows: auto;
     justify-content: center;
     align-content: start;
+    text-align: left;
 }
 
 .sidenav a {

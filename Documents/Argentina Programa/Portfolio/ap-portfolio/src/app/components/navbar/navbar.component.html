@@ -11,9 +11,9 @@
             <p>#YoProgramo</p>
         </li>
         <li id="menu">
-            <i onclick="openNav()" class="bi bi-list"></i>
-            <div id="mySidenav" class="sidenav">
-                <a href="javascript:void(0)" class="bi-x-lg" onclick="closeNav()"></a>
+            <i (click)="openNav()" class="bi bi-list"></i>
+            <div #mySidenav id="mySidenav" class="sidenav">
+                <a href="javascript:void(0)" class="bi-x-lg" (click)="closeNav()"></a>
                 <a href="#" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</a>
                 <a href="#sobremi">Sobre mí</a>
                 <a href="#experiencia">Experiencia</a>
