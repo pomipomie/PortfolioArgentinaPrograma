@@ -1,14 +1,45 @@
-/* login form */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 14;
+    left: 25%;
+    top: 5%;
+    width: 50%;
+    height: auto;
+    max-height: 95vh;
+    overflow: auto;
+    background-color: var(--bgdcolor);
+    padding: 0;
+    color: var(--blue);
+}
+
+.modal h1 {
+    font-size: 0.7em;
+    font-weight: 500;
+    margin: 0.2em;
+}
+
+.modal h2 {
+    font-size: 0.6em;
+    margin: 0.5em 0 0.2em 0;
+}
+
+.modal-content {
+    background-color: var(--bgdcolor);
+    margin: 2% auto 2% auto;
+    width: 80%;
+}
+
 input[type=text], input[type=password] {
     width: 100%;
     padding: 0.4em 0.45em;
-    margin: 0.2em 0;
-    display: inline-block;
+    margin: 0 0 0.5em 0;
+    display: block;
     border: 1px solid var(--blue);
     box-sizing: border-box;
     color: var(--blue);
     font-family: 'Roboto', sans-serif;
-    font-size: 0.5em;
+    font-size: 0.4em;
     background-color: var(--bgdcolor);
 }
 
@@ -26,7 +57,7 @@ button {
     cursor: pointer;
     width: 100%;
     font-family: 'Roboto', sans-serif;
-    font-size: 0.6em;
+    font-size: 0.5em;
 }
 
 button:hover {
@@ -41,7 +72,7 @@ button:hover {
 
 #recup {
     font-family: 'Roboto', sans-serif;
-    font-size: 0.5em;
+    font-size: 0.4em;
     color: var(--blue);
     text-decoration: none;
 }
@@ -65,43 +96,11 @@ span.psw {
     float: right;
 }
 
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 14;
-    left: 20%;
-    top: 5%;
-    width: 60%;
-    height: auto;
-    max-height: 95vh;
-    overflow: auto;
-    background-color: var(--bgdcolor);
-    padding: 0;
-    color: var(--blue);
-}
-
-.modal h1 {
-    font-size: 0.8em;
-    font-weight: 500;
-    margin: 0.2em;
-}
-
-.modal h2 {
-    font-size: 0.7em;
-    margin: 0.5em 0 0.2em 0;
-}
-
-.modal-content {
-    background-color: var(--bgdcolor);
-    margin: 1% auto 1% auto;
-    width: 80%;
-}
-
 .container label {
     color: var(--blue);
     font-family: 'Roboto', sans-serif;
-    font-size: 0.55em;
-    margin: 0;
+    font-size: 0.5em;
+    margin: 0 0 -5em 0;
     padding: 0;
 }
 
@@ -110,7 +109,7 @@ span.psw {
     right: 0;
     top: 0;
     color: var(--blue);
-    font-size: 0.7em;
+    font-size: 0.6em;
     font-weight: bold;
     text-align: right;
 }
@@ -143,12 +142,17 @@ span.psw {
     .cancelbtn {
         width: 100%;
     }
-
     .modal {
-        width: 100%;
+        width: 60%;
         height: auto;
         max-height: 100%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .modal {
+        font-size:xx-large;
+        width: 100%;
         left: 0;
-        top: 0;
     }
 }

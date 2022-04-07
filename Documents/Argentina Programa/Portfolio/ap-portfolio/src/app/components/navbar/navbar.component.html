@@ -14,14 +14,14 @@
             <i (click)="openNav()" class="bi bi-list"></i>
             <div #mySidenav id="mySidenav" class="sidenav">
                 <a href="javascript:void(0)" class="bi-x-lg" (click)="closeNav()"></a>
-                <a href="#" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</a>
+                <a href="javascript:void(0)" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</a>
                 <a href="#sobremi">Sobre mí</a>
                 <a href="#experiencia">Experiencia</a>
                 <a href="#educacion">Educación</a>
                 <a href="#skills">Skills</a>
                 <a href="#proyectos">Proyectos</a>
                 <a href="#contacto">Contacto</a>
-                <a href="#" class="btn-toggle"><i class="bi bi-lightbulb"></i></a>
+                <a href="javascript:void(0)" (click)="toggle()" class="btn-toggle"><i [ngClass]="bulbclass"></i></a>
             </div>
         </li>
     </ul>

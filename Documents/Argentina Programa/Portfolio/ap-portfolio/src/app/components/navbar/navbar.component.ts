@@ -7,6 +7,8 @@ import { Component, OnInit, Output, ElementRef, ViewChild } from '@angular/core'
 })
 export class NavbarComponent implements OnInit {
 
+  public bulbclass : string = 'bi bi-lightbulb-fill';
+  
   constructor() { }
 
   ngOnInit(): void {
@@ -16,17 +18,18 @@ export class NavbarComponent implements OnInit {
   @ViewChild("mySidenav")
   mySideNav!: ElementRef;
   openNav() {
-//    console.log(this.mySideNav);
     this.mySideNav.nativeElement.style.width = "30%";
   }
   closeNav() {
     this.mySideNav.nativeElement.style.width = "0";
   }
-}
 
-// function openNav() {
-//    document.getElementById("mySidenav").style.width = "30%";
-//} 
-//function closeNav() {
-//  document.getElementById("mySidenav").style.width = "0";
-//}
+  toggle() :any {
+  if (this.bulbclass === 'bi bi-lightbulb-fill') {
+    this.bulbclass = 'bi bi-lightbulb';
+    document.body.classList.toggle('dark-theme');
+  } else {
+    this.bulbclass = 'bi bi-lightbulb-fill';
+    document.body.classList.toggle('dark-theme');
+  }}
+}
