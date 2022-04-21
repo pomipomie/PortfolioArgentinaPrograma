@@ -22,13 +22,13 @@ public class ExpTController {
     public void createExpT (@RequestBody ExpT expt) {
        exptServ.createExpT(expt);
     }
-    @DeleteMapping ("/delete/{id_expt}")
+    @DeleteMapping ("/exptype/delete/{id_expt}")
     public void deleteExpT (@PathVariable Long id_expt) {
         exptServ.deleteExpT(id_expt);
     }
-    @GetMapping ("/search/{id_expt}")
+    @GetMapping ("/exptype/search/{id_expt}")
     @ResponseBody
-    public ExpT searchExpT (Long id_expt) {
+    public ExpT searchExpT (@PathVariable Long id_expt) {
         return exptServ.searchExpT(id_expt);
     }
 }

@@ -19,24 +19,24 @@ public class ExperienceController {
     @Autowired
     private IExperienceService expServ;
     
-    @PostMapping ("/new/experience")
+    @PostMapping ("/new/experience")  //NOT WORKING
     public void createExp (@RequestBody Experience exp) {
        expServ.createExp(exp);
     }
     
-    @DeleteMapping ("/delete/{id_exp}")
+    @DeleteMapping ("/experience/delete/{id_exp}") // STILL NOT TESTED
     public void deleteExp (@PathVariable Long id_exp) {
         expServ.deleteExp(id_exp);
     }
     
-    @PutMapping ("/edit/{id_exp}")
-    public void editExp (@PathVariable Long id_exp) {
+    @PutMapping ("/experience/edit/{id_exp}") // STILL NOT TESTED
+    public void editExp (@PathVariable Long id_exp, @RequestBody Experience exp) {
         expServ.editExp(id_exp);
     }
     
-    @GetMapping ("/search/{id_exp}")
+    @GetMapping ("/experience/search/{id_exp}") // STILL NOT TESTED
     @ResponseBody
-    public Experience searchExp (Long id_exp) {
+    public Experience searchExp (@PathVariable Long id_exp) {
         return expServ.searchExp(id_exp);
     }
     

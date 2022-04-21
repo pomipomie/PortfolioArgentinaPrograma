@@ -26,17 +26,17 @@ public class UserController {
        userServ.createUser(us);
     }
     
-    @DeleteMapping ("/delete/{id}")
+    @DeleteMapping ("/user/delete{id}")
     public void deleteUser (@PathVariable Long id) {
         userServ.deleteUser(id);
     }
     
-    @PutMapping ("/edit{id}")
+    @PutMapping ("/user/edit{id}") //STILL NOT WORKING
     public void editUser (@PathVariable Long id, @RequestBody UserP us) {
         userServ.editUser(id);
     }
     
-    @GetMapping ("/search{id}")
+    @GetMapping ("/user/search{id}")
     @ResponseBody
     public UserP searchUser(@PathVariable Long id) {
         return userServ.searchUser(id);
