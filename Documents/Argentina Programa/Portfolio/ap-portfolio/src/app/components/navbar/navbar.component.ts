@@ -8,6 +8,7 @@ import { Component, OnInit, Output, ElementRef, ViewChild } from '@angular/core'
 export class NavbarComponent implements OnInit {
 
   public bulbclass : string = 'bi bi-lightbulb-fill';
+  public onoff : string = 'bi bi-toggle-off';
   
   constructor() { }
 
@@ -32,4 +33,13 @@ export class NavbarComponent implements OnInit {
     this.bulbclass = 'bi bi-lightbulb-fill';
     document.body.classList.toggle('dark-theme');
   }}
+
+  gradient() :any {
+    if (this.onoff === 'bi bi-toggle-off') {
+      this.onoff = 'bi bi-toggle-on';
+      document.body.classList.toggle('gradientmode');
+    } else {
+      this.onoff = 'bi bi-toggle-off';
+      document.body.classList.toggle('gradientmode');
+    }}
 }

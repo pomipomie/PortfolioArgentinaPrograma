@@ -87,6 +87,7 @@
         justify-content: center;
         overflow-x: hidden;
         margin-left: -0.7em;
+        padding-left: 4vw;
     }
     .circle {
         border: 2vw solid var(--grey);

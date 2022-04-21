@@ -1,7 +1,7 @@
 <nav>
     <ul id="navul">
         <li id="aplogo">
-            <i class="bi bi-terminal"></i>
+            <i class="bi bi-terminal-fill"></i>
         </li>
         <li id="aptext">
             <p>Argentina</p>
@@ -21,7 +21,8 @@
                 <a href="#skills">Skills</a>
                 <a href="#proyectos">Proyectos</a>
                 <a href="#contacto">Contacto</a>
-                <a href="javascript:void(0)" (click)="toggle()" class="btn-toggle"><i [ngClass]="bulbclass"></i></a>
+                <a href="javascript:void(0)" (click)="toggle()" class="btn-toggle">Dark mode <i [ngClass]="bulbclass"></i></a>
+                <a href="javascript:void(0)" (click)="gradient()" class="btn-toggle">Gradient mode <i [ngClass]="onoff"></i></a>
             </div>
         </li>
     </ul>

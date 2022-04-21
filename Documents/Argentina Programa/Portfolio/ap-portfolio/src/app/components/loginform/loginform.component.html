@@ -1,5 +1,5 @@
 <div id="id01" class="modal">
-    <form class="modal-content animate" action="/action_page.php" method="post">
+    <form [formGroup]="form" (ngSubmit)="onSend($event)" class="modal-content animate" action="/action_page.php" method="post">
         <div class="titlecontainer">
             <h1>Argentina Programa</h1>
             <h1>#YoProgramo</h1>
@@ -7,9 +7,27 @@
         </div>      
         <div class="container">
             <label for="uname">Nombre de usuario</label>
-            <input type="text" placeholder="Escribir nombre" name="uname" required>
+            <input type="text" formControlName="username" placeholder="Escribir nombre" name="uname" required>
+            <div *ngIf="Username?.errors && Username?.touched">
+                <p *ngIf="Username?.hasError('required')" class="text-danger">
+                    El nombre de usuario es necesario
+                </p>
+                <p *ngIf="Username?.hasError('email')" class="text-danger">
+                    El nombre de usuario debe ser una dirección de email
+                </p>
+            </div>
+
             <label for="psw">Contraseña</label>
-            <input type="password" placeholder="Ingresar contraseña" name="psw" required>       
+            <input type="password" formControlName="password" placeholder="Ingresar contraseña" name="psw" required>
+            <div *ngIf="Password?.errors && Password?.touched">
+                <p *ngIf="Password?.hasError('required')" class="text-danger">
+                    La contraseña es necesaria
+                </p>
+                <p *ngIf="Password?.errors?.['minlength']" class="text-danger">
+                    La contraseña debe tener 8 o más caracteres
+                </p>
+            </div>
+            
             <button type="submit">Log in</button>
             <label style="font-size: 0.5em;"><input type="checkbox" checked="checked" name="remember"> Recordarme</label>
         </div>

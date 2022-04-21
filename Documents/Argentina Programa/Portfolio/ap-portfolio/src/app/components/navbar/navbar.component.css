@@ -118,6 +118,10 @@ nav li {
 }
 
 @media screen and (min-width: 1200px) {
+    nav {
+        padding-right: 5vw;
+        margin-left: -2vw;
+    }
     #aplogo {
         margin-left: -1em;
     } 
