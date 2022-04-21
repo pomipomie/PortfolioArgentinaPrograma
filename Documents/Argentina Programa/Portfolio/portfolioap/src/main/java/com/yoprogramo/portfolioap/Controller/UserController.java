@@ -31,12 +31,12 @@ public class UserController {
         userServ.deleteUser(id);
     }
     
-    @PutMapping ("/edit/{id}")
-    public void editUser (@PathVariable Long id) {
+    @PutMapping ("/edit{id}")
+    public void editUser (@PathVariable Long id, @RequestBody UserP us) {
         userServ.editUser(id);
     }
     
-    @GetMapping ("/search/{id}")
+    @GetMapping ("/search{id}")
     @ResponseBody
     public UserP searchUser(@PathVariable Long id) {
         return userServ.searchUser(id);

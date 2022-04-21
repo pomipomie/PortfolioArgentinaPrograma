@@ -32,6 +32,7 @@ public class UserService implements IUserService {
     @Override
     public void editUser(Long id) {
        UserP us = userRepo.findById(id).get();
+       us.setLocation(us.getLocation());
        userRepo.save(us);
     }
 
