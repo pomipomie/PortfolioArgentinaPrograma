@@ -23,4 +23,14 @@ public class SkillT {
     
     @OneToMany (cascade= CascadeType.ALL, mappedBy="id_skillt")
     private Set<Skills> skills;
+
+    public SkillT() {
+    }
+
+    public SkillT(Long id_skillt, String skilltype, Set<Skills> skills) {
+        this.id_skillt = id_skillt;
+        this.skilltype = skilltype;
+        this.skills = skills;
+    }
+    
 }

@@ -35,11 +35,14 @@ public class UserP {
     
     @OneToMany (cascade= CascadeType.ALL, mappedBy="id")
     private Set<Skills> skills;
+    
+    @OneToMany (cascade= CascadeType.ALL, mappedBy="id")
+    private Set<Projects> projects;
 
     public UserP() {
     }
 
-    public UserP(Long id, String firstName, String lastName, Date birthDate, String phone, String location, String picUrl, String aboutText, Set<Experience> exps, Set<Education> educs, Set<Skills> skills) {
+    public UserP(Long id, String firstName, String lastName, Date birthDate, String phone, String location, String picUrl, String aboutText, Set<Experience> exps, Set<Education> educs, Set<Skills> skills, Set<Projects> projects) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -51,8 +54,8 @@ public class UserP {
         this.exps = exps;
         this.educs = educs;
         this.skills = skills;
-    }
-    
+        this.projects = projects;
+    }  
     
         public Set<Experience> getExps(UserP us) {
         return us.exps;
