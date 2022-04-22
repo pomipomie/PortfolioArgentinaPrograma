@@ -2,6 +2,7 @@
 package com.yoprogramo.portfolioap.Model;
 
 import java.util.Date;
+import java.util.Set;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -36,14 +37,13 @@ public class Education {
     @JoinColumn (name="id_educt", nullable= false)
     private EducT id_educt;
     
-    @ManyToMany 
-    @JoinColumn (name="id_educfield", nullable= false)
-    private EducField id_educfield;
-
+    @ManyToMany(mappedBy="educs")
+    private Set<EducField> educfields;
+    
     public Education() {
     }
 
-    public Education(Long id_educ, String institution, String educInfo, String educUrl, String place, String certif, Date startDate, Date endDate, UserP id, EducT id_educt, EducField id_educfield) {
+    public Education(Long id_educ, String institution, String educInfo, String educUrl, String place, String certif, Date startDate, Date endDate, UserP id, EducT id_educt, Set<EducField> educfields) {
         this.id_educ = id_educ;
         this.institution = institution;
         this.educInfo = educInfo;
@@ -54,8 +54,10 @@ public class Education {
         this.endDate = endDate;
         this.id = id;
         this.id_educt = id_educt;
-        this.id_educfield = id_educfield;
+        this.educfields = educfields;
     }
+
+    
       
     
 }

@@ -21,7 +21,16 @@ public class SkillField {
     
     private String skillfield;
     
-    @ManyToMany (cascade= CascadeType.ALL, mappedBy="id_skillfield")
+    @ManyToMany (cascade= CascadeType.ALL, mappedBy="skillfields")
     private Set<Skills> skills;
+
+    public SkillField() {
+    }
+
+    public SkillField(Long id_skillfield, String skillfield, Set<Skills> skills) {
+        this.id_skillfield = id_skillfield;
+        this.skillfield = skillfield;
+        this.skills = skills;
+    }
     
 }

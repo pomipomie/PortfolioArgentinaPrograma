@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import lombok.Getter;
 import lombok.Setter;
@@ -21,7 +23,14 @@ public class EducField {
 
     private String field;
     
-    @ManyToMany (cascade= CascadeType.ALL, mappedBy="id_educfield")
+    @ManyToMany(cascade = {
+            CascadeType.PERSIST,
+            CascadeType.MERGE
+    })
+    @JoinTable(name = "education_educfield",
+            joinColumns = @JoinColumn(name = "id_educfield"),
+            inverseJoinColumns = @JoinColumn(name = "id_educ")
+    )
     private Set<Education> educs;
 
     public EducField() {
