@@ -10,6 +10,6 @@ public interface IUserService {
     public void createUser (UserP us);
     public void deleteUser (Long id);
     public UserP searchUser (Long id);
-    public void editUser (Long id);
+    public UserP editUser (Long id, UserP us);
     public Set<Experience> seeExp(Long id);
 }
