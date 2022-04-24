@@ -21,7 +21,8 @@ public class ExperienceController {
     
     @PostMapping ("/new/experience")  //NOT WORKING
     public void createExp (@RequestBody Experience exp) {
-       expServ.createExp(exp);
+       System.out.println("im working");
+        expServ.createExp(exp);
     }
     
     @DeleteMapping ("/experience/delete/{id_exp}") // STILL NOT TESTED

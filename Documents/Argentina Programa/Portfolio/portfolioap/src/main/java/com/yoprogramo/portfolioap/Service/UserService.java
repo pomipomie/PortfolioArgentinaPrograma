@@ -30,13 +30,9 @@ public class UserService implements IUserService {
     }
 
     @Override
-    public UserP editUser(Long id, UserP us) {
-    //    us = userRepo.findById(id).get();
-    //   UserP userp = userRepo.findById(id).get();
-    //   us = userp;
-       us.setLocation(us.getLocation());
-    //   us = userRepo.save(us);   /// ME CREA UNA NUEVA INSTANCIA, SIN ESTO NO CREA NI MODIFICA NADA
-       return us;
+    public UserP editUser(UserP us) {
+       UserP updatedUs = userRepo.save(us);
+       return updatedUs;
     }
 
     @Override
