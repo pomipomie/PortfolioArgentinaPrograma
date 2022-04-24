@@ -28,9 +28,9 @@ public class ExperienceService implements IExperienceService {
     }
 
     @Override
-    public void editExp(Long id_exp) {
-        Experience exp = expRepo.findById(id_exp).get();
-        expRepo.save(exp);
+    public Experience editExp(Experience exp) {
+        Experience updatedexp = expRepo.save(exp);
+        return updatedexp;
     }
     
 }
