@@ -2,6 +2,7 @@
 package com.yoprogramo.portfolioap.Service;
 
 import com.yoprogramo.portfolioap.Model.Experience;
+import com.yoprogramo.portfolioap.Model.UserP;
 import com.yoprogramo.portfolioap.Repository.IExperienceRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,6 +15,11 @@ public class ExperienceService implements IExperienceService {
 
     @Override
     public void createExp(Experience exp) {
+     // OPTION 1
+     //   Experience newexp = expRepo.save(exp);
+     //   UserP us = new UserP();
+    //    us.getExps().add(newexp);
+    // OPTION 2
         expRepo.save(exp);
     }
 
