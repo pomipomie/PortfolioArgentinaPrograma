@@ -19,7 +19,7 @@ public class EducationController {
     @Autowired
     public IEducationService eduServ;
     
-    @PostMapping ("/new/education") // NOT TESTED
+    @PostMapping ("/new/education") // NOT WORKING
     public void createEduc (@RequestBody Education educ) {
         eduServ.createEduc(educ);
     }
@@ -29,9 +29,10 @@ public class EducationController {
         eduServ.deleteEduc(id_educ);
     }
     
-    @PutMapping ("/education/edit/{id_educ}") //NOT TESTED
-    public void editEduc (@PathVariable Long id_educ, @RequestBody Education educ) {
-        eduServ.editEduc(id_educ);
+    @PutMapping ("/education/edit") //NOT TESTED
+    public Education editEduc (@RequestBody Education educ) {
+        eduServ.editEduc(educ);
+        return educ;
     }
     
     @GetMapping ("/education/search/{id_educ}") //NOT TESTED

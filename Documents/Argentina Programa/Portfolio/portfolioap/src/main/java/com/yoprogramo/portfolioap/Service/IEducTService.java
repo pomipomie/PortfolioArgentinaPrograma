@@ -7,5 +7,5 @@ public interface IEducTService {
     public void createEducT (EducT educt);
     public void deleteEducT (Long id_educt);
     public EducT searchEducT (Long id_educt);
-    public void editEducT (Long id_educt);
+    public EducT editEducT (EducT educt);
 }

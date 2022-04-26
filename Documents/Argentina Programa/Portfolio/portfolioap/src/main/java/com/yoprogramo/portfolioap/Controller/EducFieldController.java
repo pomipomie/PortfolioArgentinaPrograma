@@ -29,9 +29,10 @@ public class EducFieldController {
         educfServ.deleteEducF(id_educfield);
     }
     
-    @PutMapping ("/educfield/edit/{id_educfield}") //NOT TESTED
-    public void editEducF (@PathVariable Long id_educfield, @RequestBody EducField educfield) {
-        educfServ.editEducF(id_educfield);
+    @PutMapping ("/educfield/edit") //NOT TESTED
+    public EducField editEducF (@RequestBody EducField educfield) {
+        educfServ.editEducF(educfield);
+        return educfield;
     }
     
     @GetMapping ("/educfield/search/{id_educfield}") //NOT TESTED

@@ -29,9 +29,10 @@ public class EducTController {
         eductServ.deleteEducT(id_educt);
     }
     
-    @PutMapping ("/educt/edit/{id_educt}") //NOT TESTED
-    public void editEducT (@PathVariable Long id_educt, @RequestBody EducT educt) {
-        eductServ.editEducT(id_educt);
+    @PutMapping ("/educt/edit") //NOT TESTED
+    public EducT editEducT (@RequestBody EducT educt) {
+        eductServ.editEducT(educt);
+        return educt;
     }
     
     @GetMapping ("/educt/search/{id_educt}") //NOT TESTED

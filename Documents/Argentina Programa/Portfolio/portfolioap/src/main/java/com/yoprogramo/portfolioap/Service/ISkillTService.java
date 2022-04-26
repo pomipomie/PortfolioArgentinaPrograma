@@ -8,5 +8,5 @@ public interface ISkillTService {
     public void createSkillT (SkillT skillt);
     public void deleteSkillT (Long id_skillt);
     public SkillT searchSkillT (Long id_skillt);
-    public void editSkillT (Long id_skillt);
+    public SkillT editSkillT (SkillT skillt);
 }

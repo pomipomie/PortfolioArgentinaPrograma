@@ -26,5 +26,11 @@ public class ExpTService implements IExpTService {
     public ExpT searchExpT(Long id_expt) {
         return exptRepo.findById(id_expt).orElse(null);
     }
+
+    @Override
+    public ExpT editExpT(ExpT expt) {
+       ExpT updatedExpt = exptRepo.save(expt);
+       return updatedExpt;
+    }
     
 }

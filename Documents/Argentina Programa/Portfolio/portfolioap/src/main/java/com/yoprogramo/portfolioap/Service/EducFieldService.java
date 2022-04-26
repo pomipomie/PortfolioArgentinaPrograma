@@ -28,9 +28,9 @@ public class EducFieldService implements IEducFieldService {
     }
 
     @Override
-    public void editEducF(Long id_educfield) {
-        EducField educfield = educfRepo.findById(id_educfield).get();
-        educfRepo.save(educfield);
+    public EducField editEducF(EducField educfield) {
+       EducField updatedEducF = educfRepo.save(educfield);
+       return updatedEducF;
     }
     
 }

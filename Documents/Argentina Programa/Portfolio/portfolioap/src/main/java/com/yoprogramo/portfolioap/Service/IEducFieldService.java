@@ -7,5 +7,5 @@ public interface IEducFieldService {
     public void createEducF (EducField educfield);
     public void deleteEducF (Long id_educfield);
     public EducField searchEducF (Long id_educfield);
-    public void editEducF (Long id_educfield);
+    public EducField editEducF (EducField educfield);
 }

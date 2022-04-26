@@ -27,9 +27,9 @@ public class SkillTService implements ISkillTService {
     }
 
     @Override
-    public void editSkillT(Long id_skillt) {
-        SkillT skillt = skilltRepo.findById(id_skillt).get();
-        skilltRepo.save(skillt);
+    public SkillT editSkillT(SkillT skillt) {
+        SkillT updatedSkillt = skilltRepo.save(skillt);
+        return updatedSkillt;
     }
     
 }

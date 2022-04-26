@@ -28,9 +28,9 @@ public class EducationService implements IEducationService {
     }
 
     @Override
-    public void editEduc(Long id_educ) {
-        Education educ = eduRepo.findById(id_educ).get();
-        eduRepo.save(educ);
+    public Education editEduc(Education educ) {
+        Education updatededuc = eduRepo.save(educ);
+        return updatededuc;
     }
     
 }

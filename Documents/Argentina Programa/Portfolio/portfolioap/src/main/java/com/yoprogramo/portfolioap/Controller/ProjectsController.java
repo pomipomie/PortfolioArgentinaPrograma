@@ -29,9 +29,10 @@ public class ProjectsController {
         projeServ.deleteProject(id_projects);
     }
     
-    @PutMapping ("/project/edit/{id_projects}") //NOT TESTED
-    public void editProject (@PathVariable Long id_projects, @RequestBody Projects project) {
-        projeServ.editProject(id_projects);
+    @PutMapping ("/project/edit") //NOT TESTED
+    public Projects editProject (@RequestBody Projects project) {
+        projeServ.editProject(project);
+        return project;
     }
     
     @GetMapping ("/project/search/{id_projects}") //NOT TESTED

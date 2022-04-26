@@ -29,9 +29,10 @@ public class SkillFieldController {
         skillfServ.deleteSkillF(id_skillfield);
     }
     
-    @PutMapping ("/skillfield/edit/{id_skillfield}") //NOT TESTED
-    public void editSkillF (@PathVariable Long id_skillfield, @RequestBody SkillField skillfield) {
-        skillfServ.editSkillF(id_skillfield);
+    @PutMapping ("/skillfield/edit") //NOT TESTED
+    public SkillField editSkillF (@RequestBody SkillField skillfield) {
+        skillfServ.editSkillF(skillfield);
+        return skillfield;
     }
     
     @GetMapping ("/skillfield/search/{id_skillfield}") //NOT TESTED

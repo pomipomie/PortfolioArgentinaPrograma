@@ -30,9 +30,10 @@ public class SkillTController {
         skilltServ.deleteSkillT(id_skillt);
     }
     
-    @PutMapping ("/skilltype/edit/{id_skillt}") //NOT TESTED
-    public void editSkillT (@PathVariable Long id_skillt, @RequestBody SkillT skillt) {
-        skilltServ.editSkillT(id_skillt);
+    @PutMapping ("/skilltype/edit") //NOT TESTED
+    public SkillT editSkillT (@RequestBody SkillT skillt) {
+        skilltServ.editSkillT(skillt);
+        return skillt;
     }
     
     @GetMapping ("/skilltype/search/{id_skillt}") //NOT TESTED

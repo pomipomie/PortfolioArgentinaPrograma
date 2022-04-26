@@ -28,9 +28,9 @@ public class SkillsService implements ISkillsService {
     }
 
     @Override
-    public void editSkill(Long id_skills) {
-        Skills skill = skillRepo.findById(id_skills).get();
-        skillRepo.save(skill);
+    public Skills editSkill(Skills skill) {
+        Skills updatedSkill = skillRepo.save(skill);
+        return updatedSkill;
     }
     
 }

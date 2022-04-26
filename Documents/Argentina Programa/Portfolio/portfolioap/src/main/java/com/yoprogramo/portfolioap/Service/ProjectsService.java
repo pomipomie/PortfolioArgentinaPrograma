@@ -28,8 +28,8 @@ public class ProjectsService implements IProjectsService {
     }
 
     @Override
-    public void editProject(Long id_projects) {
-        Projects project = projeRepo.findById(id_projects).get();
-        projeRepo.save(project);
+    public Projects editProject(Projects project) {
+        Projects updatedProject = projeRepo.save(project);
+        return updatedProject;
     }
 }

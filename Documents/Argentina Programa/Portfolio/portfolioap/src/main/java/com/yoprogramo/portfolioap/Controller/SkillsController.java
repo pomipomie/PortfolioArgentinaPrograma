@@ -29,9 +29,10 @@ public class SkillsController {
         skillServ.deleteSkill(id_skills);
     }
     
-    @PutMapping ("/skill/edit/{id_skills}") //NOT TESTED
-    public void editSkill (@PathVariable Long id_skills, @RequestBody Skills skill) {
-        skillServ.editSkill(id_skills);
+    @PutMapping ("/skill/edit") //NOT TESTED
+    public Skills editSkill (@RequestBody Skills skill) {
+        skillServ.editSkill(skill);
+        return skill;
     }
     
     @GetMapping ("/skill/search/{id_skills}") //NOT TESTED

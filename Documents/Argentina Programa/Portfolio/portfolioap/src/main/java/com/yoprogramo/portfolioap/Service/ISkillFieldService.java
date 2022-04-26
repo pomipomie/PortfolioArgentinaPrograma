@@ -8,5 +8,5 @@ public interface ISkillFieldService {
     public void createSkillF (SkillField skillfield);
     public void deleteSkillF (Long id_skillfield);
     public SkillField searchSkillF (Long id_skillfield);
-    public void editSkillF (Long id_skillfield);    
+    public SkillField editSkillF (SkillField skillfield);    
 }

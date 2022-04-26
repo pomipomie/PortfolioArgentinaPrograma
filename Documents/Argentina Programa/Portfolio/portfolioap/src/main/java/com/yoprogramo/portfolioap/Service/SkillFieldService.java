@@ -28,9 +28,9 @@ public class SkillFieldService implements ISkillFieldService {
     }
 
     @Override
-    public void editSkillF(Long id_skillfield) {
-        SkillField skillfield = skillfRepo.findById(id_skillfield).get();
-        skillfRepo.save(skillfield);
+    public SkillField editSkillF(SkillField skillfield) {
+       SkillField updatedSkillfield = skillfRepo.save(skillfield);
+       return updatedSkillfield;
     }
     
 }
