@@ -1,6 +1,7 @@
 package com.yoprogramo.portfolioap.Model;
 
-import java.util.Date;
+//import java.util.Date;
+import java.time.LocalDate;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -18,8 +19,8 @@ public class Experience {
     private Long id_exp;
     
     private String workplace;
-    private Date startDate;
-    private Date endDate;
+    private LocalDate startDate;
+    private LocalDate endDate;
     private String job;
     private String description;
     private String place;
@@ -35,7 +36,15 @@ public class Experience {
     public Experience() {
     }
 
-    public Experience(Long id_exp, String workplace, Date startDate, Date endDate, String job, String description, String place, UserP id, ExpT id_expt) {
+    public Experience(Long id_exp,
+                      String workplace,
+                      LocalDate startDate,
+                      LocalDate endDate,
+                      String job,
+                      String description,
+                      String place,
+                      UserP id,
+                      ExpT id_expt) {
         this.id_exp = id_exp;
         this.workplace = workplace;
         this.startDate = startDate;
@@ -47,7 +56,21 @@ public class Experience {
         this.id_expt = id_expt;
     }
 
-    
-    
-    
+    public Experience(String workplace,
+                      LocalDate startDate,
+                      LocalDate endDate,
+                      String job,
+                      String description,
+                      String place,
+                      UserP id,
+                      ExpT id_expt) {
+        this.workplace = workplace;
+        this.startDate = startDate;
+        this.endDate = endDate;
+        this.job = job;
+        this.description = description;
+        this.place = place;
+        this.id = id;
+        this.id_expt = id_expt;
+    }
 }

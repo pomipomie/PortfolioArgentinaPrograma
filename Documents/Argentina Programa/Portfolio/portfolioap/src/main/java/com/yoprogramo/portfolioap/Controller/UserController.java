@@ -4,6 +4,7 @@ package com.yoprogramo.portfolioap.Controller;
 import com.yoprogramo.portfolioap.Model.Experience;
 import com.yoprogramo.portfolioap.Model.UserP;
 import com.yoprogramo.portfolioap.Service.IUserService;
+import java.util.List;
 import java.util.Set;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -21,29 +22,40 @@ public class UserController {
     @Autowired
     private IUserService userServ;
     
-    @PostMapping ("/new/user")
+    @PostMapping ("/portfolioap/user/new")
     public void createUser (@RequestBody UserP us) {
        userServ.createUser(us);
     }
     
-    @DeleteMapping ("/user/delete{id}")
+    @DeleteMapping ("/portfolioap/user/{id}/delete")
     public void deleteUser (@PathVariable Long id) {
         userServ.deleteUser(id);
     }
     
-    @PutMapping ("/user/edit")
+    @PutMapping ("/portfolioap/user/edit")
     public UserP editUser (@RequestBody UserP us) {   
         userServ.editUser(us);
          return us;
     }
     
-    @GetMapping ("/user/search{id}")
+    @GetMapping ("/portfolioap/user/{id}/search")
     @ResponseBody
     public UserP searchUser(@PathVariable Long id) {
         return userServ.searchUser(id);
     }
     
-    @GetMapping ("/{id}/experience")
+    @GetMapping ("/portfolioap/user/list") //NOT WORKING
+    @ResponseBody
+//    public Set<UserP> userList () {
+//        Set<UserP> users = userServ.userList();
+//        return users;
+//    }
+    public List<UserP> userList() {
+        List<UserP> users = userServ.userList();
+        return users;
+    }
+    
+    @GetMapping ("/portfolioap/user/{id}/experience")
     @ResponseBody 
     public Set<Experience> seeExp(@PathVariable Long id) {
         return userServ.seeExp(id);

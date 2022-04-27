@@ -4,6 +4,7 @@ package com.yoprogramo.portfolioap.Service;
 import com.yoprogramo.portfolioap.Model.Experience;
 import com.yoprogramo.portfolioap.Model.UserP;
 import com.yoprogramo.portfolioap.Repository.IUserRepository;
+import java.util.List;
 import java.util.Set;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -39,6 +40,12 @@ public class UserService implements IUserService {
     public Set<Experience> seeExp(Long id) {
        UserP us = userRepo.findById(id).get();
        return us.getExps(us);
+    }
+
+    @Override
+    public List<UserP> userList() {
+        List<UserP> users = userRepo.saveAll(userRepo.findAll());
+        return users;
     }
     
 }

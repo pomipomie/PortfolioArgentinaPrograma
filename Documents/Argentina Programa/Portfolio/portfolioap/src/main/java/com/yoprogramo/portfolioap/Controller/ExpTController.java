@@ -28,7 +28,7 @@ public class ExpTController {
         exptServ.deleteExpT(id_expt);
     }
     
-    @PutMapping ("/educt/edit") //NOT TESTED
+    @PutMapping ("/expt/edit") //NOT TESTED
     public ExpT editExpT (@RequestBody ExpT expt) {
         exptServ.editExpT(expt);
         return expt;
