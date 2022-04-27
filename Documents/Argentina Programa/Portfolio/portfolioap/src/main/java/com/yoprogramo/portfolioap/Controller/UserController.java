@@ -48,4 +48,9 @@ public class UserController {
     public Set<Experience> seeExp(@PathVariable Long id) {
         return userServ.seeExp(id);
     }
+    
+     @PostMapping ("user/login")
+     public UserP login (@RequestBody UserP us) {
+         return(userServ.login(us.getEmail(),us.getPassword()));
+     }
 }

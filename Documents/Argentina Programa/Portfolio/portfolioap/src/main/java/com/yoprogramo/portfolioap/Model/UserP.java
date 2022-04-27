@@ -4,6 +4,7 @@ package com.yoprogramo.portfolioap.Model;
 import java.util.Date;
 import java.util.Set;
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -26,6 +27,10 @@ public class UserP {
     private String location;
     private String picUrl;
     private String aboutText;
+    @Column (nullable = false, unique = true, length = 45)
+    private String email;
+    @Column (nullable = false, length = 15)
+    private String password;
     
     @OneToMany (cascade= CascadeType.ALL, mappedBy="id")
     private Set<Experience> exps;
@@ -42,7 +47,7 @@ public class UserP {
     public UserP() {
     }
 
-    public UserP(Long id, String firstName, String lastName, Date birthDate, String phone, String location, String picUrl, String aboutText, Set<Experience> exps, Set<Education> educs, Set<Skills> skills, Set<Projects> projects) {
+    public UserP(Long id, String firstName, String lastName, Date birthDate, String phone, String location, String picUrl, String aboutText, String email, String password, Set<Experience> exps, Set<Education> educs, Set<Skills> skills, Set<Projects> projects) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -51,11 +56,14 @@ public class UserP {
         this.location = location;
         this.picUrl = picUrl;
         this.aboutText = aboutText;
+        this.email = email;
+        this.password = password;
         this.exps = exps;
         this.educs = educs;
         this.skills = skills;
         this.projects = projects;
-    }  
+    }
+
     
         public Set<Experience> getExps(UserP us) {
         return us.exps;
