@@ -1,6 +1,7 @@
 
 package com.yoprogramo.portfolioap.Model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.util.Set;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -23,6 +24,7 @@ public class EducField {
 
     private String field;
     
+    @JsonIgnore
     @ManyToMany(cascade = {
             CascadeType.PERSIST,
             CascadeType.MERGE

@@ -19,23 +19,23 @@ public class EducFieldController {
     @Autowired
     public IEducFieldService educfServ;
     
-    @PostMapping ("/new/educfield") // NOT TESTED
+    @PostMapping ("/portfolioap/educfield/new")
     public void createEducF (@RequestBody EducField educfield) {
         educfServ.createEducF(educfield);
     }
     
-    @DeleteMapping ("/educfield/delete/{id_educfield}") //NOT TESTED
+    @DeleteMapping ("/portfolioap/educfield/{id_educfield}/delete")
     public void deleteEducF (@PathVariable Long id_educfield) {
         educfServ.deleteEducF(id_educfield);
     }
     
-    @PutMapping ("/educfield/edit") //NOT TESTED
+    @PutMapping ("/portfolioap/educfield/edit") 
     public EducField editEducF (@RequestBody EducField educfield) {
         educfServ.editEducF(educfield);
         return educfield;
     }
     
-    @GetMapping ("/educfield/search/{id_educfield}") //NOT TESTED
+    @GetMapping ("/portfolioap/educfield/{id_educfield}/search")
     @ResponseBody
     public EducField searchEducF (@PathVariable Long id_educfield) {
         return educfServ.searchEducF(id_educfield);

@@ -2,7 +2,7 @@
 package com.yoprogramo.portfolioap.Model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
+//import com.fasterxml.jackson.annotation.JsonManagedReference;
 import java.util.Set;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -22,7 +22,7 @@ public class ExpT {
     
     private String jobType;
     
-    @JsonManagedReference
+    //@JsonManagedReference
     @JsonIgnore
     @OneToMany (cascade= CascadeType.ALL, mappedBy="id_expt")
     private Set<Experience> exps;
@@ -35,12 +35,5 @@ public class ExpT {
         this.jobType = jobType;
         this.exps = exps;
     }
-
-    public ExpT(String jobType, Set<Experience> exps) {
-        this.jobType = jobType;
-        this.exps = exps;
-    }
-    
-    
 
 }

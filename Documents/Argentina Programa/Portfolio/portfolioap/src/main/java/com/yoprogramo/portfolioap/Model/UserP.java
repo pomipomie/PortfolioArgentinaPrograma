@@ -3,7 +3,7 @@ package com.yoprogramo.portfolioap.Model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
+//import com.fasterxml.jackson.annotation.JsonManagedReference;
 import java.time.LocalDate;
 import java.util.Set;
 import javax.persistence.CascadeType;
@@ -35,11 +35,12 @@ public class UserP {
     private String email;
     private String password;
     
-    @JsonManagedReference
+   // @JsonManagedReference
     @JsonIgnore
     @OneToMany (cascade= CascadeType.ALL, mappedBy="id")
     private Set<Experience> exps;
     
+    @JsonIgnore
     @OneToMany (cascade= CascadeType.ALL, mappedBy="id")
     private Set<Education> educs;
     

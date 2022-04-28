@@ -1,7 +1,8 @@
 
 package com.yoprogramo.portfolioap.Model;
 
-import java.util.Date;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import java.time.LocalDate;
 import java.util.Set;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -26,8 +27,11 @@ public class Education {
     private String educUrl;
     private String place;
     private String certif;
-    private Date startDate;
-    private Date endDate;
+    
+    @JsonFormat(pattern="yyyy-MM-dd")
+    private LocalDate startDate;
+    @JsonFormat(pattern="yyyy-MM-dd")
+    private LocalDate endDate;
     
     @ManyToOne
     @JoinColumn (name = "id", nullable = false)
@@ -43,7 +47,17 @@ public class Education {
     public Education() {
     }
 
-    public Education(Long id_educ, String institution, String educInfo, String educUrl, String place, String certif, Date startDate, Date endDate, UserP id, EducT id_educt, Set<EducField> educfields) {
+    public Education(Long id_educ,
+                    String institution,
+                    String educInfo,
+                    String educUrl,
+                    String place,
+                    String certif,
+                    LocalDate startDate,
+                    LocalDate endDate,
+                    UserP id,
+                    EducT id_educt,
+                    Set<EducField> educfields) {
         this.id_educ = id_educ;
         this.institution = institution;
         this.educInfo = educInfo;
@@ -55,9 +69,6 @@ public class Education {
         this.id = id;
         this.id_educt = id_educt;
         this.educfields = educfields;
-    }
-
-    
-      
+    }   
     
 }

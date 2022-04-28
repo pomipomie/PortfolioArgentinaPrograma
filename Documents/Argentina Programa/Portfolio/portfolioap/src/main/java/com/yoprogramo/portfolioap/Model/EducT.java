@@ -2,6 +2,7 @@
 package com.yoprogramo.portfolioap.Model;
 
 import java.util.Set;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -21,6 +22,7 @@ public class EducT {
     
     private String educType;
     
+    @JsonIgnore
     @OneToMany (cascade= CascadeType.ALL, mappedBy="id_educt")
     private Set<Education> educs;
 

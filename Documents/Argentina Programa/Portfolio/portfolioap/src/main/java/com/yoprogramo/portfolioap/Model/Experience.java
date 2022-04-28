@@ -1,6 +1,6 @@
 package com.yoprogramo.portfolioap.Model;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
+//import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import java.time.LocalDate;
 import javax.persistence.Entity;
@@ -30,12 +30,12 @@ public class Experience {
     private String description;
     private String place;
     
-    @JsonBackReference
+   // @JsonBackReference
     @ManyToOne
     @JoinColumn (name = "id", nullable = false)
     private UserP id;
     
-    @JsonBackReference
+   // @JsonBackReference
     @ManyToOne
     @JoinColumn (name = "id_exp_t", nullable = false)
     private ExpT id_expt;

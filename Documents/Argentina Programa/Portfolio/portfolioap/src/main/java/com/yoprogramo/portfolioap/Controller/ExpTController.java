@@ -19,22 +19,22 @@ public class ExpTController {
     @Autowired
     private IExpTService exptServ;
     
-    @PostMapping ("/new/exptype")
+    @PostMapping ("/portfolioap/exptype/new")
     public void createExpT (@RequestBody ExpT expt) {
        exptServ.createExpT(expt);
     }
-    @DeleteMapping ("/exptype/delete/{id_expt}")
+    @DeleteMapping ("/portfolioap/exptype/{id_expt}/delete")
     public void deleteExpT (@PathVariable Long id_expt) {
         exptServ.deleteExpT(id_expt);
     }
     
-    @PutMapping ("/expt/edit") //NOT TESTED
+    @PutMapping ("/portfolioap/exptype/edit") //NOT TESTED
     public ExpT editExpT (@RequestBody ExpT expt) {
         exptServ.editExpT(expt);
         return expt;
     }
     
-    @GetMapping ("/exptype/search/{id_expt}")
+    @GetMapping ("/portfolioap/exptype/{id_expt}/search")
     @ResponseBody
     public ExpT searchExpT (@PathVariable Long id_expt) {
         return exptServ.searchExpT(id_expt);

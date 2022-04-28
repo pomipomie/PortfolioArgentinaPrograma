@@ -15,11 +15,6 @@ public class ExperienceService implements IExperienceService {
 
     @Override
     public void createExp(Experience exp) {
-     // OPTION 1
-     //   Experience newexp = expRepo.save(exp);
-     //   UserP us = new UserP();
-    //    us.getExps().add(newexp);
-    // OPTION 2
         expRepo.save(exp);
     }
 

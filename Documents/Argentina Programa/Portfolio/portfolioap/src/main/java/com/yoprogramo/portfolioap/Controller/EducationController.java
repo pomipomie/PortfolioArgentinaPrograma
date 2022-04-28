@@ -19,23 +19,23 @@ public class EducationController {
     @Autowired
     public IEducationService eduServ;
     
-    @PostMapping ("/new/education") // NOT WORKING
+    @PostMapping ("/portfolioap/education/new") // NOT WORKING
     public void createEduc (@RequestBody Education educ) {
         eduServ.createEduc(educ);
     }
     
-    @DeleteMapping ("/education/delete/{id_educ}") //NOT TESTED
+    @DeleteMapping ("/portfolioap/education/{id_educ}/delete") //NOT TESTED
     public void deleteEduc (@PathVariable Long id_educ) {
         eduServ.deleteEduc(id_educ);
     }
     
-    @PutMapping ("/education/edit") //NOT TESTED
+    @PutMapping ("/portfolioap/education/edit") //NOT TESTED
     public Education editEduc (@RequestBody Education educ) {
         eduServ.editEduc(educ);
         return educ;
     }
     
-    @GetMapping ("/education/search/{id_educ}") //NOT TESTED
+    @GetMapping ("/portfolioap/education/{id_educ}/search") //NOT TESTED
     @ResponseBody
     public Education searchEduc (@PathVariable Long id_educ) {
         return eduServ.searchEduc(id_educ);
