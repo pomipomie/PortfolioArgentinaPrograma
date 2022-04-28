@@ -2,8 +2,9 @@
 package com.yoprogramo.portfolioap.Model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import java.time.LocalDate;
-//import java.util.Date;
 import java.util.Set;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -34,6 +35,8 @@ public class UserP {
     private String email;
     private String password;
     
+    @JsonManagedReference
+    @JsonIgnore
     @OneToMany (cascade= CascadeType.ALL, mappedBy="id")
     private Set<Experience> exps;
     
@@ -64,34 +67,6 @@ public class UserP {
                 Set<Skills> skills,
                 Set<Projects> projects) {
         this.id = id;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.birthDate = birthDate;
-        this.phone = phone;
-        this.location = location;
-        this.picUrl = picUrl;
-        this.aboutText = aboutText;
-        this.email = email;
-        this.password = password;
-        this.exps = exps;
-        this.educs = educs;
-        this.skills = skills;
-        this.projects = projects;
-    }
-    
-        public UserP(String firstName,
-                String lastName,
-                LocalDate birthDate,
-                String phone,
-                String location,
-                String picUrl,
-                String aboutText,
-                String email,
-                String password,
-                Set<Experience> exps,
-                Set<Education> educs,
-                Set<Skills> skills,
-                Set<Projects> projects) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.birthDate = birthDate;

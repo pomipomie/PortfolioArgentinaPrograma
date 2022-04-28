@@ -44,12 +44,8 @@ public class UserController {
         return userServ.searchUser(id);
     }
     
-    @GetMapping ("/portfolioap/user/list") //NOT WORKING
+    @GetMapping ("/portfolioap/user/list")
     @ResponseBody
-//    public Set<UserP> userList () {
-//        Set<UserP> users = userServ.userList();
-//        return users;
-//    }
     public List<UserP> userList() {
         List<UserP> users = userServ.userList();
         return users;
