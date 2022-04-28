@@ -14,4 +14,5 @@ public interface IUserService {
     public UserP editUser (UserP us);
     public List<UserP> userList();
     public Set<Experience> seeExp(Long id);
+    public UserP findByEmailAndPassword (String email, String password);
 }

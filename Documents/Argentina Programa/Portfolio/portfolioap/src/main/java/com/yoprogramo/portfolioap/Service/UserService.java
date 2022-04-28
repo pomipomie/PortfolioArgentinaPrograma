@@ -47,5 +47,11 @@ public class UserService implements IUserService {
         List<UserP> users = userRepo.saveAll(userRepo.findAll());
         return users;
     }
+
+    @Override
+    public UserP findByEmailAndPassword(String email, String password) {
+        UserP us = userRepo.findByEmailAndPassword(email, password);
+        return us; 
+    }
     
 }

@@ -56,4 +56,10 @@ public class UserController {
     public Set<Experience> seeExp(@PathVariable Long id) {
         return userServ.seeExp(id);
     }
+    
+    @PostMapping ("/portfolioap/user/login")
+    @ResponseBody
+    public UserP login (@RequestBody UserP us) {
+        return userServ.findByEmailAndPassword(us.getEmail(),us.getPassword());
+    }
 }
