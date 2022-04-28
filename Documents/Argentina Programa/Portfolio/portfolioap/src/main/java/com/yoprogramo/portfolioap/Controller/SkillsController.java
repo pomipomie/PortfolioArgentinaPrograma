@@ -19,23 +19,23 @@ public class SkillsController {
     @Autowired
     public ISkillsService skillServ;
     
-    @PostMapping ("/new/skill") // NOT TESTED
+    @PostMapping ("/portfolioap/skill/new")
     public void createSkill (@RequestBody Skills skill) {
         skillServ.createSkill(skill);
     }
     
-    @DeleteMapping ("/skill/delete/{id_skills}") //NOT TESTED
+    @DeleteMapping ("/portfolioap/skill/{id_skills}/delete") 
     public void deleteSkill (@PathVariable Long id_skills) {
         skillServ.deleteSkill(id_skills);
     }
     
-    @PutMapping ("/skill/edit") //NOT TESTED
+    @PutMapping ("/portfolioap/skill/edit")
     public Skills editSkill (@RequestBody Skills skill) {
         skillServ.editSkill(skill);
         return skill;
     }
     
-    @GetMapping ("/skill/search/{id_skills}") //NOT TESTED
+    @GetMapping ("/portfolioap/skill/{id_skills}/search")
     @ResponseBody
     public Skills searchSkill (@PathVariable Long id_skills) {
         return skillServ.searchSkill(id_skills);

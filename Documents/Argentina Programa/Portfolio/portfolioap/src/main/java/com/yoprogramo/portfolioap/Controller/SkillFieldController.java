@@ -19,23 +19,23 @@ public class SkillFieldController {
     @Autowired
     public ISkillFieldService skillfServ;
     
-    @PostMapping ("/new/skillfield") // NOT TESTED
+    @PostMapping ("/portfolioap/skillfield/new") 
     public void createSkillF (@RequestBody SkillField skillfield) {
         skillfServ.createSkillF(skillfield);
     }
     
-    @DeleteMapping ("/skillfield/delete/{id_skillfield}") //NOT TESTED
+    @DeleteMapping ("/portfolioap/skillfield/{id_skillfield}/delete") 
     public void deleteSkillF (@PathVariable Long id_skillfield) {
         skillfServ.deleteSkillF(id_skillfield);
     }
     
-    @PutMapping ("/skillfield/edit") //NOT TESTED
+    @PutMapping ("/portfolioap/skillfield/edit") 
     public SkillField editSkillF (@RequestBody SkillField skillfield) {
         skillfServ.editSkillF(skillfield);
         return skillfield;
     }
     
-    @GetMapping ("/skillfield/search/{id_skillfield}") //NOT TESTED
+    @GetMapping ("/portfolioap/skillfield/{id_skillfield}/search") 
     @ResponseBody
     public SkillField searchSkillF (@PathVariable Long id_skillfield) {
         return skillfServ.searchSkillF(id_skillfield);

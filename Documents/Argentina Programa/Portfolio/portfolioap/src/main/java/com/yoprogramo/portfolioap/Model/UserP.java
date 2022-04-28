@@ -44,9 +44,11 @@ public class UserP {
     @OneToMany (cascade= CascadeType.ALL, mappedBy="id")
     private Set<Education> educs;
     
+    @JsonIgnore
     @OneToMany (cascade= CascadeType.ALL, mappedBy="id")
     private Set<Skills> skills;
     
+    @JsonIgnore
     @OneToMany (cascade= CascadeType.ALL, mappedBy="id")
     private Set<Projects> projects;
 

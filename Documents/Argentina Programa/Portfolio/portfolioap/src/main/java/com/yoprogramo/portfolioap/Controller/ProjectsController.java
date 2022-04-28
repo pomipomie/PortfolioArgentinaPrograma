@@ -19,23 +19,23 @@ public class ProjectsController {
     @Autowired
     public IProjectsService projeServ;
     
-    @PostMapping ("/new/project") // NOT TESTED
+    @PostMapping ("/portfolioap/project/new") 
     public void createProject (@RequestBody Projects project) {
         projeServ.createProject(project);
     }
     
-    @DeleteMapping ("/project/delete/{id_projects}") //NOT TESTED
+    @DeleteMapping ("/portfolioap/project/{id_projects}/delete")
     public void deleteProject (@PathVariable Long id_projects) {
         projeServ.deleteProject(id_projects);
     }
     
-    @PutMapping ("/project/edit") //NOT TESTED
+    @PutMapping ("/portfolioap/project/edit") 
     public Projects editProject (@RequestBody Projects project) {
         projeServ.editProject(project);
         return project;
     }
     
-    @GetMapping ("/project/search/{id_projects}") //NOT TESTED
+    @GetMapping ("/portfolioap/project/{id_projects}/search")
     @ResponseBody
     public Projects searchProject (@PathVariable Long id_projects) {
         return projeServ.searchProject(id_projects);

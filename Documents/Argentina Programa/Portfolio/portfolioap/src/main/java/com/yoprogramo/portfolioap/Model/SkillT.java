@@ -1,6 +1,7 @@
 
 package com.yoprogramo.portfolioap.Model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.util.Set;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -21,6 +22,7 @@ public class SkillT {
     
     private String skilltype;
     
+    @JsonIgnore
     @OneToMany (cascade= CascadeType.ALL, mappedBy="id_skillt")
     private Set<Skills> skills;
 
