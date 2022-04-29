@@ -2,7 +2,6 @@
 package com.yoprogramo.portfolioap.Service;
 
 import com.yoprogramo.portfolioap.Model.Experience;
-import com.yoprogramo.portfolioap.Model.UserP;
 import com.yoprogramo.portfolioap.Repository.IExperienceRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

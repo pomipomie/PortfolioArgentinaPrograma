@@ -21,9 +21,9 @@ public class Experience {
     
     private String workplace;
     
-    @JsonFormat(pattern="yyyy-MM-dd")
+    @JsonFormat(pattern="yyyy-MM")
     private LocalDate startDate;
-    @JsonFormat(pattern="yyyy-MM-dd")
+    @JsonFormat(pattern="yyyy-MM")
     private LocalDate endDate;
     
     private String job;

@@ -28,9 +28,9 @@ public class Education {
     private String place;
     private String certif;
     
-    @JsonFormat(pattern="yyyy-MM-dd")
+    @JsonFormat(pattern="yyyy-MM")
     private LocalDate startDate;
-    @JsonFormat(pattern="yyyy-MM-dd")
+    @JsonFormat(pattern="yyyy-MM")
     private LocalDate endDate;
     
     @ManyToOne

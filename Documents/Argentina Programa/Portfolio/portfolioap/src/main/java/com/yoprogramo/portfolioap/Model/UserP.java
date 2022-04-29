@@ -22,18 +22,26 @@ public class UserP {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     
+    private String email;
+    private String password;
+    
     private String firstName;
     private String lastName;
     
     @JsonFormat(pattern="yyyy-MM-dd")
     private LocalDate birthDate;
     
-    private String phone;
     private String location;
     private String picUrl;
     private String aboutText;
-    private String email;
-    private String password;
+    
+    private String phone;
+    private String instagram;
+    private String linkedIn;
+    private String facebook;
+    private String twitter;
+    private String gitHub;
+    private String codePen;
     
    // @JsonManagedReference
     @JsonIgnore
@@ -56,36 +64,46 @@ public class UserP {
     }
 
     public UserP(Long id,
+                String email,
+                String password,
                 String firstName,
                 String lastName,
                 LocalDate birthDate,
-                String phone,
                 String location,
                 String picUrl,
                 String aboutText,
-                String email,
-                String password,
+                String phone,
+                String instagram,
+                String linkedIn,
+                String facebook,
+                String twitter,
+                String gitHub,
+                String codePen,
                 Set<Experience> exps,
                 Set<Education> educs,
                 Set<Skills> skills,
                 Set<Projects> projects) {
         this.id = id;
+        this.email = email;
+        this.password = password;
         this.firstName = firstName;
         this.lastName = lastName;
         this.birthDate = birthDate;
-        this.phone = phone;
         this.location = location;
         this.picUrl = picUrl;
         this.aboutText = aboutText;
-        this.email = email;
-        this.password = password;
+        this.phone = phone;
+        this.instagram = instagram;
+        this.linkedIn = linkedIn;
+        this.facebook = facebook;
+        this.twitter = twitter;
+        this.gitHub = gitHub;
+        this.codePen = codePen;
         this.exps = exps;
         this.educs = educs;
         this.skills = skills;
         this.projects = projects;
     }
 
-//        public Set<Experience> getExps(UserP us) {
-//        return us.exps;
-//    }
+    
 }
