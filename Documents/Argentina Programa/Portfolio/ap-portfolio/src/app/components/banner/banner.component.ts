@@ -10,6 +10,7 @@ export class BannerComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  //  const bannerimage = "src/assets/images/bannerpic640.jpg"
   }
 
 }

@@ -1,7 +1,10 @@
 
 package com.yoprogramo.portfolioap.Service;
 
+import com.yoprogramo.portfolioap.Model.Education;
 import com.yoprogramo.portfolioap.Model.Experience;
+import com.yoprogramo.portfolioap.Model.Projects;
+import com.yoprogramo.portfolioap.Model.Skills;
 import com.yoprogramo.portfolioap.Model.UserP;
 import com.yoprogramo.portfolioap.Repository.IUserRepository;
 import java.util.List;
@@ -39,7 +42,7 @@ public class UserService implements IUserService {
     @Override
     public Set<Experience> seeExp(Long id) {
        UserP us = userRepo.findById(id).get();
-       return us.getExps(us);
+       return us.getExps();
     }
 
     @Override
@@ -52,6 +55,24 @@ public class UserService implements IUserService {
     public UserP findByEmailAndPassword(String email, String password) {
         UserP us = userRepo.findByEmailAndPassword(email, password);
         return us; 
+    }
+
+    @Override
+    public Set<Education> seeEduc(Long id) {
+        UserP us = userRepo.findById(id).get();
+        return us.getEducs();
+    }
+
+    @Override
+    public Set<Skills> seeSkill(Long id) {
+        UserP us = userRepo.findById(id).get();
+        return us.getSkills();
+    }
+
+    @Override
+    public Set<Projects> seeProj(Long id) {
+        UserP us = userRepo.findById(id).get();
+        return us.getProjects();
     }
     
 }

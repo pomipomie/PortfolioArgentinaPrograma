@@ -85,7 +85,7 @@ public class UserP {
         this.projects = projects;
     }
 
-        public Set<Experience> getExps(UserP us) {
-        return us.exps;
-    }
+//        public Set<Experience> getExps(UserP us) {
+//        return us.exps;
+//    }
 }

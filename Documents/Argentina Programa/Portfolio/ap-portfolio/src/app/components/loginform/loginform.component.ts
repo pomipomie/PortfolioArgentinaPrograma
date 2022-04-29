@@ -15,10 +15,11 @@ export class LoginformComponent implements OnInit {
     this.form = formBuilder.group(
       {
         username:['',[Validators.required,Validators.email]],
-        password:['',[Validators.required,Validators.minLength(8)]],
+        password:['',[Validators.required,Validators.minLength(8)]]
+        /*,
         deviceId:[""],
         deviceType:[""],
-        notificationToken:[""]
+        notificationToken:[""]*/
       }
     );
   }
@@ -36,9 +37,12 @@ export class LoginformComponent implements OnInit {
 
   onSend(event:Event) {
     event.preventDefault;
-    this.autenticationService.LogIn(this.form.value).subscribe(data=>{
+    this.autenticationService.logIn(this.form.value).subscribe(data=>{
       console.log("DATA: "+JSON.stringify(data)); // para pruebas en consola
-      this.route.navigate(['']) // '/portfolio'
+      this.autenticationService.setToken(data.id);
+      this.route.navigate(['/app']) // '/portfolio'
     })
   }
+
+//  this.autenticationService.editUser(user).subscribe(data=>{ })
 }

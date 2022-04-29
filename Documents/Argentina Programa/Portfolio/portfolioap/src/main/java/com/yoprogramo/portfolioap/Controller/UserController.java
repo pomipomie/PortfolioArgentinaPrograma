@@ -1,7 +1,10 @@
 
 package com.yoprogramo.portfolioap.Controller;
 
+import com.yoprogramo.portfolioap.Model.Education;
 import com.yoprogramo.portfolioap.Model.Experience;
+import com.yoprogramo.portfolioap.Model.Projects;
+import com.yoprogramo.portfolioap.Model.Skills;
 import com.yoprogramo.portfolioap.Model.UserP;
 import com.yoprogramo.portfolioap.Service.IUserService;
 import java.util.List;
@@ -55,6 +58,24 @@ public class UserController {
     @ResponseBody 
     public Set<Experience> seeExp(@PathVariable Long id) {
         return userServ.seeExp(id);
+    }
+    
+    @GetMapping ("/portfolioap/user/{id}/education")
+    @ResponseBody 
+    public Set<Education> seeEduc(@PathVariable Long id) {
+        return userServ.seeEduc(id);
+    }
+    
+    @GetMapping ("/portfolioap/user/{id}/skills")
+    @ResponseBody 
+    public Set<Skills> seeSkill(@PathVariable Long id) {
+        return userServ.seeSkill(id);
+    }
+    
+    @GetMapping ("/portfolioap/user/{id}/projects")
+    @ResponseBody 
+    public Set<Projects> seeProj(@PathVariable Long id) {
+        return userServ.seeProj(id);
     }
     
     @PostMapping ("/portfolioap/user/login")

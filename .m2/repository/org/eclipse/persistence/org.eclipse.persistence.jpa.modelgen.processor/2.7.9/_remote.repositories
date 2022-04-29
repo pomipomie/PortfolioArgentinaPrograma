@@ -1,0 +1,4 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Mon Apr 18 15:22:33 ART 2022
+org.eclipse.persistence.jpa.modelgen.processor-2.7.9.jar>central=
+org.eclipse.persistence.jpa.modelgen.processor-2.7.9.pom>central=

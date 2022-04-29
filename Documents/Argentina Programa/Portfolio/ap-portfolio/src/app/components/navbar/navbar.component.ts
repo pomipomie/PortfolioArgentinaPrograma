@@ -1,4 +1,5 @@
 import { Component, OnInit, Output, ElementRef, ViewChild } from '@angular/core';
+//import { AutenticationService } from 'src/app/services/autentication.service';
 
 @Component({
   selector: 'app-navbar',
@@ -10,12 +11,19 @@ export class NavbarComponent implements OnInit {
   public bulbclass : string = 'bi bi-lightbulb-fill';
   public onoff : string = 'bi bi-toggle-off';
   
-  constructor() { }
+  //ulogged:string = '';
+
+  constructor(/*private autenticationService:AutenticationService*/) { }
 
   ngOnInit(): void {
-    
+   // this.ulogged = this.autenticationService.getUserLogged();
   }
 
+  /*
+  logOut(): void {
+    this.AutenticationService.deleteToken();
+  }
+  */
   @ViewChild("mySidenav")
   mySideNav!: ElementRef;
   openNav() {
