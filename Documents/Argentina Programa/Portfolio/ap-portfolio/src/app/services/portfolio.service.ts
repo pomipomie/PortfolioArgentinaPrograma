@@ -23,7 +23,11 @@ export class PortfolioService {
     return this.http.get<any>(this.url+"education"+"/0/search");
   }
 
-  obtenerDatosSki():Observable<any> { 
-    return this.http.get<any>(this.url+"skill"+"/11/search");
-  }
+ // obtenerDatosSki(id_skills: number):Observable<any> { 
+ //   return this.http.get<any>(this.url+"skill"+`/${id_skills}/search`);
+ // }
+
+ obtenerDatosSki():Observable<any> {
+   return this.http.get<any>(this.url+"user/1/skills");
+ }
 }

@@ -1,10 +1,11 @@
 <section id="skills" class="card">
     <h2>Skills</h2>
     <div id="cirgrid">
-        <article id="s1" class="circle">
-            <p>{{myPortfolio.skillname}}</p>
+        <!-- <article id="s1" class="circle"> -->
+        <article *ngFor="let skill of skills" class="circle">
+            <p>{{skill.skillname}}</p>
         </article>
-        <article id="s2" class="circle">
+        <!-- <article id="s2" class="circle">
             <p>CSS</p>
         </article>
         <article id="s3" class="circle">
@@ -18,6 +19,6 @@
         </article>
         <article id="s6" class="circle">
 
-        </article>
+        </article> -->
     </div>
 </section>

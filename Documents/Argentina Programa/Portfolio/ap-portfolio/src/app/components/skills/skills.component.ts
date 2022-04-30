@@ -8,14 +8,14 @@ import { PortfolioService } from 'src/app/services/portfolio.service';
 })
 export class SkillsComponent implements OnInit {
 
-  myPortfolio:any;
+  skills:Array<any> | undefined;
 
   constructor(private datosPortfolio:PortfolioService) { }
 
   ngOnInit(): void {
     this.datosPortfolio.obtenerDatosSki().subscribe(data => {
       console.log(data);  // FOR TESTING
-      this.myPortfolio=data;
+      this.skills=data;
     });
   }
 
