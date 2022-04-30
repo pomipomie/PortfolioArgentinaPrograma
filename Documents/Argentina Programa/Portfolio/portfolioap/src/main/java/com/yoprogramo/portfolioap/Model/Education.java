@@ -4,11 +4,13 @@ package com.yoprogramo.portfolioap.Model;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import java.time.LocalDate;
 import java.util.Set;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import lombok.Getter;
@@ -22,6 +24,7 @@ public class Education {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id_educ;
     
+    private String title;
     private String institution;
     private String educInfo;
     private String educUrl;
@@ -41,13 +44,22 @@ public class Education {
     @JoinColumn (name="id_educt", nullable= false)
     private EducT id_educt;
     
-    @ManyToMany(mappedBy="educs")
+    //@ManyToMany(mappedBy="educs")
+    @ManyToMany(cascade = {
+            CascadeType.PERSIST,
+            CascadeType.MERGE
+    })
+    @JoinTable(name = "education_educfield",
+            joinColumns = @JoinColumn(name = "id_educ"),
+            inverseJoinColumns = @JoinColumn(name = "id_educfield")
+    )
     private Set<EducField> educfields;
     
     public Education() {
     }
 
     public Education(Long id_educ,
+                    String title,
                     String institution,
                     String educInfo,
                     String educUrl,
@@ -59,6 +71,7 @@ public class Education {
                     EducT id_educt,
                     Set<EducField> educfields) {
         this.id_educ = id_educ;
+        this.title = title;
         this.institution = institution;
         this.educInfo = educInfo;
         this.educUrl = educUrl;
