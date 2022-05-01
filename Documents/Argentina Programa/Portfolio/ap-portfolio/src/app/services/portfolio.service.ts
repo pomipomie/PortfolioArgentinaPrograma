@@ -16,18 +16,14 @@ export class PortfolioService {
   }
 
   obtenerDatosExp():Observable<any> { 
-    return this.http.get<any>(this.url+"experience"+"/3/search");
+    return this.http.get<any>(this.url+"user/1/experience");
   }
 
   obtenerDatosEdu():Observable<any> { 
     return this.http.get<any>(this.url+"education"+"/0/search");
   }
 
- // obtenerDatosSki(id_skills: number):Observable<any> { 
- //   return this.http.get<any>(this.url+"skill"+`/${id_skills}/search`);
- // }
-
- obtenerDatosSki():Observable<any> {
-   return this.http.get<any>(this.url+"user/1/skills");
- }
+  obtenerDatosSki():Observable<any> {
+    return this.http.get<any>(this.url+"user/1/skills");
+  }
 }

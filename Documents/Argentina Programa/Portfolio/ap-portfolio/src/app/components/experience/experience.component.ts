@@ -8,14 +8,14 @@ import { PortfolioService } from 'src/app/services/portfolio.service';
 })
 export class ExperienceComponent implements OnInit {
 
-  myPortfolio:any;
+  exps:Array<any> | undefined;
 
   constructor(private datosPortfolio:PortfolioService) { }
 
   ngOnInit(): void {
     this.datosPortfolio.obtenerDatosExp().subscribe(data => {
       console.log(data);  // FOR TESTING
-      this.myPortfolio=data;
+      this.exps=data;
     });
   }
 

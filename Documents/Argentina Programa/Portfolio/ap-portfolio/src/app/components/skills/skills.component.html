@@ -1,24 +1,45 @@
 <section id="skills" class="card">
     <h2>Skills</h2>
-    <div id="cirgrid">
-        <!-- <article id="s1" class="circle"> -->
-        <article *ngFor="let skill of skills" class="circle">
-            <p>{{skill.skillname}}</p>
-        </article>
-        <!-- <article id="s2" class="circle">
-            <p>CSS</p>
-        </article>
-        <article id="s3" class="circle">
-
-        </article>
-        <article id="s4" class="circle">
-
-        </article>
-        <article id="s5" class="circle">
-
-        </article>
-        <article id="s6" class="circle">
-
-        </article> -->
-    </div>
+    <ul class="progress">
+        <li *ngFor="let skill of skills" id=c{{skill.id_skills}} attr.data-name={{skill.skillname}} > <svg viewBox="-10 -10 220 220">
+            <g fill="none" stroke-width="18" transform="translate(100,100)">
+                <path d="M 0,-100 A 100,100 0 0,1 86.6,-50" stroke="url(#cl1)"/>
+                <path d="M 86.6,-50 A 100,100 0 0,1 86.6,50" stroke="url(#cl2)"/>
+                <path d="M 86.6,50 A 100,100 0 0,1 0,100" stroke="url(#cl3)"/>
+                <path d="M 0,100 A 100,100 0 0,1 -86.6,50" stroke="url(#cl4)"/>
+                <path d="M -86.6,50 A 100,100 0 0,1 -86.6,-50" stroke="url(#cl5)"/>
+                <path d="M -86.6,-50 A 100,100 0 0,1 0,-100" stroke="url(#cl6)"/>
+            </g>
+        </svg> <svg viewBox="-10 -10 220 220">
+        <path d="M200,100 C200,44.771525 155.228475,0 100,0 C44.771525,0 0,44.771525 0,100 C0,155.228475 44.771525,200 100,200 C155.228475,200 200,155.228475 200,100 Z" attr.stroke-dashoffset={{skill.skillvalue}}></path>
+        </svg> </li>
+    </ul>
+    <svg width="0" height="0">
+    <defs>
+    <linearGradient id="cl1" gradientUnits="objectBoundingBox" x1="0" y1="0" x2="1" y2="1">
+        <stop stop-color="#0E043B"/>
+        <stop offset="100%" stop-color="#17075d"/>
+    </linearGradient>
+    <linearGradient id="cl2" gradientUnits="objectBoundingBox" x1="0" y1="0" x2="0" y2="1">
+        <stop stop-color="#17075d"/>
+        <stop offset="100%" stop-color="#1a096a"/>
+    </linearGradient>
+    <linearGradient id="cl3" gradientUnits="objectBoundingBox" x1="1" y1="0" x2="0" y2="1">
+        <stop stop-color="#1a096a"/>
+        <stop offset="100%" stop-color="#3c0979"/>
+    </linearGradient>
+    <linearGradient id="cl4" gradientUnits="objectBoundingBox" x1="1" y1="1" x2="0" y2="0">
+        <stop stop-color="#3c0979"/>
+        <stop offset="100%" stop-color="#f226c4"/>
+    </linearGradient>
+    <linearGradient id="cl5" gradientUnits="objectBoundingBox" x1="0" y1="1" x2="0" y2="0">
+        <stop stop-color="#f226c4"/>
+        <stop offset="100%" stop-color="#f22689"/>
+    </linearGradient>
+    <linearGradient id="cl6" gradientUnits="objectBoundingBox" x1="0" y1="1" x2="1" y2="0">
+        <stop stop-color="#f22689"/>
+        <stop offset="100%" stop-color="#0E043B"/>
+    </linearGradient>
+    </defs>
+    </svg>
 </section>

@@ -7,11 +7,11 @@ body {
 }
 
 body.dark-theme {
-    background-color: #0E043B;
+    background-color: #050216;
 }
 
 body.dark-theme .card, body.dark-theme .modal {
-    --bgdcolor: #0E043B;
+    --bgdcolor: #050216;
     --blue: #FFF7FD;
     --grey: #242494;
 }
@@ -91,6 +91,7 @@ h4 {
     margin-left: 1em;
     margin-top: -0.7em;
     margin-right: 1em;
+    margin-bottom: 2em;
 }
 
 .cardcont p {
