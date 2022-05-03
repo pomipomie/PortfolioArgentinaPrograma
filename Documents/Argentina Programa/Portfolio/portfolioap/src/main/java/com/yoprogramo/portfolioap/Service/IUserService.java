@@ -21,4 +21,5 @@ public interface IUserService {
     public Set<Skills> seeSkill(Long id);
     public Set<Projects> seeProj(Long id);
     public UserP findByEmailAndPassword (String email, String password);
+    public UserP findByEmail (String email);
 }

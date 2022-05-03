@@ -52,6 +52,22 @@
 	  <version>2.13.2</version>
 	  <type>jar</type>
 	 </dependency>
+	 <dependency>
+	  <groupId>org.springframework.boot</groupId>
+	  <artifactId>spring-boot-starter-security</artifactId>
+	  <version>2.6.6</version>
+	  <type>module</type>
+	 </dependency>
+	 <dependency>
+	  <groupId>io.jsonwebtoken</groupId>
+	  <artifactId>jjwt</artifactId>
+	  <version>0.9.1</version>
+	 </dependency>
+	 <dependency>
+	  <groupId>org.springframework.security</groupId>
+	  <artifactId>spring-security-jwt</artifactId>
+	  <version>1.0.8.RELEASE</version>
+	 </dependency>
 	</dependencies>
 
 	<build>

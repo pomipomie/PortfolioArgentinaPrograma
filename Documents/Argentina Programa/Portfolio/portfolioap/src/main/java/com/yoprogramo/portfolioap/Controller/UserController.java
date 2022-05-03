@@ -6,10 +6,18 @@ import com.yoprogramo.portfolioap.Model.Experience;
 import com.yoprogramo.portfolioap.Model.Projects;
 import com.yoprogramo.portfolioap.Model.Skills;
 import com.yoprogramo.portfolioap.Model.UserP;
+import com.yoprogramo.portfolioap.Security.Jwt.jwtProvider;
+//import com.yoprogramo.portfolioap.Security.SDto.JwtDto;
 import com.yoprogramo.portfolioap.Service.IUserService;
 import java.util.List;
 import java.util.Set;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -20,14 +28,25 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@CrossOrigin
 public class UserController {
     
     @Autowired
     private IUserService userServ;
     
+    @Autowired
+    PasswordEncoder passwordEncoder;
+
+    @Autowired
+    AuthenticationManager authenticationManager;
+    
+    @Autowired
+    jwtProvider jwtProvider;
+    
     @PostMapping ("/portfolioap/user/new")
     public void createUser (@RequestBody UserP us) {
-       userServ.createUser(us);
+        passwordEncoder.encode(us.getPassword());
+        userServ.createUser(us);
     }
     
     @DeleteMapping ("/portfolioap/user/{id}/delete")
@@ -81,6 +100,13 @@ public class UserController {
     @PostMapping ("/portfolioap/user/login")
     @ResponseBody
     public UserP login (@RequestBody UserP us) {
-        return userServ.findByEmailAndPassword(us.getEmail(),us.getPassword());
+//        Authentication authentication =
+//                authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(us.getEmail(), us.getPassword()));
+//        SecurityContextHolder.getContext().setAuthentication(authentication);
+//        String jwt = jwtProvider.generateToken(authentication);
+//        IUserService userServ = (IUserService)authentication.getPrincipal();
+// //        JwtDto jwtDto = new JwtDto(jwt, us.getEmail(), us.getAuthorities());
+        userServ.findByEmailAndPassword(us.getEmail(),us.getPassword()); // FOR DEBUGGING
+        return us;
     }
 }

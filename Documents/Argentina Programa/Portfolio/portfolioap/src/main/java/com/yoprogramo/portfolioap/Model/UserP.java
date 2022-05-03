@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 //import com.fasterxml.jackson.annotation.JsonManagedReference;
 import java.time.LocalDate;
+//import java.util.Collection;
 import java.util.Set;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -14,6 +15,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import lombok.Getter;
 import lombok.Setter;
+//import org.springframework.security.core.GrantedAuthority;
 
 @Getter @Setter
 @Entity
@@ -59,6 +61,8 @@ public class UserP {
     @JsonIgnore
     @OneToMany (cascade= CascadeType.ALL, mappedBy="id")
     private Set<Projects> projects;
+    
+//    private Collection<? extends GrantedAuthority> authorities;
 
     public UserP() {
     }
@@ -82,7 +86,8 @@ public class UserP {
                 Set<Experience> exps,
                 Set<Education> educs,
                 Set<Skills> skills,
-                Set<Projects> projects) {
+                Set<Projects> projects /*,
+                Collection<? extends GrantedAuthority> authorities*/) {
         this.id = id;
         this.email = email;
         this.password = password;
@@ -103,7 +108,7 @@ public class UserP {
         this.educs = educs;
         this.skills = skills;
         this.projects = projects;
+//        this.authorities = authorities;
     }
-
     
 }

@@ -74,5 +74,11 @@ public class UserService implements IUserService {
         UserP us = userRepo.findById(id).get();
         return us.getProjects();
     }
+
+    @Override
+    public UserP findByEmail(String email) {
+        UserP us = userRepo.findByEmail(email);
+        return us;
+    }
     
 }
