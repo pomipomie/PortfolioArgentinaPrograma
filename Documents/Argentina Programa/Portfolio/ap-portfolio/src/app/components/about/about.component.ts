@@ -8,6 +8,7 @@ import { PortfolioService } from 'src/app/services/portfolio.service';
 })
 export class AboutComponent implements OnInit {
 
+  loggedUser:boolean=true;  //debe ser false al inicio
   myPortfolio:any;
   
   constructor(private datosPortfolio:PortfolioService) { }

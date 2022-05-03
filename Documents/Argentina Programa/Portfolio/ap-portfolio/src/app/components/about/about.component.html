@@ -4,13 +4,17 @@
             <img [src]="myPortfolio.picUrl" width="75%">
         </div>
         <div id="avatartext">
+            <a href="javascript:void(0)">
+            <div class="pencilbtn" id="pencil-name" *ngIf="loggedUser"><i class="bi bi-pencil-square"></i></div>
+            </a>
             <h1>{{myPortfolio.firstName+" "+myPortfolio.lastName}}</h1>
-            <!-- <h1>María Xiomara Badano</h1> -->
         </div>
     </section>
     <section id="sobremi">
         <h2>Sobre mí</h2>
         <p>{{myPortfolio.aboutText}}</p>
-        <!-- <p>Cat ipsum dolor sit amet, i cry and cry and cry unless you pet me, and then maybe i cry just for fun do not try to mix old food with new one to fool me! jump on fridge a nice warm laptop for me to sit on.</p> -->
+        <a href="javascript:void(0)">
+        <div class="pencilbtn" id="pencil-desc" *ngIf="loggedUser"><i class="bi bi-pencil-square"></i></div>
+        </a>     
     </section>
 </div>

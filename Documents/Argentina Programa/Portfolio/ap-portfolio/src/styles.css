@@ -136,6 +136,25 @@ body.gradientmode form button {
     }
 }
 
+.pencilbtn {
+    background-color: var(--blue);
+    width: fit-content;
+    height: auto;
+    padding: 0.4em;
+    border-radius: 50%;
+    font-size: 0.7em;
+    color: var(--bgdcolor);
+}
+
+.pencilbtn:hover {
+    background-color: var(--hoverblue);
+}
+
+.pencilbtn:any-link {
+    text-decoration: none;
+    color: var(--bgdcolor);
+}
+
 @media screen and (min-width: 1000px) {
     body {
         font-size: 3.5vw;

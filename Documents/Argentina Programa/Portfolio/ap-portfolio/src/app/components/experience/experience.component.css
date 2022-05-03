@@ -1,0 +1,18 @@
+#pencil-exp {
+    position: absolute;
+    right: 2em;
+    top:28em;
+    z-index: 4;
+}
+
+@media screen and (min-width: 800px) {
+    #pencil-exp {
+        top:29em;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    #pencil-exp {
+        top:30em;
+    }
+}
