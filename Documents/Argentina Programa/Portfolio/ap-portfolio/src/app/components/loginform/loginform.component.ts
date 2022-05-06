@@ -10,11 +10,13 @@ import { AutenticationService } from 'src/app/services/autentication.service';
 })
 export class LoginformComponent implements OnInit {
 
+  logOk:boolean=false;
+
   form:FormGroup;
   constructor(private formBuilder:FormBuilder, private autenticationService:AutenticationService, private route:Router) { 
     this.form = formBuilder.group(
       {
-        username:['',[Validators.required,Validators.email]],
+        email:['',[Validators.required,Validators.email]],
         password:['',[Validators.required,Validators.minLength(8)]]
         /*,
         deviceId:[""],
@@ -27,8 +29,8 @@ export class LoginformComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  get Username() {
-    return this.form.get('username');
+  get Email() {
+    return this.form.get('email');
   }
 
   get Password() {
@@ -40,7 +42,8 @@ export class LoginformComponent implements OnInit {
     this.autenticationService.logIn(this.form.value).subscribe(data=>{
       console.log("DATA: "+JSON.stringify(data)); // para pruebas en consola
       this.autenticationService.setToken(data.id);
-      this.route.navigate(['/app']) // '/portfolio'
+      this.route.navigate(['/app']);
+      this.logOk=true;
     })
   }
 

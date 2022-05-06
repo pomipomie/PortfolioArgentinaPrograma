@@ -8,6 +8,7 @@ import { PortfolioService } from 'src/app/services/portfolio.service';
 })
 export class SkillsComponent implements OnInit {
 
+  loggedUser:boolean=true;  //debe ser false al inicio
   skills:Array<any> | undefined;
 
   constructor(private datosPortfolio:PortfolioService) { }

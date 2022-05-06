@@ -11,6 +11,7 @@ export class NavbarComponent implements OnInit {
   public bulbclass : string = 'bi bi-lightbulb-fill';
   public onoff : string = 'bi bi-toggle-off';
   
+  loggedUser:boolean=false;  //debe ser false al inicio
   //ulogged:string = '';
 
   constructor(/*private autenticationService:AutenticationService*/) { }

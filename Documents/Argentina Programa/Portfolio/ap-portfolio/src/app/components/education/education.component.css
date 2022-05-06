@@ -1,0 +1,19 @@
+#pencil-edu {
+    position: relative;
+    top: -3.2em;
+    left: 7.6em;
+    z-index: 4;
+}
+
+@media screen and (min-width: 800px) {
+    #pencil-edu {
+    top: -3.3em;
+    left: 12em;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    #pencil-edu {
+    left: 14em;
+    }
+}

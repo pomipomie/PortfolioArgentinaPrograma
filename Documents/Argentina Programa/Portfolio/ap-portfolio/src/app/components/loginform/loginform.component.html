@@ -1,4 +1,4 @@
-<div id="id01" class="modal">
+<div id="id01" class="modal" *ngIf="!logOk">
     <form [formGroup]="form" (ngSubmit)="onSend($event)" class="modal-content animate" action="/action_page.php" method="post">
         <div class="titlecontainer">
             <h1>Argentina Programa</h1>
@@ -6,14 +6,14 @@
             <h2>Iniciar sesión</h2>
         </div>      
         <div class="container">
-            <label for="uname">Nombre de usuario</label>
-            <input type="text" formControlName="username" placeholder="Escribir nombre" name="uname" required>
-            <div *ngIf="Username?.errors && Username?.touched">
-                <p *ngIf="Username?.hasError('required')" class="text-danger">
-                    El nombre de usuario es necesario
+            <label for="email">Email</label>
+            <input type="text" formControlName="email" placeholder="Escribir email" name="email" required>
+            <div *ngIf="Email?.errors && Email?.touched">
+                <p *ngIf="Email?.hasError('required')" class="text-danger">
+                    El email es necesario
                 </p>
-                <p *ngIf="Username?.hasError('email')" class="text-danger">
-                    El nombre de usuario debe ser una dirección de email
+                <p *ngIf="Email?.hasError('email')" class="text-danger">
+                    Debe escribir una dirección de email válida
                 </p>
             </div>
 

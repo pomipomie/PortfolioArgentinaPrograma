@@ -14,9 +14,10 @@
             <i (click)="openNav()" class="bi bi-list"></i>
             <div #mySidenav id="mySidenav" class="sidenav">
                 <a href="javascript:void(0)" class="bi-x-lg" (click)="closeNav()"></a>
-                <a href="javascript:void(0)" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Log in</a>
+                <a href="javascript:void(0)" onclick="document.getElementById('id01').style.display='block'" style="width:auto;" *ngIf="!loggedUser">Log in</a>
                 <!-- <a href="javascript:void(0)" onclick="document.getElementById('id01').style.display='block'" style="width:auto;" *ngIf="ulogged!==''">Log in</a> -->
-                <!-- <a href="javascript:void(0)" (click)="logOut()" *ngIf="ulogged==''">Log out</a> -->
+                <a href="javascript:void(0)" *ngIf="loggedUser">Log out</a>
+                <!-- agregar en línea de arriba: (click)="logOut()" -->
                 <a href="#sobremi">Sobre mí</a>
                 <a href="#experiencia">Experiencia</a>
                 <a href="#educacion">Educación</a>

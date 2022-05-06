@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProjectsComponent implements OnInit {
 
+  loggedUser:boolean=true;  //debe ser false al inicio
+
   constructor() { }
 
   ngOnInit(): void {

@@ -1,5 +1,8 @@
 <section id="skills" class="card">
     <h2>Skills</h2>
+    <a href="javascript:void(0)">
+        <div class="pencilbtn" id="pencil-ski" *ngIf="loggedUser"><i class="bi bi-pencil-square"></i></div>
+    </a>
     <ul class="progress">
         <li *ngFor="let skill of skills" id=c{{skill.id_skills}} attr.data-name={{skill.skillname}} > <svg viewBox="-10 -10 220 220">
             <g fill="none" stroke-width="18" transform="translate(100,100)">
