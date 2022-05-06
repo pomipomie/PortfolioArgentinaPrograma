@@ -11,6 +11,7 @@ import { AutenticationService } from 'src/app/services/autentication.service';
 export class LoginformComponent implements OnInit {
 
   logOk:boolean=false;
+  loginError:string=" ";
 
   form:FormGroup;
   constructor(private formBuilder:FormBuilder, private autenticationService:AutenticationService, private route:Router) { 
@@ -41,11 +42,15 @@ export class LoginformComponent implements OnInit {
     event.preventDefault;
     this.autenticationService.logIn(this.form.value).subscribe(data=>{
       console.log("DATA: "+JSON.stringify(data)); // para pruebas en consola
-      this.autenticationService.setToken(data.id);
-      this.route.navigate(['/app']);
-      this.logOk=true;
+      if(data==null) {
+        this.loginError="Email o contraseña inválidos";
+      } else {
+        this.autenticationService.setToken(data.id);
+        console.log("Token: "+data.id); // para pruebas
+        this.logOk=true;
+        window.location.reload();
+        //this.route.navigate(['/app']);
+      }
     })
   }
-
-//  this.autenticationService.editUser(user).subscribe(data=>{ })
 }

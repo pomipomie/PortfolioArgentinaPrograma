@@ -1,5 +1,5 @@
-import { Component, OnInit, Output, ElementRef, ViewChild } from '@angular/core';
-//import { AutenticationService } from 'src/app/services/autentication.service';
+import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
+import { AutenticationService } from 'src/app/services/autentication.service';
 
 @Component({
   selector: 'app-navbar',
@@ -12,19 +12,22 @@ export class NavbarComponent implements OnInit {
   public onoff : string = 'bi bi-toggle-off';
   
   loggedUser:boolean=false;  //debe ser false al inicio
-  //ulogged:string = '';
 
-  constructor(/*private autenticationService:AutenticationService*/) { }
+  constructor(private autenticationService:AutenticationService) { }
 
   ngOnInit(): void {
-   // this.ulogged = this.autenticationService.getUserLogged();
+    if (this.autenticationService.getUserLogged() != '') {
+    this.loggedUser=true;
+   } else {
+    this.loggedUser=false;
+   }
   }
 
-  /*
+  
   logOut(): void {
-    this.AutenticationService.deleteToken();
+    this.autenticationService.logOut(); 
   }
-  */
+  
   @ViewChild("mySidenav")
   mySideNav!: ElementRef;
   openNav() {

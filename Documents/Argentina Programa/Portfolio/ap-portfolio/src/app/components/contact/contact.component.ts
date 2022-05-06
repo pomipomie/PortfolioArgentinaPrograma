@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AutenticationService } from 'src/app/services/autentication.service';
 
 @Component({
   selector: 'app-contact',
@@ -9,9 +10,14 @@ export class ContactComponent implements OnInit {
 
   loggedUser:boolean=true;  //debe ser false al inicio
 
-  constructor() { }
+  constructor(private autenticationService:AutenticationService) { }
 
   ngOnInit(): void {
+    if (this.autenticationService.getUserLogged() != '') {
+      this.loggedUser=true;
+     } else {
+      this.loggedUser=false;
+     }
   }
 
 }

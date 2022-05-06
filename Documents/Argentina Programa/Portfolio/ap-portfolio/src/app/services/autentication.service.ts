@@ -18,7 +18,7 @@ export class AutenticationService {
   logIn(user:any):Observable<any> {
     return this.http.post(this.url+"/login", user).pipe(map(data=>{
       sessionStorage.setItem('currentUser', JSON.stringify(data));
-  //    console.log("login is running"+JSON.stringify(data)); // for testing
+    //  console.log("login is running"+JSON.stringify(data)); // for testing
       return data;
     }))
   }
@@ -39,6 +39,11 @@ export class AutenticationService {
     this.cookies.delete("token");
   }
 
+  logOut() {
+    this.deleteToken();
+    sessionStorage.removeItem('currentUser');
+  }
+
   getUserLogged(){
     const token = this.getToken();
     return token;
@@ -47,5 +52,9 @@ export class AutenticationService {
   editUser(user:any):Observable<any> {
     return this.http.put(this.url+"edit", user);
   }
+
+/*   get AuthUser() {
+    return this.currentUserSubject.value;
+  } */
 
 }

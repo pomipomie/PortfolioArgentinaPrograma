@@ -26,6 +26,7 @@
                 <p *ngIf="Password?.errors?.['minlength']" class="text-danger">
                     La contraseña debe tener 8 o más caracteres
                 </p>
+                <p class="text-danger">{{loginError}}</p>
             </div>
             
             <button type="submit">Log in</button>
