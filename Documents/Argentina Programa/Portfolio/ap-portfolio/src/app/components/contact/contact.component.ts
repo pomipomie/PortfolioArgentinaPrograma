@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AutenticationService } from 'src/app/services/autentication.service';
+import { PortfolioService } from 'src/app/services/portfolio.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-contact',
@@ -9,8 +11,24 @@ import { AutenticationService } from 'src/app/services/autentication.service';
 export class ContactComponent implements OnInit {
 
   loggedUser:boolean=true;  //debe ser false al inicio
+  myPortfolio:any;
+  user:any;
+  url = "/portfolioap/user";
+  form:FormGroup;
 
-  constructor(private autenticationService:AutenticationService) { }
+  constructor(private datosPortfolio:PortfolioService, private autenticationService:AutenticationService, private formBuilder:FormBuilder) {
+  this.form = formBuilder.group(
+      {
+        gitHub: ['', [Validators.required]],
+        facebook:['', [Validators.required]],
+        twitter:['', [Validators.required]],
+        instagram: ['', [Validators.required]],
+        phone:['', [Validators.required]],
+        linkedIn:['', [Validators.required]],
+        codePen: ['', [Validators.required]]
+      }
+    );
+  }
 
   ngOnInit(): void {
     if (this.autenticationService.getUserLogged() != '') {
@@ -18,6 +36,35 @@ export class ContactComponent implements OnInit {
      } else {
       this.loggedUser=false;
      }
+    this.datosPortfolio.obtenerDatos().subscribe(data => {
+      //  console.log(data);  // FOR TESTING
+        this.myPortfolio=data;
+    });
   }
 
+  onSave() {
+    alert(JSON.stringify(this.form.value)); //para pruebas
+    if (this.form.valid) {
+      let d = this.form.value;
+      d.aboutText = this.myPortfolio.aboutText;
+      d.birthDate = this.myPortfolio.birthDate;
+      d.location = this.myPortfolio.location;
+      d.firstName = this.myPortfolio.firstName;
+      d.lastName = this.myPortfolio.lastName;
+      d.picUrl = this.myPortfolio.picUrl;
+      d.email = this.myPortfolio.email;
+      d.password = this.myPortfolio.password;
+      d.id = this.autenticationService.getUserLogged();
+      console.log(d); //TEST
+  
+    this.datosPortfolio.editUser(d).subscribe(
+      d => {
+        this.user = d;
+        window.location.reload();
+      })
+          }
+    else{
+      alert("Formulario inválido");
+    }
+  }
 }

@@ -13,9 +13,13 @@ export class AboutComponent implements OnInit {
   loggedUser:boolean=false;  //debe ser false al inicio
   myPortfolio:any;
   user:any;
+  bDay:any;
+  bMonth:any;
+  bYear:any;
   url = "/portfolioap/user";
   
   form1: FormGroup;
+  form2: FormGroup;
   constructor(private datosPortfolio:PortfolioService, private autenticationService:AutenticationService, private formBuilder:FormBuilder) {
     this.form1 = formBuilder.group(
       {
@@ -24,12 +28,59 @@ export class AboutComponent implements OnInit {
         lastName:['', [Validators.required]]
       }
     );
+    this.form2 = formBuilder.group(
+      {
+        aboutText: ['', [Validators.required]],
+        birthDate: ['', [Validators.required]]
+      }
+    );
   }
 
   ngOnInit(): void {
     this.datosPortfolio.obtenerDatos().subscribe(data => {
     //  console.log(data);  // FOR TESTING
       this.myPortfolio=data;
+      this.bDay = this.myPortfolio.birthDate[8]+this.myPortfolio.birthDate[9];
+      switch(this.myPortfolio.birthDate[5]+this.myPortfolio.birthDate[6]) {
+        case '01':
+          this.bMonth = 'enero';
+          break;
+        case '02':
+          this.bMonth = 'febrero';
+          break;
+        case '03':
+          this.bMonth = 'marzo';
+          break;
+        case '04':
+          this.bMonth = 'abril';
+          break;
+        case '05':
+          this.bMonth = 'mayo';
+          break;
+        case '06':
+          this.bMonth = 'junio';
+          break;
+        case '07':
+          this.bMonth = 'julio';
+          break;
+        case '08':
+          this.bMonth = 'agosto';
+          break;
+        case '09':
+          this.bMonth = 'septiembre';
+          break;
+        case '10':
+          this.bMonth = 'octubre';
+          break;
+        case '11':
+          this.bMonth = 'noviembre';
+          break;
+        case '12':
+          this.bMonth = 'diciembre';
+          break;
+      }
+      this.bYear = this.myPortfolio.birthDate[0]+this.myPortfolio.birthDate[1]+this.myPortfolio.birthDate[2]+this.myPortfolio.birthDate[3];
+      //console.log(this.bDay+"-"+this.bMonth); //TEST
     });
     if (this.autenticationService.getUserLogged() != '') {
       this.loggedUser=true;
@@ -42,19 +93,57 @@ export class AboutComponent implements OnInit {
     //alert(JSON.stringify(this.form1.value)); //para pruebas
     if (this.form1.valid) {
       let d = this.form1.value;
-      console.log(d.firstName);
       d.aboutText = this.myPortfolio.aboutText;
       d.birthDate = this.myPortfolio.birthDate;
       d.location = this.myPortfolio.location;
       d.phone = this.myPortfolio.phone;
       d.email = this.myPortfolio.email;
       d.password = this.myPortfolio.password;
+      d.gitHub = this.myPortfolio.gitHub;
+      d.twitter = this.myPortfolio.twitter;
+      d.facebook = this.myPortfolio.facebook;
+      d.instagram = this.myPortfolio.instagram;
+      d.codePen = this.myPortfolio.codePen;
+      d.linkedIn = this.myPortfolio.linkedIn;
       d.id = this.autenticationService.getUserLogged();
       //console.log(d); //TEST
 
     this.datosPortfolio.editUser(d).subscribe(
       d => {
         this.user = d;
+        window.location.reload();
+      })
+          }
+    else{
+      alert("Formulario inválido");
+    }
+  }
+
+  onSaveInfo() {
+    alert(JSON.stringify(this.form2.value)); //para pruebas
+    if (this.form2.valid) {
+      let d = this.form2.value;
+      console.log(d.firstName); //test
+      d.picUrl = this.myPortfolio.picUrl;
+      d.firstName = this.myPortfolio.firstName;
+      d.lastName = this.myPortfolio.lastName;
+      d.location = this.myPortfolio.location;
+      d.phone = this.myPortfolio.phone;
+      d.email = this.myPortfolio.email;
+      d.password = this.myPortfolio.password;
+      d.gitHub = this.myPortfolio.gitHub;
+      d.twitter = this.myPortfolio.twitter;
+      d.facebook = this.myPortfolio.facebook;
+      d.instagram = this.myPortfolio.instagram;
+      d.codePen = this.myPortfolio.codePen;
+      d.linkedIn = this.myPortfolio.linkedIn;
+      d.id = this.autenticationService.getUserLogged();
+      console.log(d); //TEST
+
+    this.datosPortfolio.editUser(d).subscribe(
+      d => {
+        this.user = d;
+        window.location.reload();
       })
           }
     else{

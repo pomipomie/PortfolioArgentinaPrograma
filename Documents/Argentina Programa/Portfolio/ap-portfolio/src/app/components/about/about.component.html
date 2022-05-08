@@ -11,23 +11,35 @@
         </div>
         <div class="modal" id="editname">
             <form class="modal-content animate" [formGroup]="form1" method="put" (ngSubmit)="onSave()">
-                <!-- (ngSubmit)="onSave($event)" action="/user/edit" -->
                 <label for="picUrl">Cambiar foto de perfil</label>
                 <input type="url" placeholder={{myPortfolio.picUrl}} value={{myPortfolio.picUrl}} formControlName="picUrl" name="picUrl"><br>
                 <label for="firstName">Editar nombre</label>
                 <input type="text" placeholder={{myPortfolio.firstName}} value={{myPortfolio.firstName}} formControlName="firstName" name="firstName"><br>
                 <label for="lastName">Editar apellido</label>
                 <input type="text" placeholder={{myPortfolio.lastName}} value={{myPortfolio.lastName}} formControlName="lastName" name="lastName"><br>
-                <button id="submitname" type="submit">Guardar cambios</button><br>
-                <button id="notsubmitname" onclick="document.getElementById('editname').style.display='none'" type="button">Cancelar</button>
+                <button class="submitbtn" id="submitname" type="submit">Guardar cambios</button><br>
+                <button class="submitbtn" id="notsubmitname" onclick="document.getElementById('editname').style.display='none'" type="button">Cancelar</button>
             </form>
         </div>
     </section>
     <section id="sobremi">
         <h2>Sobre mí</h2>
         <p>{{myPortfolio.aboutText}}</p>
-        <a href="javascript:void(0)">
+        <p class="under"><i class="bi bi-balloon-heart-fill"></i> {{bDay}} de {{bMonth}} de {{bYear}}</p>
+        <a href="javascript:void(0)" onclick="document.getElementById('editinfo').style.display='block'">
         <div class="pencilbtn" id="pencil-desc" *ngIf="loggedUser"><i class="bi bi-pencil-square"></i></div>
-        </a>     
+        </a>
+        <div class="modal" id="editinfo">
+            <form class="modal-content animate" [formGroup]="form2" method="put" (ngSubmit)="onSaveInfo()">
+                <label for="aboutText">Editar descripción</label>
+                <textarea placeholder={{myPortfolio.aboutText}} value={{myPortfolio.aboutText}} formControlName="aboutText" name="aboutText" rows="5">
+                    {{myPortfolio.aboutText}}
+                </textarea><br>
+                <label for="birthDate">Editar fecha</label>
+                <input type="date" placeholder={{myPortfolio.birthDate}} value={{myPortfolio.birthDate}} formControlName="birthDate" name="birthDate"><br>
+                <button class="submitbtn" id="submitinfo" type="submit">Guardar cambios</button><br>
+                <button class="submitbtn" id="notsubmitinfo" onclick="document.getElementById('editinfo').style.display='none'" type="button">Cancelar</button>
+            </form>
+        </div>
     </section>
 </div>

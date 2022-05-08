@@ -60,6 +60,11 @@
     z-index: -1;
 }
 
+.under {
+    font-weight: 500;
+    font-style: italic;
+}
+
 #pencil-name {
     position: absolute;
     left: 1vw;
@@ -68,11 +73,11 @@
 
 /* editing window */
 .modal {
-    /* display: none; */
+    display: none;
     position: fixed;
     z-index: 14;
     left: 10%;
-    top: 30vh;
+    top: 10%;
     width: 70vw;
     height: auto;
     max-height: 70vh;
@@ -82,7 +87,7 @@
     color: var(--blue);
     border: 0.25rem solid var(--blue);
     font-family: 'Roboto', sans-serif;
-    font-size: 1.2rem;
+    font-size: 0.9rem;
 }
 
 .modal label {
@@ -101,14 +106,31 @@
     outline-color: var(--blue);
 }
 
-#submitname, #notsubmitname {
+.submitbtn {
     margin-top: 2%;
     font-family: 'Encode Sans', sans-serif;
-    font-weight: 600;
+    font-weight: 500;
     background-color: var(--pink);
     color: var(--bgdcolor);
     border: 0;
-    padding: 3%;
+    padding: 2%;
+    text-shadow:
+    -0.7px -0.7px 0 var(--blue),
+    0.7px -0.7px 0 var(--blue),
+    -0.7px 0.7px 0 var(--blue),
+    0.7px 0.7px 0 var(--blue);
+}
+
+textarea {
+    width: 80%;
+    height: auto;
+    border: 0.9px solid var(--blue);
+    padding: 0.4em 0.45em;
+    margin: 0 4%;
+}
+
+textarea:active, textarea:focus {
+    outline-color: var(--blue);
 }
 
 .animate {
@@ -124,6 +146,12 @@
 @keyframes animatezoom {
     from {transform: scale(0)} 
     to {transform: scale(1)}
+}
+
+@media screen and (min-width: 600px) {
+    .modal {
+        font-size: 1.2rem;
+    }
 }
 
 @media screen and (min-width: 800px) {
@@ -149,5 +177,9 @@
 @media screen and (min-width: 1200px) {
     #avatartext h1 {
         padding: 0 0.7em 0.7em 0.7em;
+    }
+
+    .modal {
+        font-size: 1.4rem;
     }
 }
