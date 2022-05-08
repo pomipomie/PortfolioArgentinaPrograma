@@ -50,7 +50,7 @@ export class AutenticationService {
   }
 
   editUser(user:any):Observable<any> {
-    return this.http.put(this.url+"edit", user);
+    return this.http.put(this.url+"/edit", user);
   }
 
 /*   get AuthUser() {

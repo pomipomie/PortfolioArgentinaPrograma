@@ -26,4 +26,8 @@ export class PortfolioService {
   obtenerDatosSki():Observable<any> {
     return this.http.get<any>(this.url+"user/1/skills");
   }
+
+  editUser(user:any):Observable<any> {
+    return this.http.put(this.url+"user/edit", user);
+  }
 }
