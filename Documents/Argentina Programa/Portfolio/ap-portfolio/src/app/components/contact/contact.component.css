@@ -31,6 +31,11 @@ h4 {
     margin: 0.5em;
 }
 
+#codepn {
+    position: relative;
+    top: -0.27em;
+}
+
 /* editing window */
 .modal {
     display: none;

@@ -1,13 +1,18 @@
 <section id="experiencia" class="card">
     <h2>Experiencia</h2>
     <a href="javascript:void(0)">
-        <div class="pencilbtn" id="pencil-exp" *ngIf="loggedUser"><i class="bi bi-pencil-square"></i></div>
-    </a>  
+        <div class="pencilbtn" id="addexp" *ngIf="loggedUser"><i class="bi bi-plus-square"></i></div>
+    </a>
     <article *ngFor="let exp of exps" class="cardcont">
-        <h3>{{exp.job}}</h3>
+        <h3>{{exp.job}}
+            <a href="javascript:void(0)" (click)=openForm($event)>
+                <div class="pencilbtn pencil-exp" *ngIf="loggedUser"><i class="bi bi-pencil-square"></i></div>
+            </a>
+        </h3>
         <h4>{{exp.workplace}}</h4>
         <p>{{exp.startDate}} - {{exp.endDate}}</p>
         <p>{{exp.description}}</p>
+        <p>{{exp.id_expt.jobType}}</p>
     </article>
-    <!-- VER MASTERCLASS MIN 42~-->
+    <app-expform *ngIf="openModal"></app-expform>
 </section>

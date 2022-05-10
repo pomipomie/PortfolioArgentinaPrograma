@@ -3,11 +3,11 @@
     <a href="javascript:void(0)">
         <div class="pencilbtn" id="pencil-edu" *ngIf="loggedUser"><i class="bi bi-pencil-square"></i></div>
     </a>
-    <article id="ed1" class="cardcont">
-        <h3>{{myPortfolio.title}}</h3>
-        <h4>{{myPortfolio.institution}}</h4>
-        <p>{{myPortfolio.eudcInfo}}</p>
-        <!-- <p>{{myPortfolio.educType}}</p> CODEAR SERVICIO PARA EDUCTYPE Y FIELD-->
-        <a href="{{myPortfolio.educUrl}}" target="_blank"><p>Sitio web</p></a>
+    <article *ngFor="let edu of edus" class="cardcont">
+        <h3>{{edu.title}}</h3>
+        <h4>{{edu.institution}}</h4>
+        <p>{{edu.eudcInfo}}</p>
+        <!-- <p>{{edu.id_educt.educType.}}</p> -->
+        <a href="{{edu.educUrl}}" target="_blank"><p>Sitio web</p></a>
     </article>
 </section>

@@ -20,7 +20,7 @@ export class PortfolioService {
   }
 
   obtenerDatosEdu():Observable<any> { 
-    return this.http.get<any>(this.url+"education"+"/0/search");
+    return this.http.get<any>(this.url+"user/1/education");
   }
 
   obtenerDatosSki():Observable<any> {
@@ -29,5 +29,13 @@ export class PortfolioService {
 
   editUser(user:any):Observable<any> {
     return this.http.put(this.url+"user/edit", user);
+  }
+
+  editExp(exp:any):Observable<any> {
+    return this.http.put(this.url+"experience/edit", exp);
+  }
+
+  obtenerExp(id_exp:any):Observable<any> { 
+    return this.http.get<any>(this.url+"experience/"+id_exp+"/search");
   }
 }

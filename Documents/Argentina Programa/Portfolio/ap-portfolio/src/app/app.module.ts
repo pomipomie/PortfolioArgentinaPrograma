@@ -16,6 +16,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HttpClientModule } from '@angular/common/http'
 import { ReactiveFormsModule } from '@angular/forms';
 import { CookieService } from 'ngx-cookie-service';
+import { ExpformComponent } from './components/expform/expform.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { CookieService } from 'ngx-cookie-service';
     ProjectsComponent,
     ContactComponent,
     LoginformComponent,
-    FooterComponent
+    FooterComponent,
+    ExpformComponent
   ],
   imports: [
     BrowserModule,
