@@ -1,4 +1,7 @@
 #addexp {
+    position: relative;
+    top: -3.2em;
+    left: 7.2em;
     z-index: 4;
 }
 
@@ -7,21 +10,8 @@
     z-index: 4;
 }
 
-h2 a {
-    display: inline-block;
-    text-shadow: none;
-}
-
 h3 a {
     display: inline-block;
-}
-
-.jobtype {
-    background-color: var(--pink);
-    padding: 0.5em;
-    font-size: 0.5em;
-    max-width: fit-content;
-    border-radius: 3em;
 }
 
 /* editing window */

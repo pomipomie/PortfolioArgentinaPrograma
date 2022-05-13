@@ -15,6 +15,7 @@ export class ExperienceComponent implements OnInit {
   expts:Array<any> | undefined;
   user:any;
   openModal:boolean=false;
+  openModalN:boolean=false;
   url = "/portfolioap/user";
 
   constructor(private datosPortfolio:PortfolioService, private autenticationService:AutenticationService) { 
@@ -37,6 +38,12 @@ export class ExperienceComponent implements OnInit {
     console.log("you clicked here"); //TEST
     this.openModal = true;
   }
+
+  openFormN(event: Event) {
+    console.log("you clicked here!!"); //TEST
+    this.openModalN = true;
+  }
+
 
   closeForm(event: Event) {
     console.log("you closed"); //TEST

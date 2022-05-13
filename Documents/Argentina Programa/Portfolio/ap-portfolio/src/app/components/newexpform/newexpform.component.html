@@ -1,0 +1,18 @@
+<p>newexpform works!</p>
+<div class="modal" id="newexp">
+    <form class="modal-content animate" [formGroup]="form" method="put" (ngSubmit)="onSave()">
+        <label for="job">Puesto de trabajo</label>
+        <input type="text" value="job" formControlName="job" name="job"><br>
+        <label for="workplace">Empresa</label>
+        <input type="text" value="workplace" formControlName="workplace" name="workplace"><br>
+        <label for="startDate">Fecha de inicio</label>
+        <input date="year" value="startDate" formControlName="startDate" name="startDate"><br>
+        <label for="endDate">Fecha de salida</label>
+        <input date="year" value="endDate" formControlName="endDate" name="endDate"><br>
+        <label for="description">Descripción</label>
+        <textarea value="description" formControlName="description" name="description" rows="5">
+        </textarea><br>
+        <button class="submitbtn submitexp" type="submit">Crear experiencia</button><br>
+        <button class="submitbtn notsubmitexp" onclick="window.location.reload()" type="button">Cancelar</button>
+    </form>
+</div>

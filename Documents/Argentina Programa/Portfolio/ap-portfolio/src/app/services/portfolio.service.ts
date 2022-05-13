@@ -38,4 +38,8 @@ export class PortfolioService {
   obtenerExp(id_exp:any):Observable<any> { 
     return this.http.get<any>(this.url+"experience/"+id_exp+"/search");
   }
+
+  newExp(exp:any):Observable<any> {
+    return this.http.post(this.url+"experience/new", exp);
+  }
 }

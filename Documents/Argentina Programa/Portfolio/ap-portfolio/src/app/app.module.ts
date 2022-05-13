@@ -17,6 +17,7 @@ import { HttpClientModule } from '@angular/common/http'
 import { ReactiveFormsModule } from '@angular/forms';
 import { CookieService } from 'ngx-cookie-service';
 import { ExpformComponent } from './components/expform/expform.component';
+import { NewexpformComponent } from './components/newexpform/newexpform.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { ExpformComponent } from './components/expform/expform.component';
     ContactComponent,
     LoginformComponent,
     FooterComponent,
-    ExpformComponent
+    ExpformComponent,
+    NewexpformComponent
   ],
   imports: [
     BrowserModule,
