@@ -133,3 +133,34 @@ git branch
 git checkout main
 git pull
 git diff
+git status
+git add ap-portfolio
+cd documents/"Argentina Programa"
+cd Portfolio
+git add ap-portfolio
+git commit -m "i guess its done"
+git checkout main
+git branch "old modal saved"
+git branch "oldmodal"
+git checkout oldmodal
+git add ap-portfolio
+git commit -m "old modal version saved here"
+git add ap-portfolio
+git status
+git push
+git push --set-upstream origin oldmodal
+git checkout modalv2
+git branch
+git checkout modal-v2
+git push --set-upstream origin modal-v2
+git checkout main
+git merge modal-v2
+git checkout modal-v2
+git status
+cd documents/"Argentina Programa"/portfolio
+git checkout modal-v2
+git commit
+git checkout modal-v2
+git merge modal-v2
+git status
+git add .vscode
