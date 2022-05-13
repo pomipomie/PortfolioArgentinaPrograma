@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validator, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validator, Validators } from '@angular/forms';
 import { PortfolioService } from 'src/app/services/portfolio.service';
 import { AutenticationService } from 'src/app/services/autentication.service';
 
@@ -18,14 +18,15 @@ export class ExpformComponent implements OnInit {
   form:FormGroup;
 
   constructor(private datosPortfolio:PortfolioService, private autenticationService:AutenticationService, private formBuilder:FormBuilder) { 
+    
     this.form = formBuilder.group(
       {
         id_exp: [[Validators.required]],
         job: ['', [Validators.required]],
-        workplace:['', [Validators.required]],
-        startDate:['', [Validators.required]],
-        endDate:['', [Validators.required]],
-        description:['', [Validators.required]]
+        workplace:[''],
+        startDate:[''],
+        endDate:[''],
+        description:['']
         // ,
         // expt:['', [Validators.required]]
       }
@@ -48,15 +49,24 @@ export class ExpformComponent implements OnInit {
     alert(JSON.stringify(this.form.value)); //para pruebas
     if (this.form.valid) {
       let d = this.form.value;
-      //console.log(this.exp.id_exp); //TEST - NOT WORKING
-      // d.id_exp = this.exp.id_exp;
-     // console.log(d.id_exp); //TEST
-      // VER CÓMO HACER PARA EDITAR CADA UNA DE LAS EXPERIENCIAS
+      console.log(d); //TEST
 
     this.datosPortfolio.editExp(d).subscribe(
       d => {
+        console.log(d); //TEST - not working
         console.log(d.id_exp); //TEST - NOT WORKING
-        this.exp.id_exp = d.selexp;
+        if (d.workplace == null) {
+          d.workplace = this.exp.workplace;
+        }
+        if (d.startDate == null) {
+          d.startDate = this.exp.startDate;
+        }
+        if (d.endDate == null) {
+          d.endDate = this.exp.endDate;
+        }
+        if (d.description == null) {
+          d.description = this.exp.description;
+        }
         this.exp = d;
         window.location.reload();
       })

@@ -1,4 +1,6 @@
 #NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
-#Tue Apr 19 10:18:22 ART 2022
+#Fri Apr 29 16:33:32 ART 2022
 spring-boot-starter-logging-3.0.0-20220419.103253-431.jar>spring-snapshots=
 spring-boot-starter-logging-3.0.0-20220419.103253-431.pom>spring-snapshots=
+spring-boot-starter-logging-3.0.0-20220429.143938-452.jar>spring-snapshots=
+spring-boot-starter-logging-3.0.0-20220429.143938-452.pom>spring-snapshots=

@@ -1,21 +1,20 @@
     <p>expform works!</p>
-    <div class="modal" *ngFor="let exp of exps" id="{{exp.id_exp}}">
+    <div class="modal" id="editexp">
         <form class="modal-content animate" [formGroup]="form" method="put" (ngSubmit)="onSave()">
             <label for="id_exp">Id a editar</label>
             <select name="id_exp"  formControlName="id_exp" (change)="exp.id_exp">
                 <option *ngFor="let exp of exps" value={{exp.id_exp}}>{{exp.id_exp}}</option>
             </select><br>
             <label for="job">Editar trabajo</label>
-            <input type="text" placeholder={{exp.job}} value={{exp.job}} formControlName="job" name="job"><br>
+            <input type="text" value="job" formControlName="job" name="job"><br>
             <label for="workplace">Editar empresa</label>
-            <input type="text" placeholder={{exp.workplace}} value={{exp.workplace}} formControlName="workplace" name="workplace"><br>
+            <input type="text" value="workplace" formControlName="workplace" name="workplace"><br>
             <label for="startDate">Editar fecha de inicio</label>
-            <input date="year" placeholder={{exp.startDate}} value={{exp.startDate}} formControlName="startDate" name="startDate"><br>
+            <input date="year" value="startDate" formControlName="startDate" name="startDate"><br>
             <label for="endDate">Editar fecha de salida</label>
-            <input date="year" placeholder={{exp.endDate}} value={{exp.endDate}} formControlName="endDate" name="endDate"><br>
+            <input date="year" value="endDate" formControlName="endDate" name="endDate"><br>
             <label for="description">Editar descripción</label>
-            <textarea placeholder={{exp.description}} value={{exp.description}} formControlName="description" name="description" rows="5">
-                {{exp.description}}
+            <textarea value="description" formControlName="description" name="description" rows="5">
             </textarea><br>
             <!-- <label for="expt">Editar tipo de experiencia</label>
             <select name="expt">

@@ -3,6 +3,7 @@
     <a href="javascript:void(0)">
         <div class="pencilbtn" id="addexp" *ngIf="loggedUser"><i class="bi bi-plus-square"></i></div>
     </a>
+    <app-expform *ngIf="openModal"></app-expform>
     <article *ngFor="let exp of exps" class="cardcont">
         <h3>{{exp.job}}
             <a href="javascript:void(0)" (click)=openForm($event)>
@@ -14,5 +15,4 @@
         <p>{{exp.description}}</p>
         <p>{{exp.id_expt.jobType}}</p>
     </article>
-    <app-expform *ngIf="openModal"></app-expform>
 </section>
