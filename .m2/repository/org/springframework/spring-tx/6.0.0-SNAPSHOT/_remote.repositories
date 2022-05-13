@@ -1,4 +1,6 @@
 #NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
-#Tue Apr 19 13:07:58 ART 2022
+#Fri Apr 29 16:33:32 ART 2022
 spring-tx-6.0.0-20220416.162130-412.jar>spring-snapshots=
 spring-tx-6.0.0-20220416.162130-412.pom>spring-snapshots=
+spring-tx-6.0.0-20220429.105912-422.jar>spring-snapshots=
+spring-tx-6.0.0-20220429.105912-422.pom>spring-snapshots=
