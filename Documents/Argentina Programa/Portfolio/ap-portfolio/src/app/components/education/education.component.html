@@ -1,10 +1,17 @@
 <section id="educacion" class="card">
-    <h2>Educación</h2>
-    <a href="javascript:void(0)">
-        <div class="pencilbtn" id="pencil-edu" *ngIf="loggedUser"><i class="bi bi-pencil-square"></i></div>
-    </a>
+    <h2>Educación
+        <a href="javascript:void(0)" (click)=openFormN($event)>
+            <div class="pencilbtn" id="addedu" *ngIf="loggedUser"><i class="bi bi-plus-square"></i></div>
+        </a>
+    </h2>
+    <app-neweduform *ngIf="openModalN"></app-neweduform>
+    <app-eduform *ngIf="openModal"></app-eduform>
     <article *ngFor="let edu of edus" class="cardcont">
-        <h3>{{edu.title}}</h3>
+        <h3>{{edu.title}}
+            <a href="javascript:void(0)" (click)=openForm($event)>
+                <div class="pencilbtn" id="pencil-edu" *ngIf="loggedUser"><i class="bi bi-pencil-square"></i></div>
+            </a>
+        </h3>
         <h4>{{edu.institution}}</h4>
         <p>{{edu.eudcInfo}}</p>
         <!-- <p>{{edu.id_educt.educType.}}</p> -->

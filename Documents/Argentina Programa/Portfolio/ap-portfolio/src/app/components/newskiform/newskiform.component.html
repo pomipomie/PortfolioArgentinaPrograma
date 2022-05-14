@@ -1,0 +1,11 @@
+<!-- <p>newskiform works!</p> -->
+<div class="modal" id="addski">
+    <form class="modal-content animate" [formGroup]="form" method="post" (ngSubmit)="onSave()">
+        <label for="skillname">Skill</label>
+        <input type="text" value="skillname" formControlName="skillname" name="skillname"><br>
+        <label for="skillvalue">Valor</label>
+        <input type="number" value="skillvalue" formControlName="skillvalue" name="skillvalue"><br>
+        <button class="submitbtn submitexp" type="submit">Crear skill</button><br>
+        <button class="submitbtn notsubmitexp" onclick="window.location.reload()" type="button">Cancelar</button>
+    </form>
+</div>

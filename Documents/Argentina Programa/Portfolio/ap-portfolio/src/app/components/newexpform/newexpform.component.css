@@ -57,11 +57,6 @@ h3 a {
     color: var(--bgdcolor);
     border: 0;
     padding: 2%;
-    text-shadow:
-    -0.7px -0.7px 0 var(--blue),
-    0.7px -0.7px 0 var(--blue),
-    -0.7px 0.7px 0 var(--blue),
-    0.7px 0.7px 0 var(--blue);
     cursor: pointer;
 }
 

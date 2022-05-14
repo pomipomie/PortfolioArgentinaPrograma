@@ -27,6 +27,10 @@ export class PortfolioService {
     return this.http.get<any>(this.url+"user/1/skills");
   }
 
+  obtenerDatosPro():Observable<any> {
+    return this.http.get<any>(this.url+"user/1/projects");
+  }
+
   editUser(user:any):Observable<any> {
     return this.http.put(this.url+"user/edit", user);
   }
@@ -41,5 +45,29 @@ export class PortfolioService {
 
   newExp(exp:any):Observable<any> {
     return this.http.post(this.url+"experience/new", exp);
+  }
+
+  editEdu(edu:any):Observable<any> {
+    return this.http.put(this.url+"education/edit", edu);
+  }
+
+  newEdu(edu:any):Observable<any> {
+    return this.http.post(this.url+"education/new", edu);
+  }
+
+  editSkill(skill:any):Observable<any> {
+    return this.http.put(this.url+"skill/edit", skill);
+  }
+
+  newSkill(skill:any):Observable<any> {
+    return this.http.post(this.url+"skill/new", skill);
+  }
+
+  editPro(proj:any):Observable<any> {
+    return this.http.put(this.url+"project/edit", proj);
+  }
+
+  newPro(proj:any):Observable<any> {
+    return this.http.post(this.url+"project/new", proj);
   }
 }

@@ -18,6 +18,12 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { CookieService } from 'ngx-cookie-service';
 import { ExpformComponent } from './components/expform/expform.component';
 import { NewexpformComponent } from './components/newexpform/newexpform.component';
+import { EduformComponent } from './components/eduform/eduform.component';
+import { NeweduformComponent } from './components/neweduform/neweduform.component';
+import { NewskiformComponent } from './components/newskiform/newskiform.component';
+import { SkiformComponent } from './components/skiform/skiform.component';
+import { ProformComponent } from './components/proform/proform.component';
+import { NewproformComponent } from './components/newproform/newproform.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +39,13 @@ import { NewexpformComponent } from './components/newexpform/newexpform.componen
     LoginformComponent,
     FooterComponent,
     ExpformComponent,
-    NewexpformComponent
+    NewexpformComponent,
+    EduformComponent,
+    NeweduformComponent,
+    NewskiformComponent,
+    SkiformComponent,
+    ProformComponent,
+    NewproformComponent
   ],
   imports: [
     BrowserModule,

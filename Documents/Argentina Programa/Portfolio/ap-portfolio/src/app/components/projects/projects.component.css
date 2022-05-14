@@ -1,19 +1,33 @@
 #pencil-pro {
-    position: relative;
-    top: -3.2em;
-    left: 7.6em;
     z-index: 4;
 }
 
-@media screen and (min-width: 800px) {
-    #pencil-pro {
-    top: -3.3em;
-    left: 12em;
-    }
+.preview {
+    width: 50vw;
+    height: auto;
 }
 
-@media screen and (min-width: 1000px) {
-    #pencil-pro {
-    left: 14em;
-    }
+.preview img {
+    width: 50vw;
+    height: auto;
+    border-radius: 1rem;
+    border: 0.25em solid var(--blue);
+    box-sizing: border-box;
+    visibility: visible;
+}
+
+.filter{
+    position: relative;
+    z-index: 6;
+    visibility: hidden;
+}
+
+.filter:hover {
+    visibility: visible;
+}
+
+.filter:after{
+    position: absolute; content: ''; display: block; top: 0; left: 0; height: 95%; width: 99%;
+    background: radial-gradient(ellipse at center,rgb(242, 38, 137) 0%, rgba(242, 38, 137, 0.07) 100%);
+    mix-blend-mode: screen;
 }

@@ -1,11 +1,20 @@
 <section id="proyectos" class="card">
-    <h2>Proyectos</h2>
-    <a href="javascript:void(0)">
-        <div class="pencilbtn" id="pencil-pro" *ngIf="loggedUser"><i class="bi bi-pencil-square"></i></div>
-    </a>
-    <article id="p1" class="cardcont">
-        <h3>Título</h3>
-        <h4>Subtítulo</h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo natus nesciunt quia provident, amet magnam ipsa ipsum alias neque eum. Recusandae veniam, hic laudantium fugiat eius laboriosam. Enim, iusto molestiae.</p>
+    <h2>Proyectos
+        <a href="javascript:void(0)" (click)=openFormN($event)>
+            <div class="pencilbtn" id="addpro" *ngIf="loggedUser"><i class="bi bi-plus-square"></i></div>
+        </a>
+    </h2>
+    <app-newproform *ngIf="openModalN"></app-newproform>
+    <app-proform *ngIf="openModal"></app-proform>
+    <article *ngFor="let proj of projs" class="cardcont">
+        <h3>{{proj.pname}}
+            <a href="javascript:void(0)" (click)=openForm($event)>
+                <div class="pencilbtn" id="pencil-pro" *ngIf="loggedUser"><i class="bi bi-pencil-square"></i></div>
+            </a>
+        </h3>
+        <p>{{proj.pdescription}}</p>
+        <div class="preview">
+            <a href="{{proj.purl}}" target="_blank"><div class="filter"><img src="{{proj.ppreview}}"></div></a>
+        </div>
     </article>
 </section>

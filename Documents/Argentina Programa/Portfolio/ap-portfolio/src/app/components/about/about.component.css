@@ -23,8 +23,9 @@
 
 #avatarpic img {
     margin-top: -2.5em;
-    border: 0.45em solid var(--blue);
-    border-radius: 5%;
+    background-color: var(--blue);
+    border: 0.4em solid var(--blue);
+    border-radius: 2rem;
     z-index: 5;
     position: relative;
 }
@@ -58,6 +59,7 @@
     position: absolute;
     background-color: var(--blue);
     z-index: -1;
+    border-radius: 3rem;
 }
 
 .under {
@@ -114,11 +116,6 @@
     color: var(--bgdcolor);
     border: 0;
     padding: 2%;
-    text-shadow:
-    -0.7px -0.7px 0 var(--blue),
-    0.7px -0.7px 0 var(--blue),
-    -0.7px 0.7px 0 var(--blue),
-    0.7px 0.7px 0 var(--blue);
 }
 
 textarea {
@@ -164,6 +161,10 @@ textarea:active, textarea:focus {
     #sobremi h2::before {
         width: 125%;
         margin-top: 0;
+    }
+    #avatarpic img {
+        border-radius: 3rem;
+        border: 0.45em solid var(--blue);
     }
     #avatartext h1 {
         font-size: 1em;

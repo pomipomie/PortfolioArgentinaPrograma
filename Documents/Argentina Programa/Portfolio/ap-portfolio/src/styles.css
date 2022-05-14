@@ -16,8 +16,17 @@ body.dark-theme .card, body.dark-theme .modal {
     --grey: #242494;
 }
 
-body.dark-theme .modal {
+.modal {
     border: 3px solid var(--blue);
+    border-radius: 1rem;
+}
+
+.modal button {
+    border-radius: 3rem;
+}
+
+.modal input, textarea {
+    border-radius: 2rem;
 }
 
 body {
@@ -75,9 +84,15 @@ h4 {
     2px 2px 0 var(--pink); */
 }
 
+.card h2 a {
+    text-shadow: none;
+    display: inline-block;
+}
+
 .card h2::before {
     content: " ";
     width: 100%;
+    max-width: 95vw;
     height: 0.9em;
     margin-bottom: 7vw;
     margin-top: -1.5vw;
@@ -85,6 +100,7 @@ h4 {
     position: absolute;
     background-color: var(--pink);
     z-index: -1;
+    border-radius: 3em;
 }
 
 .cardcont {
@@ -92,6 +108,10 @@ h4 {
     margin-top: -0.7em;
     margin-right: 1em;
     margin-bottom: 2em;
+}
+
+.cardcont h3 a {
+    display: inline-block;
 }
 
 .cardcont p {
@@ -110,10 +130,8 @@ body.gradientmode #aboutcontainer, body.gradientmode footer {
     background-image: linear-gradient(90deg, var(--blue), var(--pink));
 }
 
-body.gradientmode form button {
-    background-image: linear-gradient(90deg, var(--pink), var(--pink), var(--blue));
-    color: var(--bgdcolor);
-    font-weight: 500;
+body.gradientmode .modal {
+    background-image: linear-gradient(120deg, var(--pink), var(--bgdcolor), var(--bgdcolor));
 }
 
 @media screen and (min-width: 800px) {

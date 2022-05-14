@@ -1,0 +1,15 @@
+<!-- <p>newproform works!</p> -->
+<div class="modal" id="addpro">
+    <form class="modal-content animate" [formGroup]="form" method="post" (ngSubmit)="onSave()">
+        <label for="pname">Nombre</label>
+        <input type="text" value="pname" formControlName="pname" name="pname"><br>
+        <label for="pdescription">Descripción</label>
+        <input type="text" value="pdescription" formControlName="pdescription" name="pdescription"><br>
+        <label for="preview">Vista previa</label>
+        <input type="text" value="ppreview" formControlName="ppreview" name="ppreview"><br>
+        <label for="purl">URL</label>
+        <input type="text" value="purl" formControlName="purl" name="purl"><br>
+        <button class="submitbtn submitexp" type="submit">Crear proyecto</button><br>
+        <button class="submitbtn notsubmitexp" onclick="window.location.reload()" type="button">Cancelar</button>
+    </form>
+</div>

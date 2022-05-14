@@ -1,8 +1,9 @@
 <section id="contacto" class="card">
-    <h2>Contacto</h2>
-    <a href="javascript:void(0)" onclick="document.getElementById('editcon').style.display='block'">
-        <div class="pencilbtn" id="pencil-con" *ngIf="loggedUser"><i class="bi bi-pencil-square"></i></div>
-    </a>
+    <h2>Contacto
+        <a href="javascript:void(0)" onclick="document.getElementById('editcon').style.display='block'">
+            <div class="pencilbtn" id="pencil-con" *ngIf="loggedUser"><i class="bi bi-pencil-square"></i></div>
+        </a>
+    </h2>
     <article id="c1" class="cardcont">
         <section>
             <a href="{{myPortfolio.gitHub}}" target="_blank">

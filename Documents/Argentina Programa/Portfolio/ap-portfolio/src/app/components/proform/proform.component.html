@@ -1,0 +1,19 @@
+<p>proform works!</p>
+<div class="modal" id="editpro">
+    <form class="modal-content animate" [formGroup]="form" method="put" (ngSubmit)="onSave()">
+        <label for="id_projects">Id a editar</label>
+        <select name="id_projects"  formControlName="id_projects" (change)="proj.id_projects">
+            <option *ngFor="let proj of projs" value={{proj.id_projects}}>{{proj.id_projects}}</option>
+        </select><br>
+        <label for="pname">Editar nombre</label>
+        <input type="text" value="pname" formControlName="pname" name="pname"><br>
+        <label for="pdescription">Editar descripción</label>
+        <input type="text" value="pdescription" formControlName="pdescription" name="pdescription"><br>
+        <label for="preview">Editar vista previa</label>
+        <input type="text" value="ppreview" formControlName="ppreview" name="ppreview"><br>
+        <label for="purl">Editar URL</label>
+        <input type="text" value="purl" formControlName="purl" name="purl"><br>
+        <button class="submitbtn submitexp" type="submit">Guardar cambios</button><br>
+        <button class="submitbtn notsubmitexp" onclick="window.location.reload()" type="button">Cancelar</button>
+    </form>
+</div>

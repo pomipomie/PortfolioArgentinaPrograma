@@ -11,6 +11,8 @@ export class EducationComponent implements OnInit {
 
   loggedUser:boolean=true;  //debe ser false al inicio
   edus:Array<any> | undefined;
+  openModal:boolean=false;
+  openModalN:boolean=false;
 
   constructor(private datosPortfolio:PortfolioService, private autenticationService:AutenticationService) { }
 
@@ -24,6 +26,16 @@ export class EducationComponent implements OnInit {
      } else {
       this.loggedUser=false;
      }
+  }
+
+  openForm(event: Event) {
+    console.log("you clicked here"); //TEST
+    this.openModal = true;
+  }
+
+  openFormN(event: Event) {
+    console.log("you clicked here!!"); //TEST
+    this.openModalN = true;
   }
 
 }

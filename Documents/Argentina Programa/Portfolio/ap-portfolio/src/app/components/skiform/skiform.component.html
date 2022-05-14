@@ -1,0 +1,15 @@
+<!-- <p>skiform works!</p> -->
+<div class="modal" id="editski">
+    <form class="modal-content animate" [formGroup]="form" method="put" (ngSubmit)="onSave()">
+        <label for="id_skills">Id a editar</label>
+        <select name="id_skills"  formControlName="id_skills" (change)="skill.id_skills">
+            <option *ngFor="let skill of skills" value={{skill.id_skills}}>{{skill.id_skills}}</option>
+        </select><br>
+        <label for="skillname">Editar skill</label>
+        <input type="text" value="skillname" formControlName="skillname" name="skillname"><br>
+        <label for="skillvalue">Editar valor</label>
+        <input type="number" value="skillvalue" formControlName="skillvalue" name="skillvalue"><br>
+        <button class="submitbtn submitexp" type="submit">Guardar cambios</button><br>
+        <button class="submitbtn notsubmitexp" onclick="window.location.reload()" type="button">Cancelar</button>
+    </form>
+</div>

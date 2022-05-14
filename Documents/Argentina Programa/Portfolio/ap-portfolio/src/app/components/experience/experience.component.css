@@ -108,19 +108,6 @@ textarea:active, textarea:focus {
     }
 }
 
-@media screen and (min-width: 800px) {
-    #addexp {
-    top: -3.3em;
-    left: 12em;
-    }
-}
-
-@media screen and (min-width: 1000px) {
-    #addexp {
-    left: 13em;
-    }
-}
-
 @media screen and (min-width: 1200px) {
     .modal {
         font-size: 1.4rem;
