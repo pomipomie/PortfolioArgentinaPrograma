@@ -70,4 +70,8 @@ export class PortfolioService {
   newPro(proj:any):Observable<any> {
     return this.http.post(this.url+"project/new", proj);
   }
+
+  getPro(id_projects:any):Observable<any> {
+    return this.http.get<any>(this.url+"project/"+id_projects+"/search");
+  }
 }
