@@ -2,7 +2,6 @@ footer {
     background-color: var(--pink);
     color: var(--bgdcolor);
     font-family: 'Roboto', sans-serif;
-    font-size: 0.5em;
     width: 100%;
 }
 
@@ -10,4 +9,12 @@ footer p {
     padding: 0.5em;
     margin-left: 1em;
     overflow-x: hidden;
+}
+
+footer a {
+    color: var(--bgdcolor);
+}
+
+footer a:any-link {
+    text-decoration: none;
 }

@@ -46,29 +46,41 @@ export class ExpformComponent implements OnInit {
   }
 
   onSave() {
-    alert(JSON.stringify(this.form.value)); //para pruebas
+    //alert(JSON.stringify(this.form.value)); //para pruebas
     if (this.form.valid) {
       let d = this.form.value;
-      console.log(d); //TEST
-
-    this.datosPortfolio.editExp(d).subscribe(
-      d => {
-        console.log(d); //TEST - not working
-        console.log(d.id_exp); //TEST - NOT WORKING
-        if (d.workplace == null) {
+      //console.log(d); //TEST
+      this.datosPortfolio.obtenerExp(d.id_exp).subscribe(data => {
+        this.exp = data;
+        // console.log(this.exp); //test
+        // console.log(this.exp.id); //test
+        // console.log(this.exp.id_expt); //test
+        d.id = this.exp.id;
+        d.id_expt = this.exp.id_expt;
+        d.place = this.exp.place;
+        if (d.workplace == "") {
           d.workplace = this.exp.workplace;
         }
-        if (d.startDate == null) {
-          d.startDate = this.exp.startDate;
+        // console.log(this.exp.startDate); //works
+        // console.log("d.start: "+d.startDate); //works
+        if (d.startDate == "") {
+           d.startDate = this.exp.startDate;
         }
-        if (d.endDate == null) {
+        // console.log("date :"+d.startDate); //works
+        if (d.endDate == "") {
           d.endDate = this.exp.endDate;
         }
-        if (d.description == null) {
+        if (d.description == "") {
           d.description = this.exp.description;
         }
-        this.exp = d;
-        window.location.reload();
+        // console.log(d); //IT'S WORKING
+        this.datosPortfolio.editExp(d).subscribe(
+          d => {
+            console.log(d); //TEST - working
+            console.log(d.id_exp); //TEST - WORKING
+            this.exp = d;
+            window.location.reload();
+          })
       })
           }
     else{

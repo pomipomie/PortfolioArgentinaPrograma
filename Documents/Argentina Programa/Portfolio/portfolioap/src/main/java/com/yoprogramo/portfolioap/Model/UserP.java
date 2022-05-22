@@ -43,7 +43,7 @@ public class UserP {
     private String gitHub;
     private String codePen;
     
-   // @JsonManagedReference
+   //@JsonManagedReference
     @JsonIgnore
     @OneToMany (cascade= CascadeType.ALL, mappedBy="id")
     private Set<Experience> exps;

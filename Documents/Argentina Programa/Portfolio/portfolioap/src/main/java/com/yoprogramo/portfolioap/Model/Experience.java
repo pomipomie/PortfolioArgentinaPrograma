@@ -1,8 +1,6 @@
 package com.yoprogramo.portfolioap.Model;
 
-//import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonFormat;
-import java.time.LocalDate;
+import com.fasterxml.jackson.annotation.JsonFilter;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -14,6 +12,7 @@ import lombok.Setter;
 
 @Getter @Setter
 @Entity
+@JsonFilter("userFilter")
 public class Experience {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -21,21 +20,17 @@ public class Experience {
     
     private String workplace;
     
-    @JsonFormat(pattern="yyyy")
-    private LocalDate startDate;
-    @JsonFormat(pattern="yyyy")
-    private LocalDate endDate;
+    private String startDate;
+    private String endDate;
     
     private String job;
     private String description;
     private String place;
     
-   // @JsonBackReference
     @ManyToOne
     @JoinColumn (name = "id", nullable = false)
     private UserP id;
     
-   // @JsonBackReference
     @ManyToOne
     @JoinColumn (name = "id_exp_t", nullable = false)
     private ExpT id_expt;
@@ -45,8 +40,8 @@ public class Experience {
 
     public Experience(Long id_exp,
                       String workplace,
-                      LocalDate startDate,
-                      LocalDate endDate,
+                      String startDate,
+                      String endDate,
                       String job,
                       String description,
                       String place,

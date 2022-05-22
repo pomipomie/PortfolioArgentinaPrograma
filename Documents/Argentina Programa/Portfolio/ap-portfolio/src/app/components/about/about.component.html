@@ -23,12 +23,13 @@
         </div>
     </section>
     <section id="sobremi">
-        <h2>Sobre mí</h2>
+        <h2>Sobre mí
+            <a href="javascript:void(0)" onclick="document.getElementById('editinfo').style.display='block'">
+                <div class="pencilbtn" id="pencil-desc" *ngIf="loggedUser"><i class="bi bi-pencil-square"></i></div>
+            </a>
+        </h2>
         <p>{{myPortfolio.aboutText}}</p>
-        <p class="under"><i class="bi bi-balloon-heart-fill"></i> {{bDay}} de {{bMonth}} de {{bYear}}</p>
-        <a href="javascript:void(0)" onclick="document.getElementById('editinfo').style.display='block'">
-        <div class="pencilbtn" id="pencil-desc" *ngIf="loggedUser"><i class="bi bi-pencil-square"></i></div>
-        </a>
+        <p id="under"><i class="bi bi-balloon-heart-fill"></i> {{bDay}} de {{bMonth}} de {{bYear}}</p>
         <div class="modal" id="editinfo">
             <form class="modal-content animate" [formGroup]="form2" method="put" (ngSubmit)="onSaveInfo()">
                 <label for="aboutText">Editar descripción</label>

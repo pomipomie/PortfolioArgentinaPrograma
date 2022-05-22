@@ -1,71 +1,61 @@
 nav {
+    max-width: 100%;
+}
+
+#navul {
     background-color: var(--blue);
     color: var(--bgdcolor);
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
     align-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
     text-align: center;
-    width: 100%;
+    width: 100vw;
+    max-width: 100%;
     height: auto;
     font-family: 'Encode Sans', sans-serif;
+    font-size: 1em;
     position: fixed;
     z-index: 8;
+    margin: 0;
+    padding: 0.25em 4em 0.25em 1em;
 }
 
-#navul {
-    margin-block-start: 0;
-    margin-block-end: 0;
-    margin-inline-start: 0;
-    margin-inline-end: 0;
-    padding-inline-start: 0;
-    width: 100%;
-    display: grid;
-    justify-content: stretch;
-    grid-template-columns: auto auto auto auto;
-    align-content: center;
+#navul a {
+    color: var(--bgdcolor);
+}
+
+#navul a:any-link {
+    text-decoration: none;
 }
 
 nav li {
     list-style-type: none;
-    font-size: 1em;
     margin-top: 0.25em;
 }
 
 #aplogo {
+    display: flex;
+}
+
+#aplogo p {
+    margin: 0 0 0 0.5em;
+}
+
+.bi-terminal-fill {
     font-size: 1.5em;
-    grid-column: 1 / 2;
-    margin-left: 0.3em;
-    margin-right: -0.4em;
 }
 
-#aptext {
-    font-size: 0.65em;
-    line-height: 0;
-    margin-top: 0.4em;
-    grid-column: 2 / 3;
-    text-align: left;
-}
-
-#yoprogramo {
-    font-size: 0.85em;
-    margin-right: 2em;
-    line-height: 2em;
-    grid-column: 3 / 4;
-}
-
-#yoprogramo p {
-    margin: 0.25em 0 0 -1em;
-}
-
-#menu {
-    font-size: 1.15em;
-    line-height: 2em;
-    grid-column: 4 / span 1;
+#aptext p {
+    font-size: 0.7em;
 }
 
 #menu i {
-    margin: 0.25em 0 0 0;
+    margin: 0.25em 1em 0 0;
+    font-size: 1.25em;
+    padding-right: 0.5em;
 }
 
 #menu p:hover {
@@ -85,7 +75,7 @@ nav li {
     padding-top: 3vw;
     transition: 0.5s;
     color: var(--bgdcolor);
-    font-size: 0.7em;
+    font-size: 0.8em;
     display: grid;
     grid-auto-rows: auto;
     justify-content: center;
@@ -94,9 +84,7 @@ nav li {
 }
 
 .sidenav a {
-    color: var(--bgdcolor);
-    text-decoration: none;
-    padding: 0.5em;
+    padding: 0.5em 0 0 0.7em;
     line-height: 1.15em;
 }
 
@@ -104,36 +92,24 @@ nav li {
     background-color: var(--hoverblue);
 }
 
-@media screen and (min-width: 800px) {
-    #aplogo {
-        margin-left: 0.3em;
-        margin-right: -1em;
-    }
-    #yoprogramo {
-        margin-left: -1em;
-    }
-    .sidenav {
-        font-size: 0.6em;
-    }
+ @media screen and (min-width: 860px) {
+   #navul {
+       padding-right: 4em;
+       padding-left: 2em;
+   }
+   #menu i {
+       padding-right: 3em;
+   }
 }
 
 @media screen and (min-width: 1200px) {
-    nav {
-        padding-right: 5vw;
-        margin-left: -2vw;
+    #navul {
+        font-size: 28px;
     }
-    #aplogo {
-        margin-left: -1em;
-    } 
-    
-    #aptext {
-        margin-left: -3em;
-    }
-    #yoprogramo {
-        margin-left: -2em;
-        margin-right: 2em;
-    }
-    #menu {
-        margin-right: -1em;
+}
+
+@media screen and (min-width: 1800px) {
+    #navul {
+        font-size: 48px;
     }
 }

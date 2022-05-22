@@ -16,29 +16,32 @@ body.dark-theme .card, body.dark-theme .modal {
     --grey: #242494;
 }
 
-.modal {
-    border: 3px solid var(--blue);
-    border-radius: 1rem;
-}
-
-.modal button {
-    border-radius: 3rem;
-}
-
-.modal input, textarea {
-    border-radius: 2rem;
-}
+/*mobile first: starting at 280px (target: samsung galaxy fold) */
 
 body {
     background-color: var(--bgdcolor);
     margin: 0;
-    font-size: 5vw;
+    font-size: 5.5vw;
     overflow-x: hidden;
+    font-family: 'Roboto', sans-serif;
+}
+
+body.gradientmode #aboutcontainer, body.gradientmode footer {
+    background-image: linear-gradient(90deg, var(--blue), var(--pink));
+}
+
+body>* {
+    max-width: 100%;
 }
 
 main {
     width: 100vw;
     height: auto;
+    max-width: 100%;
+}
+
+main>* {
+    max-width: 100%;
 }
 
 h1, h2 {
@@ -49,11 +52,31 @@ h1, h2 {
     position: relative;
 }
 
+h1 {
+    font-size: 1.2em;
+}
+
+h2 {
+    font-size: 1.15em;
+}
+
+p {
+    font-size: 0.8em;
+}
+
 h3, h4 {
     font-family: 'Encode Sans', sans-serif;
     text-align: left;
     font-weight: 600;
-    margin-top: -0.7em;
+}
+
+h2 a {
+    display: inline-block;
+    text-shadow: none;
+}
+
+h3 a {
+    display: inline-block;
 }
 
 h3 {
@@ -64,29 +87,22 @@ h3 {
 h4 {
     font-size: 0.8em;
     line-height: 1em;
+    margin-top: -0.7em;
 }
 
 .card {
     color: var(--blue);
+    margin-left: 0.6em;
 }
 
 .card h2 {
-    font-size: 1.2em;
+    font-size: 1.15em;
     font-weight: 700;
     text-shadow:
     -1px -1px 0 var(--bgdcolor),  
     1px -1px 0 var(--bgdcolor),
     -1px 1px 0 var(--bgdcolor),
     1px 1px 0 var(--bgdcolor);
-    /* -2px -2px 0 var(--pink),  
-    2px -2px 0 var(--pink),
-    -2px 2px 0 var(--pink),
-    2px 2px 0 var(--pink); */
-}
-
-.card h2 a {
-    text-shadow: none;
-    display: inline-block;
 }
 
 .card h2::before {
@@ -104,54 +120,32 @@ h4 {
 }
 
 .cardcont {
-    margin-left: 1em;
-    margin-top: -0.7em;
-    margin-right: 1em;
+    margin-top: -0.3em;
+    margin-right: 1.15em;
     margin-bottom: 2em;
-}
-
-.cardcont h3 a {
-    display: inline-block;
+    text-align: left;
 }
 
 .cardcont p {
-    font-family: 'Roboto', sans-serif;
-    margin-top: -0.7em;
+    margin-top: -0.5em;
     font-weight: 400;
+}
+
+.cardcont a:any-link {
+    text-decoration: none;
+    color: var(--blue);
+}
+
+.type {
+    background-color: var(--pink);
+    padding: 0.5em;
     font-size: 0.6em;
-    text-align: justify;
+    max-width: fit-content;
+    border-radius: 3em;
 }
 
 body.gradientmode .card h2::before {
     background-image: linear-gradient(90deg, var(--pink), var(--bgdcolor));
-}
-
-body.gradientmode #aboutcontainer, body.gradientmode footer {
-    background-image: linear-gradient(90deg, var(--blue), var(--pink));
-}
-
-body.gradientmode .modal {
-    background-image: linear-gradient(120deg, var(--pink), var(--bgdcolor), var(--bgdcolor));
-}
-
-@media screen and (min-width: 800px) {
-    body {
-        font-size: 3.75vw;
-    }
-    
-    .card h2 {
-        text-shadow:
-        -2px -2px 0 var(--bgdcolor),  
-        2px -2px 0 var(--bgdcolor),
-        -2px 2px 0 var(--bgdcolor),
-        2px 2px 0 var(--bgdcolor);
-    }
-    h3 {
-        font-size: 0.9em;
-    }
-    h4 {
-        font-size: 0.7em;
-    }
 }
 
 .pencilbtn {
@@ -162,6 +156,7 @@ body.gradientmode .modal {
     border-radius: 50%;
     font-size: 0.7em;
     color: var(--bgdcolor);
+    z-index: 4;
 }
 
 .pencilbtn:hover {
@@ -173,38 +168,175 @@ body.gradientmode .modal {
     color: var(--bgdcolor);
 }
 
-@media screen and (min-width: 1000px) {
+/* Modal */
+
+body.gradientmode .modal {
+    background-image: linear-gradient(120deg, var(--pink), var(--bgdcolor), var(--bgdcolor));
+}
+
+.modal {
+    border: 3px solid var(--blue);
+    border-radius: 1em;
+    position: fixed;
+    z-index: 14;
+    width: 80vw;
+    height: auto;
+    max-height: 90vh;
+    left: 5%;
+    top: 5%;
+    background-color: var(--bgdcolor);
+    padding: 4% 2%;
+    color: var(--blue);
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.7em;
+    overflow: auto;
+    text-align: center;
+}
+
+.modal button {
+    border-radius: 2em;
+    background-color: var(--pink);
+    margin: 1em 0 0 0;
+    padding: 0.6em;
+    font-family: 'Encode Sans', sans-serif;
+    font-weight: 500;
+    color: var(--bgdcolor);
+    border: 0;
+    cursor: pointer;
+    width: 60%;
+}
+
+.modal button:hover {
+    opacity: 0.8;
+}
+
+.modal label {
+    padding: 4% 0 1% 0;
+    display: block;
+    font-family: 'Encode Sans', sans-serif;
+}
+
+.modal input, textarea {
+    border-radius: 1em;
+    border: 0.9px solid var(--blue);
+    font-size: 0.8em;
+    margin: 0.5em;
+    padding: 0.4em;
+    width: 80%;
+}
+
+.modal select {
+    border-radius: 1em;
+    border: 0.9px solid var(--blue);
+    font-size: 0.8em;
+    margin: 0.5em;
+    padding: 0.4em;
+}
+
+.modal input:active,
+.modal input:focus,
+.modal textarea:active,
+.modal textarea:focus,
+.modal select:active,
+.modal select:focus {
+    outline-color: var(--blue);
+    background-color: hsla(331, 94%, 81%, 0.932);
+}
+
+.modal input[type=checkbox] {
+    accent-color: var(--pink);
+    width: fit-content;
+}
+
+.animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s;
+}
+
+@-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)} 
+    to {-webkit-transform: scale(1)}
+}
+    
+@keyframes animatezoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+}
+
+/* media queries */
+
+@media screen and (min-width: 600px) {
+    body {
+        font-size: 4vw;
+    }
+    .card {
+        margin-left: 0.9em;
+    }
+}
+
+@media screen and (min-width: 700px) {
     body {
         font-size: 3.5vw;
     }
+    .card {
+        margin-left: 1.2em;
+    }
+    .modal {
+        width: 60vw;
+        left: 15%;
+        top: 5%;
+    }
 }
-@media screen and (min-width: 1200px) {
+
+@media screen and (min-width: 860px) {
     body {
-        font-size: 3vw;
+        font-size: 2.75vw;
     }
     .card {
-        padding-left: 4vw;
-        padding-right: 4vw;
-    }
-
-    .cardcont p {
-        font-size: 0.5em;
-        margin-right: 2em;
-    }
-
-    .card h2 {
-        font-size: 0.9em;
+        margin-left: 1.5em;
     }
     .card h2::before {
-        width: 80%;
-        margin-bottom: 9vw;
-        margin-top: -1vw;
-        margin-left: -47vw;
+        height: 1em;
     }
-    h3 {
-        font-size: 0.7em;
+    .modal input, textarea {
+        font-size: 1em;
+        margin: 0.5em;
+        padding: 0.4em;
+        width: 60%;
     }
-    h4 {
-        font-size: 0.5em;
+}
+
+@media screen and (min-width: 1000px) {
+    body {
+        font-size: 24px;
+    }
+    h1 {
+        font-size: 1.5em;
+    }
+    h2 {
+        font-size: 1.4em;
+    }
+    .card h2 {
+        font-size: 1.4em;
+    }
+    .card h2::before {
+        height: 1.1em;
+    }
+
+    .cardcont {
+        padding-left: 5vw;
+        padding-right: 5vw;  
+    }
+
+    .modal {
+        width: 40vw;
+        left: 30%;
+        padding: 1%;
+    }
+}
+
+@media screen and (min-width: 1800px) {
+    body {
+        font-size: 36px;
     }
 }
