@@ -6,12 +6,16 @@
         <label for="workplace">Empresa</label>
         <input type="text" value="workplace" formControlName="workplace" name="workplace"><br>
         <label for="startDate">Fecha de inicio</label>
-        <input date="year" value="startDate" formControlName="startDate" name="startDate"><br>
+        <input type="text" value="startDate" formControlName="startDate" name="startDate"><br>
         <label for="endDate">Fecha de salida</label>
-        <input date="year" value="endDate" formControlName="endDate" name="endDate"><br>
+        <input type="text" value="endDate" formControlName="endDate" name="endDate"><br>
         <label for="description">Descripción</label>
         <textarea value="description" formControlName="description" name="description" rows="5">
         </textarea><br>
+        <label for="id_expt">Tipo de experiencia</label>
+            <select name="id_expt"  formControlName="id_expt" (change)="exp.id_expt">
+                <option *ngFor="let expt of expts" value={{exp.id_expt}}>{{exp.id_expt.jobType}}</option>
+        </select><br>
         <button class="submitbtn submitexp" type="submit">Crear experiencia</button><br>
         <button class="submitbtn notsubmitexp" onclick="window.location.reload()" type="button">Cancelar</button>
     </form>

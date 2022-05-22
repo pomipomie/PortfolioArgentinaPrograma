@@ -14,6 +14,8 @@ export class NewexpformComponent implements OnInit {
   openModalN:boolean=false;
   form:FormGroup;
   exp:any;
+  expts:Array<any> | undefined;
+  expt:any;
 
   constructor(private datosPortfolio:PortfolioService, private autenticationService:AutenticationService, private formBuilder:FormBuilder) { 
     this.form = formBuilder.group(
@@ -22,7 +24,8 @@ export class NewexpformComponent implements OnInit {
         workplace:['', [Validators.required]],
         startDate:[''],
         endDate:[''],
-        description:['']
+        description:[''],
+        id_expt:['', [Validators.required]]
       }
     );
    }
@@ -33,21 +36,40 @@ export class NewexpformComponent implements OnInit {
      } else {
       this.loggedUser=false;
      }
+     this.datosPortfolio.obtenerDatosExpT().subscribe(data => {
+      console.log(data);  // FOR TESTING
+      this.expts=data;
+    });
   }
 
   onSave() {
     alert(JSON.stringify(this.form.value)); //para pruebas
+    // let userid = parseInt(this.autenticationService.getUserLogged());
+    // alert(userid);
+    // let user = this.autenticationService.getUser(1);
+    // alert(JSON.stringify(user)); //test
+    
     if (this.form.valid) {
       let d = this.form.value;
-      console.log(d); //TEST
-
-    this.datosPortfolio.newExp(d).subscribe(
-      d => {
-        console.log(d); //TEST - not working
-        this.exp = d;
-        window.location.reload();
+      let thisId:Object;
+      this.datosPortfolio.obtenerDatos().subscribe( data =>
+        {thisId = data;
+        //console.log("id: "+JSON.stringify(thisId));//test
+        d.id = thisId;
+        console.log("realid: "+JSON.stringify(d.id));//test
+        // d.id_expt = {
+        //   "id_expt": 2,
+        //   "jobType": "freelance"
+        // };
+        d.place = "";
+        console.log(d); //TEST
+        this.datosPortfolio.newExp(d).subscribe(
+          d => {
+            console.log(d); //TEST - working
+            this.exp = d;
+            window.location.reload();
+          })
       })
-      // console.log("hola"); //TEST
           }
     else{
       alert("Formulario inválido");

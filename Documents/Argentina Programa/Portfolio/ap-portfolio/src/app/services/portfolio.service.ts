@@ -19,6 +19,10 @@ export class PortfolioService {
     return this.http.get<any>(this.url+"user/1/experience");
   }
 
+  obtenerDatosExpT():Observable<any> { 
+    return this.http.get<any>(this.url+"exptype/list");
+  }
+
   obtenerDatosEdu():Observable<any> { 
     return this.http.get<any>(this.url+"user/1/education");
   }
