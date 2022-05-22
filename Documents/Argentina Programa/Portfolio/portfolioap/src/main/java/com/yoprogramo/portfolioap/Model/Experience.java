@@ -1,6 +1,5 @@
 package com.yoprogramo.portfolioap.Model;
 
-import com.fasterxml.jackson.annotation.JsonFilter;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -12,7 +11,6 @@ import lombok.Setter;
 
 @Getter @Setter
 @Entity
-@JsonFilter("userFilter")
 public class Experience {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

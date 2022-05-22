@@ -47,6 +47,10 @@ export class PortfolioService {
     return this.http.get<any>(this.url+"experience/"+id_exp+"/search");
   }
 
+  obtenerExpT(id_expt:any):Observable<any> { 
+    return this.http.get<any>(this.url+"exptype/"+id_expt+"/search");
+  }
+
   newExp(exp:any):Observable<any> {
     return this.http.post(this.url+"experience/new", exp);
   }

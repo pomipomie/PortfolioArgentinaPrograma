@@ -56,19 +56,21 @@ export class NewexpformComponent implements OnInit {
         {thisId = data;
         //console.log("id: "+JSON.stringify(thisId));//test
         d.id = thisId;
-        console.log("realid: "+JSON.stringify(d.id));//test
-        // d.id_expt = {
-        //   "id_expt": 2,
-        //   "jobType": "freelance"
-        // };
-        d.place = "";
-        console.log(d); //TEST
-        this.datosPortfolio.newExp(d).subscribe(
-          d => {
-            console.log(d); //TEST - working
-            this.exp = d;
-            window.location.reload();
-          })
+        //console.log("realid: "+JSON.stringify(d.id));//test
+        this.datosPortfolio.obtenerExpT(d.id_expt).subscribe(
+          dat => {
+            d.id_expt = dat;
+          //  console.log(dat);
+          d.place = "";
+          console.log(d); //TEST
+          this.datosPortfolio.newExp(d).subscribe(
+            d => {
+              console.log(d); //TEST - working
+              this.exp = d;
+              window.location.reload();
+            })
+          }
+        )
       })
           }
     else{

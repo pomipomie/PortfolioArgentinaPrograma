@@ -3,6 +3,7 @@ package com.yoprogramo.portfolioap.Controller;
 
 import com.yoprogramo.portfolioap.Model.ExpT;
 import com.yoprogramo.portfolioap.Service.IExpTService;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -38,5 +39,12 @@ public class ExpTController {
     @ResponseBody
     public ExpT searchExpT (@PathVariable Long id_expt) {
         return exptServ.searchExpT(id_expt);
+    }
+    
+    @GetMapping ("/portfolioap/exptype/list")
+    @ResponseBody
+    public List<ExpT> expTList() {
+        List<ExpT> expts = exptServ.expTList();
+        return expts;
     }
 }

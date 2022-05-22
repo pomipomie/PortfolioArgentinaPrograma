@@ -14,7 +14,7 @@
         </textarea><br>
         <label for="id_expt">Tipo de experiencia</label>
             <select name="id_expt"  formControlName="id_expt" (change)="exp.id_expt">
-                <option *ngFor="let expt of expts" value={{exp.id_expt}}>{{exp.id_expt.jobType}}</option>
+                <option *ngFor="let expt of expts" value={{expt.id_expt}}>{{expt.jobType}}</option>
         </select><br>
         <button class="submitbtn submitexp" type="submit">Crear experiencia</button><br>
         <button class="submitbtn notsubmitexp" onclick="window.location.reload()" type="button">Cancelar</button>
