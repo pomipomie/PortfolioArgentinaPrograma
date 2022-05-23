@@ -11,7 +11,7 @@ import { PortfolioService } from 'src/app/services/portfolio.service';
 })
 export class NeweduformComponent implements OnInit {
 
-  loggedUser:boolean=true;  //debe ser false al inicio
+  loggedUser:boolean=true;
   edus:Array<any> | undefined;
   edu:any;
   educts:Array<any> | undefined;
@@ -25,6 +25,7 @@ export class NeweduformComponent implements OnInit {
         title: ['', [Validators.required]],
         institution: ['', [Validators.required]],
         place:[''],
+        educUrl:[''],
         certif: [''],
         startDate:[''],
         endDate:[''],

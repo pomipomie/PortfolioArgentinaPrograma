@@ -26,6 +26,7 @@ export class EduformComponent implements OnInit {
         title: ['', [Validators.required]],
         institution: [''],
         place:[''],
+        educUrl: [''],
         certif: [''],
         startDate:[''],
         endDate:[''],
@@ -75,6 +76,9 @@ export class EduformComponent implements OnInit {
           }
           if (d.educInfo == (null || "")) {
             d.educInfo = this.edu.educInfo;
+          }
+          if (d.educUrl == (null || "")) {
+            d.educUrl = this.edu.educUrl;
           }
           if (d.certif == (null || "")) {
             d.certif = this.edu.certif;
