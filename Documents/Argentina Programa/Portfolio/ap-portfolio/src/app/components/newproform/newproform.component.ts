@@ -42,14 +42,18 @@ export class NewproformComponent implements OnInit {
     alert(JSON.stringify(this.form.value)); //para pruebas
     if (this.form.valid) {
       let d = this.form.value;
-      console.log(d); //TEST
-
-    this.datosPortfolio.newPro(d).subscribe(
-      d => {
-        console.log(d); //TEST - not working
-        this.projs = d;
-        window.location.reload();
-      })
+      //console.log(d); //TEST
+      let thisId:Object;
+      this.datosPortfolio.obtenerDatos().subscribe( data =>
+        {thisId = data;
+        d.id = thisId;
+        this.datosPortfolio.newPro(d).subscribe(
+          d => {
+            console.log(d); //TEST
+            this.proj = d;
+            window.location.reload();
+          })
+        })
           }
     else{
       alert("Formulario inválido");

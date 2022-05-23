@@ -56,7 +56,7 @@ export class NeweduformComponent implements OnInit {
         {thisId = data;
         d.id = thisId;
         d.educfields=[];
-        console.log("realid: "+JSON.stringify(d.id));//test
+        //console.log("realid: "+JSON.stringify(d.id));//test
         this.datosPortfolio.obtenerEducT(d.id_educt).subscribe(
           dat => {
             d.id_educt = dat;
