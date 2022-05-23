@@ -11,6 +11,7 @@ export class EducationComponent implements OnInit {
 
   loggedUser:boolean=true;  //debe ser false al inicio
   edus:Array<any> | undefined;
+  edu:any;
   openModal:boolean=false;
   openModalN:boolean=false;
 

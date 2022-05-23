@@ -13,6 +13,8 @@ export class NewskiformComponent implements OnInit {
   loggedUser:boolean=true;  //debe ser false al inicio
   skills:Array<any> | undefined;
   skill:any;
+  skillts:Array<any> | undefined;
+  skillt:any;
   openModalN:boolean=false;
   form:FormGroup;
 
@@ -20,7 +22,8 @@ export class NewskiformComponent implements OnInit {
     this.form = formBuilder.group(
       {
         skillname: ['', [Validators.required]],
-        skillvalue: ['', [Validators.required]]
+        skillvalue: ['', [Validators.required]],
+        id_skillt: ['', [Validators.required]]
       }
     );
   }
@@ -30,24 +33,37 @@ export class NewskiformComponent implements OnInit {
       this.skills=data;
       //console.log(this.skills);  // FOR TESTING
     });
+    this.datosPortfolio.obtenerDatosSkillT().subscribe(data => {
+      this.skillts=data;
+    });
     if (this.autenticationService.getUserLogged() != '') {
       this.loggedUser=true;
      } else {
       this.loggedUser=false;
      }
+     console.log("100%(expert)=629; 90%(advanced)=560; 75%(upper-intermediate)=470; 50%(intermediate)=315; 25%(basic)=160; 5%(newbie)=50");
   }
 
   onSave() {
     alert(JSON.stringify(this.form.value)); //para pruebas
     if (this.form.valid) {
       let d = this.form.value;
-      console.log(d); //TEST
-
-    this.datosPortfolio.newSkill(d).subscribe(
-      d => {
-        console.log(d); //TEST - not working
-        this.skills = d;
-        window.location.reload();
+      let thisId:Object;
+      this.datosPortfolio.obtenerDatos().subscribe( data =>
+        {thisId = data;
+        d.id = thisId;
+        d.skillfields=[];
+        //console.log("realid: "+JSON.stringify(d.id));//test
+        this.datosPortfolio.obtenerSkillT(d.id_skillt).subscribe(dat=>{
+          console.log(d); //TEST
+          d.id_skillt=dat;
+          this.datosPortfolio.newSkill(d).subscribe(
+            d => {
+              console.log(d); //TEST - working
+              this.skill = d;
+              window.location.reload();
+            })
+        })
       })
           }
     else{

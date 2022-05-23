@@ -16,6 +16,10 @@
         <label for="educInfo">Descripción</label>
         <textarea value="educInfo" formControlName="educInfo" name="educInfo" rows="5">
         </textarea><br>
+        <label for="id_educt">Tipo de educación</label>
+        <select name="id_educt" formControlName="id_educt" (change)="edu.id_educt">
+            <option *ngFor="let educt of educts" value={{educt.id_educt}}>{{educt.educType}}</option>
+        </select><br>
         <button class="submitbtn submitexp" type="submit">Crear</button><br>
         <button class="submitbtn notsubmitexp" onclick="window.location.reload()" type="button">Cancelar</button>
     </form>

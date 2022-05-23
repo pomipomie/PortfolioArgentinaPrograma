@@ -13,6 +13,8 @@ export class EduformComponent implements OnInit {
   loggedUser:boolean=true;  //debe ser false al inicio
   edus:Array<any> | undefined;
   edu:any;
+  educts:Array<any> | undefined;
+  educt:any;
   openModal:boolean=false;
   form:FormGroup;
 
@@ -22,12 +24,13 @@ export class EduformComponent implements OnInit {
       {
         id_educ: [[Validators.required]],
         title: ['', [Validators.required]],
-        institution: ['', [Validators.required]],
+        institution: [''],
         place:[''],
         certif: [''],
         startDate:[''],
         endDate:[''],
-        educInfo:['']
+        educInfo:[''],
+        id_educt: [[Validators.required]]
       }
     );
   }
@@ -37,6 +40,9 @@ export class EduformComponent implements OnInit {
       //console.log(data);  // FOR TESTING
       this.edus=data;
     });
+    this.datosPortfolio.obtenerDatosEduT().subscribe(data => {
+      this.educts=data;
+    })
     if (this.autenticationService.getUserLogged() != '') {
       this.loggedUser=true;
      } else {
@@ -49,28 +55,37 @@ export class EduformComponent implements OnInit {
     if (this.form.valid) {
       let d = this.form.value;
       console.log(d); //TEST
+      this.datosPortfolio.obtenerEdu(d.id_educ).subscribe(data => {
+        this.edu=data;
+        d.id=this.edu.id;
+        d.educfields=this.edu.educfields;
+        this.datosPortfolio.obtenerEducT(d.id_educt).subscribe(dat=>{
+          d.id_educt=dat;
+          if (d.place == (null || "")) {
+            d.place = this.edu.place;
+          }
+          if (d.institution == (null || "")) {
+            d.institution = this.edu.institution;
+          }
+          if (d.startDate == (null || "")) {
+            d.startDate = this.edu.startDate;
+          }
+          if (d.endDate == (null || "")) {
+            d.endDate = this.edu.endDate;
+          }
+          if (d.educInfo == (null || "")) {
+            d.educInfo = this.edu.educInfo;
+          }
+          if (d.certif == (null || "")) {
+            d.certif = this.edu.certif;
+          }
+          this.datosPortfolio.editEdu(d).subscribe(
+            d => {
+              this.edu = d;
+              window.location.reload();
+            })
+        })
 
-    this.datosPortfolio.editEdu(d).subscribe(
-      d => {
-        console.log(d); //TEST - not working
-        console.log(d.id_edu); //TEST - NOT WORKING
-        if (d.place == null) {
-          d.place = this.edu.place;
-        }
-        if (d.startDate == null) {
-          d.startDate = this.edu.startDate;
-        }
-        if (d.endDate == null) {
-          d.endDate = this.edu.endDate;
-        }
-        if (d.educInfo == null) {
-          d.educInfo = this.edu.educInfo;
-        }
-        if (d.certif == null) {
-          d.certif = this.edu.certif;
-        }
-        this.edu = d;
-        window.location.reload();
       })
           }
     else{

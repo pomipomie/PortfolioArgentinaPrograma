@@ -5,6 +5,10 @@
         <input type="text" value="skillname" formControlName="skillname" name="skillname"><br>
         <label for="skillvalue">Valor</label>
         <input type="number" value="skillvalue" formControlName="skillvalue" name="skillvalue"><br>
+        <label for="id_skillt">Tipo de skill</label>
+        <select name="id_skillt" formControlName="id_skillt" (change)="skill.id_skillt">
+            <option *ngFor="let skillt of skillts" value={{skillt.id_skillt}}>{{skillt.skilltype}}</option>
+        </select><br>
         <button class="submitbtn submitexp" type="submit">Crear skill</button><br>
         <button class="submitbtn notsubmitexp" onclick="window.location.reload()" type="button">Cancelar</button>
     </form>

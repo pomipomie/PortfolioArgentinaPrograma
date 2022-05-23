@@ -4,6 +4,7 @@ package com.yoprogramo.portfolioap.Controller;
 import org.springframework.web.bind.annotation.RestController;
 import com.yoprogramo.portfolioap.Model.EducT;
 import com.yoprogramo.portfolioap.Service.IEducTService;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -39,5 +40,12 @@ public class EducTController {
     @ResponseBody
     public EducT searchEducT (@PathVariable Long id_educt) {
         return eductServ.searchEducT(id_educt);
+    }
+    
+    @GetMapping ("/portfolioap/educt/list")
+    @ResponseBody
+    public List<EducT> educTList() {
+        List<EducT> educts = eductServ.educTList();
+        return educts;
     }
 }

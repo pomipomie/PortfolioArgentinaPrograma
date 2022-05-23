@@ -31,7 +31,7 @@ export class AboutComponent implements OnInit {
     this.form2 = formBuilder.group(
       {
         aboutText: ['', [Validators.required]],
-        birthDate: ['', [Validators.required]]
+        birthDate: ['']
       }
     );
   }
@@ -137,6 +137,9 @@ export class AboutComponent implements OnInit {
       d.instagram = this.myPortfolio.instagram;
       d.codePen = this.myPortfolio.codePen;
       d.linkedIn = this.myPortfolio.linkedIn;
+      if ( d.birthDate == "") {
+        d.birthDate = this.myPortfolio.birthDate;
+      }
       d.id = this.autenticationService.getUserLogged();
       console.log(d); //TEST
 

@@ -1,9 +1,9 @@
 <!-- <p>eduform works!</p> -->
 <div class="modal" id="editedu">
     <form class="modal-content animate" [formGroup]="form" method="put" (ngSubmit)="onSave()">
-        <label for="id_educ">Id a editar</label>
+        <label for="id_educ">Educación a editar</label>
         <select name="id_educ"  formControlName="id_educ" (change)="edu.id_educ">
-            <option *ngFor="let edu of edus" value={{edu.id_educ}}>{{edu.id_educ}}</option>
+            <option *ngFor="let edu of edus" value={{edu.id_educ}}>{{edu.title}}</option>
         </select><br>
         <label for="title">Editar título</label>
         <input type="text" value="title" formControlName="title" name="title"><br>
@@ -20,6 +20,10 @@
         <label for="educInfo">Editar descripción</label>
         <textarea value="educInfo" formControlName="educInfo" name="educInfo" rows="5">
         </textarea><br>
+        <label for="id_educt">Editar tipo de educación</label>
+        <select name="id_educt" formControlName="id_educt" (change)="edu.id_educt">
+            <option *ngFor="let educt of educts" value={{educt.id_educt}}>{{educt.educType}}</option>
+        </select><br>
         <button class="submitbtn submitexp" type="submit">Guardar cambios</button><br>
         <button class="submitbtn notsubmitexp" onclick="window.location.reload()" type="button">Cancelar</button>
     </form>

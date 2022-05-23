@@ -14,6 +14,8 @@ export class NeweduformComponent implements OnInit {
   loggedUser:boolean=true;  //debe ser false al inicio
   edus:Array<any> | undefined;
   edu:any;
+  educts:Array<any> | undefined;
+  educt:any;
   openModal:boolean=false;
   form:FormGroup;
 
@@ -26,7 +28,8 @@ export class NeweduformComponent implements OnInit {
         certif: [''],
         startDate:[''],
         endDate:[''],
-        educInfo:['']
+        educInfo:[''],
+        id_educt: ['', [Validators.required]]
       }
     );
   }
@@ -38,6 +41,9 @@ export class NeweduformComponent implements OnInit {
      } else {
       this.loggedUser=false;
      }
+    this.datosPortfolio.obtenerDatosEduT().subscribe(data => {
+      this.educts=data;
+    })
   }
 
   onSave() {
@@ -45,14 +51,25 @@ export class NeweduformComponent implements OnInit {
     if (this.form.valid) {
       let d = this.form.value;
       console.log(d); //TEST
-
-    this.datosPortfolio.newEdu(d).subscribe(
-      d => {
-        console.log(d); //TEST - not working
-        this.edu = d;
-        window.location.reload();
+      let thisId:Object;
+      this.datosPortfolio.obtenerDatos().subscribe( data =>
+        {thisId = data;
+        d.id = thisId;
+        d.educfields=[];
+        console.log("realid: "+JSON.stringify(d.id));//test
+        this.datosPortfolio.obtenerEducT(d.id_educt).subscribe(
+          dat => {
+            d.id_educt = dat;
+          console.log(d); //TEST
+          this.datosPortfolio.newEdu(d).subscribe(
+            d => {
+              console.log(d); //TEST - working
+              this.edu = d;
+              window.location.reload();
+            })
+          }
+        )
       })
-      // console.log("hola"); //TEST
           }
     else{
       alert("Formulario inválido");

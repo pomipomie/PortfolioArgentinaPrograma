@@ -3,6 +3,7 @@ package com.yoprogramo.portfolioap.Service;
 
 import com.yoprogramo.portfolioap.Model.EducT;
 import com.yoprogramo.portfolioap.Repository.IEducTRepository;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -31,6 +32,12 @@ public class EducTService implements IEducTService {
     public EducT editEducT(EducT educt) {
        EducT updatedEduct = eductRepo.save(educt);
        return updatedEduct;
+    }
+
+    @Override
+    public List<EducT> educTList() {
+        List<EducT> educts = eductRepo.saveAll(eductRepo.findAll());
+        return educts;
     }
     
 }

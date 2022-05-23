@@ -3,6 +3,7 @@ package com.yoprogramo.portfolioap.Controller;
 
 import com.yoprogramo.portfolioap.Model.SkillT;
 import com.yoprogramo.portfolioap.Service.ISkillTService;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -40,5 +41,12 @@ public class SkillTController {
     @ResponseBody
     public SkillT searchSkillT (@PathVariable Long id_skillt) {
         return skilltServ.searchSkillT(id_skillt);
+    }
+    
+    @GetMapping ("/portfolioap/skilltype/list")
+    @ResponseBody
+    public List<SkillT> skillTList() {
+        List<SkillT> skillts = skilltServ.SkillTList();
+        return skillts;
     }
 }

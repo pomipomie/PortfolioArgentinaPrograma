@@ -1,0 +1,9 @@
+.edulinks {
+    display: flex;
+    justify-content: flex-start;
+    padding-top: 0.5em;
+}
+
+.edulinks a {
+    margin-right: 1em;
+}

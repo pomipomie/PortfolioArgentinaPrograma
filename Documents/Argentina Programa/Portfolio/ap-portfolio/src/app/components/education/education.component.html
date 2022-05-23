@@ -13,8 +13,13 @@
             </a>
         </h3>
         <h4>{{edu.institution}}</h4>
-        <p>{{edu.eudcInfo}}</p>
-        <!-- <p>{{edu.id_educt.educType.}}</p> -->
-        <a href="{{edu.educUrl}}" target="_blank"><p><i class="bi bi-globe2"></i> Sitio web</p></a>
+        <p *ngIf="edu.id_educt.educType!=='Curso Online'">{{edu.place}}</p>
+        <p>{{edu.startDate}} - {{edu.endDate}}<span *ngIf="!edu.endDate">En curso</span></p>
+        <p>{{edu.educInfo}}</p>
+        <div class="edulinks">
+            <a href="{{edu.educUrl}}" target="_blank"><p><i class="bi bi-globe2"></i> Sitio web</p></a>
+            <a href="{{edu.certif}}" target="_blank" *ngIf="edu.certif"><p><i class="bi bi-file-earmark-richtext-fill"></i> Certificado</p></a>
+        </div>
+        <p class="type">{{edu.id_educt.educType}}</p>
     </article>
 </section>

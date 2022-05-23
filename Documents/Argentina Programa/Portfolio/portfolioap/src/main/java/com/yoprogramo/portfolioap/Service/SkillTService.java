@@ -2,6 +2,7 @@ package com.yoprogramo.portfolioap.Service;
 
 import com.yoprogramo.portfolioap.Model.SkillT;
 import com.yoprogramo.portfolioap.Repository.ISkillTRepository;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -30,6 +31,12 @@ public class SkillTService implements ISkillTService {
     public SkillT editSkillT(SkillT skillt) {
         SkillT updatedSkillt = skilltRepo.save(skillt);
         return updatedSkillt;
+    }
+
+    @Override
+    public List<SkillT> SkillTList() {
+        List<SkillT> skillts = skilltRepo.saveAll(skilltRepo.findAll());
+        return skillts;
     }
     
 }

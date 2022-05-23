@@ -37,18 +37,13 @@ export class NewexpformComponent implements OnInit {
       this.loggedUser=false;
      }
      this.datosPortfolio.obtenerDatosExpT().subscribe(data => {
-      console.log(data);  // FOR TESTING
+      //console.log(data);  // FOR TESTING
       this.expts=data;
     });
   }
 
   onSave() {
-    alert(JSON.stringify(this.form.value)); //para pruebas
-    // let userid = parseInt(this.autenticationService.getUserLogged());
-    // alert(userid);
-    // let user = this.autenticationService.getUser(1);
-    // alert(JSON.stringify(user)); //test
-    
+    alert(JSON.stringify(this.form.value)); //para pruebas 
     if (this.form.valid) {
       let d = this.form.value;
       let thisId:Object;
