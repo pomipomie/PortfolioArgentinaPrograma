@@ -1,3 +1,7 @@
 .pencil-exp {
     position: relative;
 }
+
+#delexp {
+    margin-left: 0.5em;
+}

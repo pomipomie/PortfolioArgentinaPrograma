@@ -4,16 +4,18 @@ body {
     --hoverblue: #1b0c5e;
     --pink: hsl(331, 89%, 55%);
     --grey: #bcbcbe;
+    --stgrey: #bcbcbe;
 }
 
 body.dark-theme {
-    background-color: #050216;
+    background-color: #03010c;
 }
 
 body.dark-theme .card, body.dark-theme .modal {
-    --bgdcolor: #050216;
+    --bgdcolor: #03010c;
     --blue: #FFF7FD;
     --grey: #242494;
+    --grey: #bcbcbe;
 }
 
 /*mobile first: starting at 280px (target: samsung galaxy fold) */
@@ -128,7 +130,7 @@ h4 {
 
 .cardcont p {
     margin-top: -0.5em;
-    font-weight: 400;
+    font-weight: 300;
 }
 
 .cardcont a:any-link {
@@ -152,11 +154,15 @@ body.gradientmode .card h2::before {
     background-color: var(--blue);
     width: fit-content;
     height: auto;
-    padding: 0.4em;
+    padding: 0.5em;
     border-radius: 50%;
     font-size: 0.7em;
     color: var(--bgdcolor);
     z-index: 4;
+    display:flex;
+    text-align: center;
+    justify-items: center;
+    align-items: center;
 }
 
 .pencilbtn:hover {
@@ -294,6 +300,7 @@ body.gradientmode .modal {
     }
     .card {
         margin-left: 1.5em;
+        padding: 0 3vw;
     }
     .card h2::before {
         height: 1em;
@@ -316,6 +323,9 @@ body.gradientmode .modal {
     h2 {
         font-size: 1.4em;
     }
+    .card:not(#skills) {
+        padding: 0 5vw;
+    }
     .card h2 {
         font-size: 1.4em;
     }
@@ -325,7 +335,7 @@ body.gradientmode .modal {
 
     .cardcont {
         padding-left: 5vw;
-        padding-right: 5vw;  
+        padding-right: 5vw;
     }
 
     .modal {

@@ -56,6 +56,7 @@ nav li {
     margin: 0.25em 1em 0 0;
     font-size: 1.25em;
     padding-right: 0.5em;
+    cursor: pointer;
 }
 
 #menu p:hover {
@@ -92,6 +93,21 @@ nav li {
     background-color: var(--hoverblue);
 }
 
+#toggles {
+    display: none;
+    justify-content: right;
+    align-content: center;
+    align-self: center;
+    justify-self: right;
+    gap: 1.5rem;
+}
+
+#toggles i:hover, #menu i:hover {
+    color: var(--hoverblue);
+}
+
+/* Media queries */
+
  @media screen and (min-width: 860px) {
    #navul {
        padding-right: 4em;
@@ -105,6 +121,9 @@ nav li {
 @media screen and (min-width: 1200px) {
     #navul {
         font-size: 28px;
+    }
+    #toggles {
+        display: flex;
     }
 }
 

@@ -44,10 +44,15 @@ export class ExperienceComponent implements OnInit {
     this.openModalN = true;
   }
 
+  // closeForm(event: Event) {
+  //   console.log("you closed"); //TEST
+  //   //this.openModal = false;
+  //   window.location.reload;
+  // }
 
-  closeForm(event: Event) {
-    console.log("you closed"); //TEST
-    //this.openModal = false;
-    window.location.reload;
+  deleteExp(id_exp: any) {
+    console.log("deleting..."); //TEST
+    this.datosPortfolio.deleteExp(id_exp).subscribe();
+    window.location.reload();
   }
 }

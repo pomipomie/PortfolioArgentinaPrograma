@@ -39,4 +39,10 @@ export class ProjectsComponent implements OnInit {
     this.openModalN = true;
   }
 
+  deleteProj(id_projects: any) {
+    console.log("deleting..."); //TEST
+    this.datosPortfolio.deletePro(id_projects).subscribe();
+    window.location.reload();
+  }
+
 }

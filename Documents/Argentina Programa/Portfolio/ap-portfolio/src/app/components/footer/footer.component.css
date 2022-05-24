@@ -18,3 +18,24 @@ footer a {
 footer a:any-link {
     text-decoration: none;
 }
+
+#up {
+    z-index: 7;
+    display: block;
+    position: fixed;
+    bottom: 10vh;
+    right: 6vmax;
+    font-size: 6vmin;
+}
+
+@media screen and (min-width: 600px) {
+    #up {
+        right: 9vmax;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    #up {
+        right: 6vw;
+    }
+}

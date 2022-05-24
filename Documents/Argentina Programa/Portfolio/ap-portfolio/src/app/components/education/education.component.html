@@ -11,6 +11,9 @@
             <a href="javascript:void(0)" (click)=openForm($event)>
                 <div class="pencilbtn" id="pencil-edu" *ngIf="loggedUser"><i class="bi bi-pencil-square"></i></div>
             </a>
+            <a href="javascript:void(0)" (click)="deleteEdu(edu.id_educ)">
+                <div class="pencilbtn" id="deledu" *ngIf="loggedUser"><i class="bi bi-x-square"></i></div>
+            </a>
         </h3>
         <h4>{{edu.institution}}</h4>
         <p *ngIf="edu.id_educt.educType!=='Curso Online'">{{edu.place}}</p>

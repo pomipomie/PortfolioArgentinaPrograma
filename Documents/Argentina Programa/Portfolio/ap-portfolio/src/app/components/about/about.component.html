@@ -4,10 +4,10 @@
             <img [src]="myPortfolio.picUrl" width="80%" alt="avatar picture">
         </div>
         <div id="avatartext">
-            <a href="javascript:void(0)" onclick="document.getElementById('editname').style.display='block'">
-            <div class="pencilbtn" id="pencil-name" *ngIf="loggedUser"><i class="bi bi-pencil-square"></i></div>
-            </a>
             <h1>{{myPortfolio.firstName+" "+myPortfolio.lastName}}</h1>
+            <a href="javascript:void(0)" onclick="document.getElementById('editname').style.display='block'">
+                <div class="pencilbtn" id="pencil-name" *ngIf="loggedUser"><i class="bi bi-pencil-square"></i></div>
+            </a>
         </div>
         <div class="modal" id="editname">
             <form class="modal-content animate" [formGroup]="form1" method="put" (ngSubmit)="onSave()">

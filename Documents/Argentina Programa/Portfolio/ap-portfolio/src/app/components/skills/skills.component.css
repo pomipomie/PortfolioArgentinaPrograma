@@ -23,8 +23,9 @@
     width: 100%;
     top: 2.3em;
     left: 0;
-    font-size: 1.2em;
+    font-size: 1em;
     text-align: center;
+    padding: 0.5em 0;
 }
 .progress svg {
     width: 40vw;
@@ -44,7 +45,7 @@
     fill: none;
     stroke-width: 19;
     stroke-dasharray: 629;
-    stroke: var(--grey);
+    stroke: var(--stgrey);
     -webkit-animation: load 5s;
     -moz-animation: load 5s;
     -o-animation: load 5s;
@@ -67,50 +68,51 @@ stroke-dashoffset:0
 }
 }
 
-#pencil-ski {
-    position:relative;
+.btndiv {
+    display: flex;
+    justify-items: center;
     top: -2em;
+    position:relative;
+}
+
+#delskill {
+    margin-left: 0.5em;
 }
 
 /* media queries */
 
 @media screen and (min-width: 600px) {
     .progress>li:after {
-        top: 2.5em;
+        top: 1.6em;
+        padding: 1em 0;
     }
 
     .progress svg {
-        width: 30vw;
-        height: 30vw;
+        width: 27vw;
+        height: 27vw;
     }
 }
 
 @media screen and (min-width: 700px) {
+    .progress {
+        gap: 3%;
+    }
     .progress>li:after {
-        top: 2.25em;
+        top: 1.75em;
     }
     .progress svg {
         width: 25vw;
         height: 25vw;
+        margin-bottom: 15%;
     }
 }
 
 @media screen and (min-width: 860px) {
+    .progress {
+        gap: 1%;
+    }
     .progress>li:after {
-        top: 2.9em;
-    }
-    li + li {
-        margin-left: 1em;
-    }
-    .progress svg {
-        width: 24vw;
-        height: 24vw;
-    }
-}
-
-@media screen and (min-width: 1000px) {
-    .progress>li:after {
-        top: 35%;
+        padding: 15% 0;
     }
     .progress svg {
         width: 20vw;
@@ -118,15 +120,28 @@ stroke-dashoffset:0
     }
 }
 
+@media screen and (min-width: 1000px) {
+    .progress svg {
+        width: 15vw;
+        height: 15vw;
+    }
+}
+
 @media screen and (min-width: 1200px) {
     .progress>li:after {
-        font-size: 2.5rem;
+        padding: 20% 0;
+    }
+}
+
+@media screen and (min-width: 1500px) {
+    .progress svg {
+        width: 12vw;
+        height: 12vw;
     }
 }
 
 @media screen and (min-width: 1800px) {
-    .progress svg {
-        width: 15vw;
-        height: 15vw;
+    .progress>li:after {
+        font-size: 0.75em;
     }
 }

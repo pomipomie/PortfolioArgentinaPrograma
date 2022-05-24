@@ -63,6 +63,10 @@ export class PortfolioService {
     return this.http.post(this.url+"experience/new", exp);
   }
 
+  deleteExp(id_exp:any):Observable<any> {
+    return this.http.delete(this.url+"experience/"+id_exp+"/delete");
+  }
+
   editEdu(edu:any):Observable<any> {
     return this.http.put(this.url+"education/edit", edu);
   }
@@ -73,6 +77,10 @@ export class PortfolioService {
 
   obtenerEdu(id_educ:any):Observable<any> { 
     return this.http.get<any>(this.url+"education/"+id_educ+"/search");
+  }
+
+  deleteEdu(id_educ:any):Observable<any> {
+    return this.http.delete(this.url+"education/"+id_educ+"/delete");
   }
 
   obtenerEducT(id_educt:any):Observable<any> { 
@@ -91,6 +99,10 @@ export class PortfolioService {
     return this.http.get<any>(this.url+"skill/"+id_skills+"/search");
   }
 
+  deleteSkill(id_skills:any):Observable<any> {
+    return this.http.delete(this.url+"skill/"+id_skills+"/delete");
+  }
+
   obtenerSkillT(id_skillt:any):Observable<any> { 
     return this.http.get<any>(this.url+"skilltype/"+id_skillt+"/search");
   }
@@ -105,5 +117,9 @@ export class PortfolioService {
 
   getPro(id_projects:any):Observable<any> {
     return this.http.get<any>(this.url+"project/"+id_projects+"/search");
+  }
+
+  deletePro(id_projects:any):Observable<any> {
+    return this.http.delete(this.url+"project/"+id_projects+"/delete");
   }
 }

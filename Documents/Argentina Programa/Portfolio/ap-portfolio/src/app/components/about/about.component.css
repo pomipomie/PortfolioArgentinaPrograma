@@ -29,6 +29,12 @@
     position: relative;
     max-width: 400px;
     height: auto;
+    object-fit: cover;
+}
+
+#avatartext {
+    display: flex;
+    justify-items: center;
 }
 
 #avatartext h1 {
@@ -66,8 +72,7 @@
 }
 
 #pencil-name {
-    position: absolute;
-    left: 1vw;
+    position: relative;
     z-index: 4;
 }
 
@@ -92,8 +97,13 @@
 }
 
 @media screen and (min-width: 860px) {
-    #pencil-name {
-        left: 2.5vw;
+    #aboutcontainer {
+        padding: 0 3vw;
+    }
+
+    #avatarpic {
+        width: 80%;
+        padding: 0 10%;
     }
 
     #avatarpic img {
@@ -106,6 +116,9 @@
 }
 
 @media screen and (min-width: 1000px) {
+    #aboutcontainer {
+        padding: 0 5vw;
+    }
     #avatartext h1 {
         padding: 0 0.5em 1em 0.5em;
     }
@@ -118,11 +131,5 @@
 @media screen and (min-width: 1200px) {
     #avatartext h1 {
         padding: 0 2em 1em 2em;
-    }
-}
-
-@media screen and (min-width: 1800px) {
-    #pencil-name {
-        left: 7vw;
     }
 }

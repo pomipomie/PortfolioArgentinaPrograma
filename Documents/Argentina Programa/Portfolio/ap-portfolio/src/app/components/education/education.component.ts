@@ -39,4 +39,10 @@ export class EducationComponent implements OnInit {
     this.openModalN = true;
   }
 
+  deleteEdu(id_educ: any) {
+    console.log("deleting..."); //TEST
+    this.datosPortfolio.deleteEdu(id_educ).subscribe();
+    window.location.reload();
+  }
+
 }

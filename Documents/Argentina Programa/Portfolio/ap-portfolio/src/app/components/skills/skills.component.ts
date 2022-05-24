@@ -37,5 +37,11 @@ export class SkillsComponent implements OnInit {
     console.log("you clicked here!!"); //TEST
     this.openModalN = true;
   }
+  
+  deleteSkill(id_skills: any) {
+    console.log("deleting..."); //TEST
+    this.datosPortfolio.deleteSkill(id_skills).subscribe();
+    window.location.reload();
+  }
 
 }

@@ -10,7 +10,26 @@
         <li id="yoprogramo">
             <p>#YoProgramo</p>
         </li>
-        <li id="menu">
+        <li id="toggles">
+            <a href="javascript:void(0)" (click)="toggle()" class="btn-toggle" title="Dark/Light mode">
+                <i [ngClass]="bulbclass" id="drkm"></i>
+            </a>
+            <a href="javascript:void(0)" (click)="gradient()" class="btn-toggle" title="Gradient/Plain mode">
+                <i [ngClass]="onoff" id="grdm"></i>
+            </a>
+            <a href="window.location.reload()" (click)="logOut()" *ngIf="loggedUser" class="btn-toggle" title="Log Out">
+                <i class="bi bi-door-open" id="lgout"></i>
+            </a>
+            <a href="javascript:void(0)" onclick="document.getElementById('id01').style.display='block'" style="width:auto;" *ngIf="!loggedUser" class="btn-toggle" title="Log In">
+                <i class="bi bi-door-closed-fill" id="lgin"></i>
+            </a>
+            <a href="#experiencia" title="Experiencia"><i class="bi bi-card-list"></i></a>
+            <a href="#educacion" title="Educación"><i class="bi bi-mortarboard-fill"></i></a>
+            <a href="#skills" title="Skills"><i class="bi bi-keyboard"></i></a>
+            <a href="#proyectos" title="Proyectos"><i class="bi bi-journal-code"></i></a>
+            <a href="#contacto" title="Contacto"><i class="bi bi-envelope-open"></i></a>
+        </li>
+        <li id="menu" title="Menu">
             <i (click)="openNav()" class="bi bi-list"></i>
             <div #mySidenav id="mySidenav" class="sidenav">
                 <a href="javascript:void(0)" class="bi-x-lg" (click)="closeNav()"></a>

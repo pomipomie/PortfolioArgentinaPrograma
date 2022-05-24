@@ -11,6 +11,9 @@
             <a href="javascript:void(0)" (click)=openForm($event)>
                 <div class="pencilbtn" id="pencil-pro" *ngIf="loggedUser"><i class="bi bi-pencil-square"></i></div>
             </a>
+            <a href="javascript:void(0)" (click)="deleteProj(proj.id_projects)">
+                <div class="pencilbtn" id="delpro" *ngIf="loggedUser"><i class="bi bi-x-square"></i></div>
+            </a>
         </h3>
         <p>{{proj.pdescription}}</p>
         <div class="preview">

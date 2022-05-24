@@ -11,6 +11,9 @@
             <a href="javascript:void(0)" (click)=openForm($event)>
                 <div class="pencilbtn pencil-exp" *ngIf="loggedUser"><i class="bi bi-pencil-square"></i></div>
             </a>
+            <a href="javascript:void(0)" (click)="deleteExp(exp.id_exp)">
+                <div class="pencilbtn" id="delexp" *ngIf="loggedUser"><i class="bi bi-x-square"></i></div>
+            </a>
         </h3>
         <h4>{{exp.workplace}}</h4>
         <p>{{exp.startDate}} - {{exp.endDate}}</p>
