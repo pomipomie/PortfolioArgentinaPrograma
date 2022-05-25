@@ -1,6 +1,6 @@
 {
     "/portfolioap/*":{
-        "target":"http://localhost:8080",
+        "target":"https://portfolio-ap-mxb.herokuapp.com/",
         "secure":false,
         "logLevel":"debug"
     }

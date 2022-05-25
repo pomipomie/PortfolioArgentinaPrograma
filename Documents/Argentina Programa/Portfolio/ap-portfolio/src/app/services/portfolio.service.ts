@@ -6,13 +6,13 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class PortfolioService {
-  url:string="/portfolioap/" // poner URL API!!!
+  url:string="https://portfolio-ap-mxb.herokuapp.com/portfolioap/";
   constructor(private http:HttpClient) { 
     console.log("El servicio está corriendo");
   }
 
   obtenerDatos():Observable<any> { 
-    return this.http.get<any>(this.url+"user"+"/1/search");   // this.url+"user"
+    return this.http.get<any>(this.url+"user"+"/1/search");
   }
 
   obtenerDatosExp():Observable<any> { 

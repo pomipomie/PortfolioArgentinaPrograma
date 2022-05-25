@@ -8,17 +8,15 @@ import { CookieService } from 'ngx-cookie-service';
   providedIn: 'root'
 })
 export class AutenticationService {
-  url = "/portfolioap/user";
-  currentUserSubject: BehaviorSubject<any>;  //currentUserSubject tiene que ser inicializado!
+  url = "https://portfolio-ap-mxb.herokuapp.com/portfolioap/user";
+  currentUserSubject: BehaviorSubject<any>;
   constructor(private http:HttpClient, private cookies:CookieService) { 
     this.currentUserSubject= new BehaviorSubject<any>(JSON.parse(sessionStorage.getItem('currentUser') || '{}'));
-  //  console.log("autservice is running"+JSON.stringify(this.currentUserSubject)); // for testing
   }
 
   logIn(user:any):Observable<any> {
     return this.http.post(this.url+"/login", user).pipe(map(data=>{
       sessionStorage.setItem('currentUser', JSON.stringify(data));
-    //  console.log("login is running"+JSON.stringify(data)); // for testing
       return data;
     }))
   }
@@ -52,9 +50,5 @@ export class AutenticationService {
   editUser(user:any):Observable<any> {
     return this.http.put(this.url+"/edit", user);
   }
-
-/*   get AuthUser() {
-    return this.currentUserSubject.value;
-  } */
 
 }
