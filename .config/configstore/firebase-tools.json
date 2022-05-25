@@ -1,5 +1,4 @@
 {
-	"analytics-uuid": "f9d03d90-e3fb-4197-a8f1-67224291cc9d",
 	"motd": {
 		"cloudBuildErrorAfter": 1594252800000,
 		"cloudBuildWarnAfter": 1590019200000,
@@ -10,25 +9,31 @@
 		"node8WarnAfter": 1600128000000,
 		"fetched": 1653476043236
 	},
+	"additionalAccounts": [],
+	"activeAccounts": {},
+	"analytics-uuid": "72eecddd-c3e3-4e06-87d1-874cc50b4ff0",
 	"usage": true,
 	"user": {
 		"iss": "accounts.google.com",
 		"azp": "563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com",
 		"aud": "563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com",
-		"sub": "116508185142634187667",
-		"email": "mxbadano@gmail.com",
+		"sub": "110961816874790734708",
+		"email": "furikixio@gmail.com",
 		"email_verified": true,
-		"at_hash": "Lse1xkudkGAUOnB_t8TrUA",
-		"iat": 1653476071,
-		"exp": 1653479671
+		"at_hash": "TUML7PdmbvRO--BUzTs7EA",
+		"iat": 1653486876,
+		"exp": 1653490476
 	},
 	"tokens": {
-		"expires_at": 1653479670470,
-		"access_token": "ya29.a0ARrdaM952z3QGHiZb5pc1hM7BVb_DmNF3iF5FCQFLvCOG44CbhpD2hUNx5NwtuHgN5peHuLR9l7E40ixfpuHSkakWwZChn_g-N1TjMCOIjBAFVCECdnzPuycpwga4yZ5jXbshSL9uxOtkknyj6-sQy8N6LGtDjFnBHvU",
+		"expires_at": 1653490475499,
+		"access_token": "ya29.a0ARrdaM-6qiDyamCo27oksjf-1RX6PNG98nuNnlb_vyl7W4KR6senWk76-w1X1el2lW51QqvEcAJwKmKzttYj9r4RNtK4fohREseJrgYFWFcJwQo_k4HGjAGAgwfA21D9n6tFrrHm4BABMH8MVK5z5mnJepZ1vX2unoGx",
 		"expires_in": 3599,
-		"refresh_token": "1//0hk6RX7Q91E67CgYIARAAGBESNwF-L9IrShrFrCV7Fs7A_-q2QPnATkxe9kfb6D-aUZywcg79MXvxeC9F3eUu3YFt9Sdhd6uvOfc",
-		"scope": "openid https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase",
+		"refresh_token": "1//0h5jDH79UpIQaCgYIARAAGBESNwF-L9Irm_o1N9MdFHm0U1KyLxpsqDW8VFIdoaKpIZtVWZ4gKXm5oAFl-6tuz-YSelFRKrPIqLY",
+		"scope": "https://www.googleapis.com/auth/firebase https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/cloudplatformprojects.readonly openid",
 		"token_type": "Bearer",
-		"id_token": "eyJhbGciOiJSUzI1NiIsImtpZCI6IjQ4NmYxNjQ4MjAwNWEyY2RhZjI2ZDkyMTQwMThkMDI5Y2E0NmZiNTYiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJhY2NvdW50cy5nb29nbGUuY29tIiwiYXpwIjoiNTYzNTg0MzM1ODY5LWZncmhnbWQ0N2JxbmVraWo1aThiNXByMDNobzg0OWU2LmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwiYXVkIjoiNTYzNTg0MzM1ODY5LWZncmhnbWQ0N2JxbmVraWo1aThiNXByMDNobzg0OWU2LmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwic3ViIjoiMTE2NTA4MTg1MTQyNjM0MTg3NjY3IiwiZW1haWwiOiJteGJhZGFub0BnbWFpbC5jb20iLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiYXRfaGFzaCI6IkxzZTF4a3Vka0dBVU9uQl90OFRyVUEiLCJpYXQiOjE2NTM0NzYwNzEsImV4cCI6MTY1MzQ3OTY3MX0.jcgYGzQ7l27wau6jBEdHe7maTLtaqNmAx9EUEXb3yfBiCtOLpomGFtvQ8gvGqMWQWiDrmspghMFEPY7nDkTyaeItUneQVOPJ9fmNqLVLq73_-FSdL4YODofmoIFOaH5iZZwE8XBVEq3cBWAUMIdIgTyMXgM5PDTC_QwsNL76Q9qDGkWKnNGOL4Sz0J-rFgToZvnRxL81elzFY0zMGd_j73DCnjw-zOUPCAs77U8IbsLrkhF8dfah8zqbTJRP6CZRi5laIGZDJkJzN71sI0CZ2f-9i6Q6x9O32B3SsXfG4_1eqExPM0LeH_wssxFZfL6fwEzyayKL1oyDhPLtjtDSRw"
+		"id_token": "eyJhbGciOiJSUzI1NiIsImtpZCI6IjQ4NmYxNjQ4MjAwNWEyY2RhZjI2ZDkyMTQwMThkMDI5Y2E0NmZiNTYiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJhY2NvdW50cy5nb29nbGUuY29tIiwiYXpwIjoiNTYzNTg0MzM1ODY5LWZncmhnbWQ0N2JxbmVraWo1aThiNXByMDNobzg0OWU2LmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwiYXVkIjoiNTYzNTg0MzM1ODY5LWZncmhnbWQ0N2JxbmVraWo1aThiNXByMDNobzg0OWU2LmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwic3ViIjoiMTEwOTYxODE2ODc0NzkwNzM0NzA4IiwiZW1haWwiOiJmdXJpa2l4aW9AZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsImF0X2hhc2giOiJUVU1MN1BkbWJ2Uk8tLUJVelRzN0VBIiwiaWF0IjoxNjUzNDg2ODc2LCJleHAiOjE2NTM0OTA0NzZ9.GstvnCAto98agWiALYVCC99jnDuCFfUNvu-XMmKumqiiJNaxku6VwcKRN8O1TRlMDCzl-JBlkMkN2acE-0JWpgl3MB3vJ7b3MygWPfO_94brckTw3RyP4_uLru_55VmOTd7KUe5zrohNjdOKSdaCCY9-xmhGkhBYnu0Xr-5MsPZ89pWYdrLfFzTNshvsf-WpAgUGJ_de_NrGnpb1OJa3ldWGHefEjYtcSL_3H9a_VxIZDAUiOZJxI8k2sh6Aid-amtb3rnBL0t68RlWMOn-NU-VrgkH_OM3bnvmVEG67M-J1J1XQib_lWPprHBCHWrM8niwAAcAyPYIEMeCLwRuN3Q"
+	},
+	"activeProjects": {
+		"C:\\Users\\furik\\Documents\\Argentina Programa\\Portfolio\\ap-portfolio": "portfolio-ap-mxb"
 	}
 }
