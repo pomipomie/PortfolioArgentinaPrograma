@@ -38,7 +38,6 @@ export class AboutComponent implements OnInit {
 
   ngOnInit(): void {
     this.datosPortfolio.obtenerDatos().subscribe(data => {
-    //  console.log(data);  // FOR TESTING
       this.myPortfolio=data;
       this.bDay = this.myPortfolio.birthDate[8]+this.myPortfolio.birthDate[9];
       switch(this.myPortfolio.birthDate[5]+this.myPortfolio.birthDate[6]) {
@@ -80,7 +79,6 @@ export class AboutComponent implements OnInit {
           break;
       }
       this.bYear = this.myPortfolio.birthDate[0]+this.myPortfolio.birthDate[1]+this.myPortfolio.birthDate[2]+this.myPortfolio.birthDate[3];
-      //console.log(this.bDay+"-"+this.bMonth); //TEST
     });
     if (this.autenticationService.getUserLogged() != '') {
       this.loggedUser=true;
@@ -90,7 +88,6 @@ export class AboutComponent implements OnInit {
   }
 
   onSave() {
-    //alert(JSON.stringify(this.form1.value)); //para pruebas
     if (this.form1.valid) {
       let d = this.form1.value;
       d.aboutText = this.myPortfolio.aboutText;
@@ -106,7 +103,6 @@ export class AboutComponent implements OnInit {
       d.codePen = this.myPortfolio.codePen;
       d.linkedIn = this.myPortfolio.linkedIn;
       d.id = this.autenticationService.getUserLogged();
-      //console.log(d); //TEST
 
     this.datosPortfolio.editUser(d).subscribe(
       d => {
@@ -120,10 +116,8 @@ export class AboutComponent implements OnInit {
   }
 
   onSaveInfo() {
-    alert(JSON.stringify(this.form2.value)); //para pruebas
     if (this.form2.valid) {
       let d = this.form2.value;
-      console.log(d.firstName); //test
       d.picUrl = this.myPortfolio.picUrl;
       d.firstName = this.myPortfolio.firstName;
       d.lastName = this.myPortfolio.lastName;
@@ -141,7 +135,6 @@ export class AboutComponent implements OnInit {
         d.birthDate = this.myPortfolio.birthDate;
       }
       d.id = this.autenticationService.getUserLogged();
-      console.log(d); //TEST
 
     this.datosPortfolio.editUser(d).subscribe(
       d => {

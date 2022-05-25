@@ -10,7 +10,7 @@ import { PortfolioService } from 'src/app/services/portfolio.service';
 })
 export class NewskiformComponent implements OnInit {
 
-  loggedUser:boolean=true;  //debe ser false al inicio
+  loggedUser:boolean=false;  //debe ser false al inicio
   skills:Array<any> | undefined;
   skill:any;
   skillts:Array<any> | undefined;
@@ -31,7 +31,6 @@ export class NewskiformComponent implements OnInit {
   ngOnInit(): void {
     this.datosPortfolio.obtenerDatosSki().subscribe(data => {
       this.skills=data;
-      //console.log(this.skills);  // FOR TESTING
     });
     this.datosPortfolio.obtenerDatosSkillT().subscribe(data => {
       this.skillts=data;
@@ -45,7 +44,6 @@ export class NewskiformComponent implements OnInit {
   }
 
   onSave() {
-    alert(JSON.stringify(this.form.value)); //para pruebas
     if (this.form.valid) {
       let d = this.form.value;
       let thisId:Object;
@@ -53,13 +51,10 @@ export class NewskiformComponent implements OnInit {
         {thisId = data;
         d.id = thisId;
         d.skillfields=[];
-        //console.log("realid: "+JSON.stringify(d.id));//test
         this.datosPortfolio.obtenerSkillT(d.id_skillt).subscribe(dat=>{
-          console.log(d); //TEST
           d.id_skillt=dat;
           this.datosPortfolio.newSkill(d).subscribe(
             d => {
-              console.log(d); //TEST - working
               this.skill = d;
               window.location.reload();
             })

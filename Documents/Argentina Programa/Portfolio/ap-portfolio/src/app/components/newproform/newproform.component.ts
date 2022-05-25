@@ -10,7 +10,7 @@ import { PortfolioService } from 'src/app/services/portfolio.service';
 })
 export class NewproformComponent implements OnInit {
 
-  loggedUser:boolean=true;  //debe ser false al inicio
+  loggedUser:boolean=false;  //debe ser false al inicio
   projs:Array<any> | undefined;
   proj:any;
   openModalN:boolean=false;
@@ -39,17 +39,14 @@ export class NewproformComponent implements OnInit {
   }
 
   onSave() {
-    alert(JSON.stringify(this.form.value)); //para pruebas
     if (this.form.valid) {
       let d = this.form.value;
-      //console.log(d); //TEST
       let thisId:Object;
       this.datosPortfolio.obtenerDatos().subscribe( data =>
         {thisId = data;
         d.id = thisId;
         this.datosPortfolio.newPro(d).subscribe(
           d => {
-            console.log(d); //TEST
             this.proj = d;
             window.location.reload();
           })

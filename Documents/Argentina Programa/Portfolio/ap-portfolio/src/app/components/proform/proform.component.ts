@@ -10,7 +10,7 @@ import { PortfolioService } from 'src/app/services/portfolio.service';
 })
 export class ProformComponent implements OnInit {
 
-  loggedUser:boolean=true;  //debe ser false al inicio
+  loggedUser:boolean=false;  //debe ser false al inicio
   projs:Array<any> | undefined;
   proj:any;
   openModal:boolean=false;
@@ -41,10 +41,8 @@ export class ProformComponent implements OnInit {
   }
 
   onSave() {
-    alert(JSON.stringify(this.form.value)); //para pruebas
     if (this.form.valid) {
       let d = this.form.value;
-      console.log(d); //TEST
       this.datosPortfolio.getPro(d.id_projects).subscribe(data =>{
         this.proj=data;
         d.id=this.proj.id;
@@ -62,7 +60,6 @@ export class ProformComponent implements OnInit {
         }
         this.datosPortfolio.editPro(d).subscribe(
           d => {
-            console.log(d); //TEST - not working
             this.proj = d;
             window.location.reload();
           })

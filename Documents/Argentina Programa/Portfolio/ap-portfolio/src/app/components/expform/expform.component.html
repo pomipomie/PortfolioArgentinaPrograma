@@ -1,27 +1,25 @@
-    <!-- <p>expform works!</p> -->
-    <div class="modal" id="editexp">
-        <form class="modal-content animate" [formGroup]="form" method="put" (ngSubmit)="onSave()">
-            <label for="id_exp">Experiencia a editar</label>
-            <select name="id_exp"  formControlName="id_exp" (change)="exp.id_exp">
-                <option *ngFor="let exp of exps" value={{exp.id_exp}}>{{exp.job}}</option>
-            </select><br>
-            <label for="job">Editar trabajo</label>
-            <input type="text" value="job" formControlName="job" name="job"><br>
-            <label for="workplace">Editar empresa</label>
-            <input type="text" value="workplace" formControlName="workplace" name="workplace"><br>
-            <label for="startDate">Editar fecha de inicio</label>
-            <input type="text" value="startDate" formControlName="startDate" name="startDate"><br>
-            <label for="endDate">Editar fecha de salida</label>
-            <input type="text" value="endDate" formControlName="endDate" name="endDate"><br>
-            <label for="description">Editar descripción</label>
-            <textarea value="description" formControlName="description" name="description" rows="5">
-            </textarea><br>
-            <label for="id_expt">Editar tipo de experiencia</label>
-            <select name="id_expt" formControlName="id_expt" (change)="exp.id_expt">
-                <option *ngFor="let expt of expts" value={{expt.id_expt}}>{{expt.jobType}}</option>
-            </select><br>
-            <button class="submitbtn submitexp" type="submit">Guardar cambios</button><br>
-            <button class="submitbtn notsubmitexp" onclick="window.location.reload()" type="button">Cancelar</button>
-        </form>
-    </div>
-<!-- (click)=closeForm($event) -->
+<div class="modal" id="editexp">
+    <form class="modal-content animate" [formGroup]="form" method="put" (ngSubmit)="onSave()">
+        <label for="id_exp">Experiencia a editar</label>
+        <select name="id_exp"  formControlName="id_exp" (change)="exp.id_exp">
+            <option *ngFor="let exp of exps" value={{exp.id_exp}}>{{exp.job}}</option>
+        </select><br>
+        <label for="job">Editar trabajo</label>
+        <input type="text" value="job" formControlName="job" name="job"><br>
+        <label for="workplace">Editar empresa</label>
+        <input type="text" value="workplace" formControlName="workplace" name="workplace"><br>
+        <label for="startDate">Editar fecha de inicio</label>
+        <input type="text" value="startDate" formControlName="startDate" name="startDate"><br>
+        <label for="endDate">Editar fecha de salida</label>
+        <input type="text" value="endDate" formControlName="endDate" name="endDate"><br>
+        <label for="description">Editar descripción</label>
+        <textarea value="description" formControlName="description" name="description" rows="5">
+        </textarea><br>
+        <label for="id_expt">Editar tipo de experiencia</label>
+        <select name="id_expt" formControlName="id_expt" (change)="exp.id_expt">
+            <option *ngFor="let expt of expts" value={{expt.id_expt}}>{{expt.jobType}}</option>
+        </select><br>
+        <button class="submitbtn submitexp" type="submit">Guardar cambios</button><br>
+        <button class="submitbtn notsubmitexp" onclick="window.location.reload()" type="button">Cancelar</button>
+    </form>
+</div>

@@ -19,10 +19,6 @@ export class LoginformComponent implements OnInit {
       {
         email:['',[Validators.required,Validators.email]],
         password:['',[Validators.required,Validators.minLength(8)]]
-        /*,
-        deviceId:[""],
-        deviceType:[""],
-        notificationToken:[""]*/
       }
     );
   }
@@ -40,17 +36,13 @@ export class LoginformComponent implements OnInit {
 
   onSend(event:Event) {
     event.preventDefault;
-   // alert(JSON.stringify(this.form.value)); //para pruebas
     this.autenticationService.logIn(this.form.value).subscribe(data=>{
-      console.log("DATA: "+JSON.stringify(data)); // para pruebas en consola
       if(data==null) {
         this.loginError="Email o contraseña inválidos";
       } else {
         this.autenticationService.setToken(data.id);
-        console.log("Token: "+data.id); // para pruebas
         this.logOk=true;
         window.location.reload();
-        //this.route.navigate(['/app']);
       }
     })
   }

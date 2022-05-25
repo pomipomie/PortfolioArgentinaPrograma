@@ -9,7 +9,7 @@ import { PortfolioService } from 'src/app/services/portfolio.service';
 })
 export class ExperienceComponent implements OnInit {
 
-  loggedUser:boolean=true;  //debe ser false al inicio
+  loggedUser:boolean=false;  //debe ser false al inicio
   exps:Array<any> | undefined;
   exp:any;
   expts:Array<any> | undefined;
@@ -24,7 +24,6 @@ export class ExperienceComponent implements OnInit {
 
   ngOnInit(): void {
     this.datosPortfolio.obtenerDatosExp().subscribe(data => {
-      //console.log(data);  // FOR TESTING
       this.exps=data;
     });
     if (this.autenticationService.getUserLogged() != '') {
@@ -35,23 +34,14 @@ export class ExperienceComponent implements OnInit {
   }
 
   openForm(event: Event) {
-    console.log("you clicked here"); //TEST
     this.openModal = true;
   }
 
   openFormN(event: Event) {
-    console.log("you clicked here!!"); //TEST
     this.openModalN = true;
   }
 
-  // closeForm(event: Event) {
-  //   console.log("you closed"); //TEST
-  //   //this.openModal = false;
-  //   window.location.reload;
-  // }
-
   deleteExp(id_exp: any) {
-    console.log("deleting..."); //TEST
     this.datosPortfolio.deleteExp(id_exp).subscribe();
     window.location.reload();
   }

@@ -11,7 +11,7 @@ import { PortfolioService } from 'src/app/services/portfolio.service';
 })
 export class NeweduformComponent implements OnInit {
 
-  loggedUser:boolean=true;
+  loggedUser:boolean=false;
   edus:Array<any> | undefined;
   edu:any;
   educts:Array<any> | undefined;
@@ -48,23 +48,18 @@ export class NeweduformComponent implements OnInit {
   }
 
   onSave() {
-    alert(JSON.stringify(this.form.value)); //para pruebas
     if (this.form.valid) {
       let d = this.form.value;
-      console.log(d); //TEST
       let thisId:Object;
       this.datosPortfolio.obtenerDatos().subscribe( data =>
         {thisId = data;
         d.id = thisId;
         d.educfields=[];
-        //console.log("realid: "+JSON.stringify(d.id));//test
         this.datosPortfolio.obtenerEducT(d.id_educt).subscribe(
           dat => {
             d.id_educt = dat;
-          console.log(d); //TEST
           this.datosPortfolio.newEdu(d).subscribe(
             d => {
-              console.log(d); //TEST - working
               this.edu = d;
               window.location.reload();
             })

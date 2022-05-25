@@ -10,7 +10,7 @@ import { PortfolioService } from 'src/app/services/portfolio.service';
 })
 export class SkiformComponent implements OnInit {
 
-  loggedUser:boolean=true;  //debe ser false al inicio
+  loggedUser:boolean=false;  //debe ser false al inicio
   skills:Array<any> | undefined;
   skill:any;
   skillts:Array<any> | undefined;
@@ -31,7 +31,6 @@ export class SkiformComponent implements OnInit {
   ngOnInit(): void {
     this.datosPortfolio.obtenerDatosSki().subscribe(data => {
       this.skills=data;
-      //console.log(this.skills);  // FOR TESTING
     });
     this.datosPortfolio.obtenerDatosSkillT().subscribe(data => {
       this.skillts=data;
@@ -45,7 +44,6 @@ export class SkiformComponent implements OnInit {
   }
 
   onSave() {
-    alert(JSON.stringify(this.form.value)); //para pruebas
     if (this.form.valid) {
       let d = this.form.value;
       this.datosPortfolio.obtenerSkill(d.id_skills).subscribe(data =>{
@@ -53,8 +51,6 @@ export class SkiformComponent implements OnInit {
         d.id=this.skill.id;
         d.skillfields=this.skill.skillfields;
         d.id_skillt=this.skill.id_skillt;
-        //this.datosPortfolio.obtenerSkillT(d.id_skillt).subscribe(dat =>{
-        //  d.id_skillt=dat;
           if (d.skillname == (null || "")) {
             d.skillname=this.skill.skillname;
           }
@@ -66,7 +62,6 @@ export class SkiformComponent implements OnInit {
               this.skill = d;
               window.location.reload();
             })
-      //  })
       })
           }
     else{

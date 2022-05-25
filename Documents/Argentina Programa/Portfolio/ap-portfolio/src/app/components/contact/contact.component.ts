@@ -10,7 +10,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class ContactComponent implements OnInit {
 
-  loggedUser:boolean=true;  //debe ser false al inicio
+  loggedUser:boolean=false;  //debe ser false al inicio
   myPortfolio:any;
   user:any;
   url = "/portfolioap/user";
@@ -37,13 +37,11 @@ export class ContactComponent implements OnInit {
       this.loggedUser=false;
      }
     this.datosPortfolio.obtenerDatos().subscribe(data => {
-      //  console.log(data);  // FOR TESTING
         this.myPortfolio=data;
     });
   }
 
   onSave() {
-    alert(JSON.stringify(this.form.value)); //para pruebas
     if (this.form.valid) {
       let d = this.form.value;
       d.aboutText = this.myPortfolio.aboutText;
@@ -55,7 +53,6 @@ export class ContactComponent implements OnInit {
       d.email = this.myPortfolio.email;
       d.password = this.myPortfolio.password;
       d.id = this.autenticationService.getUserLogged();
-      console.log(d); //TEST
   
     this.datosPortfolio.editUser(d).subscribe(
       d => {

@@ -9,7 +9,7 @@ import { PortfolioService } from 'src/app/services/portfolio.service';
 })
 export class SkillsComponent implements OnInit {
 
-  loggedUser:boolean=true;  //debe ser false al inicio
+  loggedUser:boolean=false;
   skills:Array<any> | undefined;
   openModal:boolean=false;
   openModalN:boolean=false;
@@ -18,7 +18,6 @@ export class SkillsComponent implements OnInit {
 
   ngOnInit(): void {
     this.datosPortfolio.obtenerDatosSki().subscribe(data => {
-      console.log(data);  // FOR TESTING
       this.skills=data;
     });
     if (this.autenticationService.getUserLogged() != '') {
@@ -29,17 +28,14 @@ export class SkillsComponent implements OnInit {
   }
 
   openForm(event: Event) {
-    console.log("you clicked here"); //TEST
     this.openModal = true;
   }
 
   openFormN(event: Event) {
-    console.log("you clicked here!!"); //TEST
     this.openModalN = true;
   }
   
   deleteSkill(id_skills: any) {
-    console.log("deleting..."); //TEST
     this.datosPortfolio.deleteSkill(id_skills).subscribe();
     window.location.reload();
   }

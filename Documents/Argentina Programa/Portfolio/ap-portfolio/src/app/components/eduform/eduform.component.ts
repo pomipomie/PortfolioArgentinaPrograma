@@ -10,7 +10,7 @@ import { PortfolioService } from 'src/app/services/portfolio.service';
 })
 export class EduformComponent implements OnInit {
 
-  loggedUser:boolean=true;  //debe ser false al inicio
+  loggedUser:boolean=false;  //debe ser false al inicio
   edus:Array<any> | undefined;
   edu:any;
   educts:Array<any> | undefined;
@@ -38,7 +38,6 @@ export class EduformComponent implements OnInit {
 
   ngOnInit(): void {
     this.datosPortfolio.obtenerDatosEdu().subscribe(data => {
-      //console.log(data);  // FOR TESTING
       this.edus=data;
     });
     this.datosPortfolio.obtenerDatosEduT().subscribe(data => {
@@ -52,10 +51,8 @@ export class EduformComponent implements OnInit {
   }
 
   onSave() {
-    alert(JSON.stringify(this.form.value)); //para pruebas
     if (this.form.valid) {
       let d = this.form.value;
-      console.log(d); //TEST
       this.datosPortfolio.obtenerEdu(d.id_educ).subscribe(data => {
         this.edu=data;
         d.id=this.edu.id;
