@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.yoprogramo.portfolioap.PortfolioapApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 111.303 s - in com.yoprogramo.portfolioap.PortfolioapApplicationTests
