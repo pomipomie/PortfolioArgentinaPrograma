@@ -1,6 +1,6 @@
 {
     "/portfolioap/*":{
-        "target":"https://portfolio-ap-mxb.herokuapp.com/",
+        "target":"http://mnqseogljt.us16.qoddiapp.com/",
         "secure":false,
         "logLevel":"debug"
     }
