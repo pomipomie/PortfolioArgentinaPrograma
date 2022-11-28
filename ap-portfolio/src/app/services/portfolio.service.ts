@@ -6,9 +6,8 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class PortfolioService {
-  url:string="https://portfolio-ap-mxb.herokuapp.com/portfolioap/";
-  constructor(private http:HttpClient) { 
-    console.log("El servicio está corriendo");
+  url:string="http://mnqseogljt.us16.qoddiapp.com/portfolioap/";
+  constructor(private http:HttpClient) {
   }
 
   obtenerDatos():Observable<any> { 
