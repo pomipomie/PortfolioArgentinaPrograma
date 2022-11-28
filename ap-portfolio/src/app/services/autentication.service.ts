@@ -8,7 +8,7 @@ import { CookieService } from 'ngx-cookie-service';
   providedIn: 'root'
 })
 export class AutenticationService {
-  url = "http://mnqseogljt.us16.qoddiapp.com/portfolioap/user";
+  url = "https://mnqseogljt.us16.qoddiapp.com/portfolioap/user";
   currentUserSubject: BehaviorSubject<any>;
   constructor(private http:HttpClient, private cookies:CookieService) { 
     this.currentUserSubject= new BehaviorSubject<any>(JSON.parse(sessionStorage.getItem('currentUser') || '{}'));

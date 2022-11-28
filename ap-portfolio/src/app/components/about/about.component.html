@@ -12,7 +12,7 @@
         <div class="modal" id="editname">
             <form class="modal-content animate" [formGroup]="form1" method="put" (ngSubmit)="onSave()">
                 <label for="picUrl">Cambiar foto de perfil</label>
-                <input type="url" placeholder={{myPortfolio.picUrl}} value={{myPortfolio.picUrl}} formControlName="picUrl" name="picUrl"><br>
+                <input type="url" placeholder={{myPortfolio?.picUrl}} value={{myPortfolio?.picUrl}} formControlName="picUrl" name="picUrl"><br>
                 <label for="firstName">Editar nombre</label>
                 <input type="text" placeholder={{myPortfolio.firstName}} value={{myPortfolio.firstName}} formControlName="firstName" name="firstName"><br>
                 <label for="lastName">Editar apellido</label>
