@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class PortfolioService {
-  url:string="https://mnqseogljt.us16.qoddiapp.com/portfolioap/";
+  url:string="https://gjhdtpwcvb.us18.qoddiapp.com/portfolioap/";
   constructor(private http:HttpClient) {
   }
 
